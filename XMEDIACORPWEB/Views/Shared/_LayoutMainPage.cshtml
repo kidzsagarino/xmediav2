@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_LayoutMainPage</title>
+    <link href="~/css/Home.css" rel="stylesheet" />
+    <link href="~/css/AboutUs.css" rel="stylesheet" />
+    <link href="~/css/UserLoginAccount.css" rel="stylesheet" />
+    <link href="~/css/UserForgotPass.css" rel="stylesheet" />
+    <link href="~/css/UserDashboard.css" rel="stylesheet" />
+    <link href="~/css/NewUserAccount.css" rel="stylesheet" />
+</head>
+<body id="layoutMainPage_Body">
+    <header>
+        <nav>
+            <div id="headerWrapper0_logo">
+                <img src="~/images/x-media_logo.png" />
+            </div>
+            <div id="headerWrapper0_menuDiv">
+                <ul id="headerMenuUl">
+                    <li><a href="/Home">Home</a></li>
+                    <li><a href="/AboutUs">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Offers</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div id="headerWrapper0_customerLoginDiv">
+                <h3 id="customerLoginTextH3"><a href="~/LoginUserAccount/ExistingUserLoginAccount">Customer Login</a></h3>
+
+            </div>
+        </nav>
+    </header>
+    <content>
+        <div id="contentWrapper0">
+            @RenderBody()
+        </div>
+    </content>
+    <footer>
+        <div id="footerWrapper0"></div>
+    </footer>
+    <script src="~/Scripts/library.js"></script>
+    @RenderSection("Scripts_NewAccount", false)
+    @RenderSection("Scripts_LoginUser", false)
+    @RenderSection("Scripts_ForgotPassword", false)
+
+
+</body>
+</html>
+

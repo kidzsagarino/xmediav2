@@ -1,0 +1,38 @@
+﻿@model BusinessModel.ObjectModel.LoginReturnInformationObjectModel
+
+@{
+    ViewBag.Title = "CustomerAccountDashboard";
+    Layout = "~/Views/Shared/_LayoutUserAccount.cshtml";
+    
+}
+
+<div id="customerDashboardWrapper0" class="customerDashboardWrapper0" data-id="@Model.PersonalInfo.UserID">
+    <div id="customerDashboardWrapper1" class="customerDashboardWrapper1">
+       
+        <div id="customerDashboardWrapper2_Left" class="customerDashboardWrapper2">
+            <div id="custDashLeftPanel_Top" class="custDashLeftPanel_Top">
+                <div id="custDashLeftPanel_Top_imgDiv">
+                    
+                    @*<img src="~/images/userphotoimage/@Model.PersonalInfo.PhotoImageFileName" />*@
+                    <img src="~/images/misc/fgm-Id.jpg" />
+                </div>
+            </div>
+            <div id="custDashLeftPanel_menu" class="custDashLeftPanel_menu">
+                <h3 id="custDashLeftPanelMenu_MyAccount" class="dashboardRightPanelMenu">
+                    <i><img src="~/images/icon/profile.png" /></i>My Account
+                </h3>
+                <h3 id="custDashLeftPanelMenu_Transacttion" class="dashboardRightPanelMenu">
+                    <i><img src="~/images/icon/transaction.png" /></i>Transaction
+                </h3>
+                <h3 id="custDashLeftPanelMenu_Messages" class="dashboardRightPanelMenu">
+                    <i><img src="~/images/icon/messages.png" /></i>Messages
+                </h3>
+            </div>
+            <div id="custDashLeftPanel_bottom" class="custDashLeftPanel_bottom">
+                <h3><i><img src="~/images/icon/settings.png" /></i>Settings</h3>
+            </div>
+        </div>
+        <div id="customerDashboardWrapper2_content" class="customerDashboardWrapper2"></div>
+        <div id="customerDashboardWrapper2_Right" class="customerDashboardWrapper2"></div>
+    </div>
+</div>

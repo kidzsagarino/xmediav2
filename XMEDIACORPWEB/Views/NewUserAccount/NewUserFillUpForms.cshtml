@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "CreateCustomerAccount";
+    Layout = "~/Views/Shared/_LayoutMainPage.cshtml";
+}
+
+<div id="createAccountWrapper0">
+    <div id="createAccountWrapper1">
+
+        <h2 id="createAccountWrapper2_1_h2">Create account</h2>
+
+        <div id="createAccountWrapper2_2">
+            <h2>Create account guide</h2>
+            <article id="createAccountArticle">
+                <p>1.  Complete the form's details found on the right, including checked box of data privacy and terms. </p>
+                <p>2.  Click "create account", if forms are properly filled up, it will show successfully created.</p>
+                <p>3.  Check your email for confirmation of your account. Click the link on your email to confirm.</p>
+                <p>4.  Go back to x-media website home page and login using your username and password created previously</p>
+                <p>5.  After login, if successful, your dashboard will show up and you can start transaction!</p>
+            </article>
+        </div>
+        <div id="createAccountWrapper2_3">
+            <form id="createAccountWrapper3_1">
+
+                <label>Email Address : </label>
+                <div id="newUserFormInputContainer_EmailAddress" class="newAccountsInputDiv">
+                    <input type="email" name="EmailAddress" class="newAccountsInputs" required />
+                    <small class="validationCommentsForUserInput"></small>
+                </div>
+
+                <label>Password :</label>
+                <div id="newUserFormInputContainer_Istillloveyou" class="newAccountsInputDiv">
+                    <input id="IStillLoveYou" name="IStillLoveYou" class="newAccountsInputs" required />
+                    <small class="validationCommentsForUserInput"></small>
+                </div>
+
+                <label>Confirm password :</label>
+                <div id="newUserFormInputContainer_ConfirmPassword" class="newAccountsInputDiv">
+                    <input id="ConfirmPassword" name="ConfirmPassword" class="newAccountsInputs" required />
+                    <small class="validationCommentsForUserInput"></small>
+                </div>
+
+                <label>First Name :</label>
+                <div id="newUserFormInputContainer_FirstName" class="newAccountsInputDiv">
+                    <input name="FirstName" class="newAccountsInputs" required />
+                    <small class="validationCommentsForUserInput"></small>
+                </div>
+
+                <label>Last Name :</label>
+                <div id="newUserFormInputContainer_LastName" class="newAccountsInputDiv">
+                    <input name="LastName" class="newAccountsInputs" required />
+                    <small class="validationCommentsForUserInput"></small>
+                </div>
+
+
+                <label>Contact Mobile :</label>
+                <div id="newUserFormInputContainer_MobileNo" class="newAccountsInputDiv">
+                    <input name="MobileNo" class="newAccountsInputs" required />
+                    <small class="validationCommentsForUserInput"></small>
+                </div>
+
+                <label>Contact Landline :</label>
+                <div id="newUserFormInputContainer_LandlineNo" class="newAccountsInputDiv">
+                    <input name="LandlineNo" class="newAccountsInputs" />
+                    <small class="validationCommentsForUserInput"></small>
+                </div>
+
+                <label>Company / Business :</label>
+                <div id="newUserFormInputContainer_CompanyName" class="newAccountsInputDiv">
+                    <input name="CompanyName" class="newAccountsInputs" />
+                    <small class="validationCommentsForUserInput"></small>
+                </div>
+                <div id="createAccountWrapper4_1_agreement">
+                    <div>
+                        <input id="createAccntDataPrivacy" type="checkbox" />
+                        <label>Data privacy</label>
+                    </div>
+                    <div>
+                        <input id="createAccntTermsAndAgreement" type="checkbox" />
+                        <label>Terms and agreement</label>
+                    </div>
+                </div>
+                <div id="createAccountWrapper4_2_proceedCreateAcct">
+                    <h3 id="proceedCreateAccount">Proceed create account</h3>
+                </div>
+            </form>
+            <div id="createAccountWrapper3_2">
+                <div id="createAccountWrapper4_1_photoIdDiv">
+
+                    <input id="uploadFilesInput" type="file" hidden="hidden" accept="images/png, images/jpeg" />
+                    <canvas id="createAccountWrapper5_canvass">
+                    </canvas>
+                    <img id="newAccountPhotoImage" src="" />
+
+                </div>
+            </div>
+        </div>
+        <div id="createAccountWrapper2_4">
+            <h5 id="createAccountNotesH5">*You data provided are solely use for your account information and transaction &#64 x-media </h5>
+            <h5 id="createAccountDataPrivacyH5"><a href="#">privacy</a></h5>
+            <h5 id="createAccountTermsH5"><a href="#">terms</a></h5>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts_NewAccount{
+    <script src="~/Scripts/NewUserAccount.js"></script>
+}
+
