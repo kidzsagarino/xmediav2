@@ -1,0 +1,383 @@
+﻿/*--------------------------------------NEW ACCOUNT FILL-UP FORMS ------------------------*/
+#createAccountWrapper0 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    /*border:4px solid red;*/
+}
+
+#createAccountWrapper1 {
+    display: grid;
+    grid-template-columns: minmax(200px,300px) minmax(650px,800px);
+    grid-template-rows: repeat(3,auto);
+    min-width: 850px;
+    margin: 20px;
+    box-sizing: border-box;
+    /*border: 4px solid red;*/
+}
+
+#createAccountWrapper2_1_h2 {
+    grid-area: 1/1 / span 1 / span 2;
+    width: 100%;
+    box-sizing: border-box;
+    /*border: 10px solid orange;*/
+    font-size: 2rem;
+    position: relative;
+    padding: 10px 0 10px 10px;
+    margin-bottom: 30px;
+}
+
+    #createAccountWrapper2_1_h2::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        box-shadow: 0 0 1px 1px rgba(128, 128, 128,.2);
+        background-color: grey;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    #createAccountWrapper2_1_h2::before {
+        content: "@x-mediacreateaccount";
+        position: absolute;
+        bottom: 5px;
+        right: 0;
+        text-align: right;
+        font-size: 1rem;
+        font-weight: 300;
+        font-style: italic;
+    }
+
+#createAccountWrapper2_2 {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 100%;
+    position: relative;
+    /*border: 2px solid green;*/
+}
+
+    #createAccountWrapper2_2::after {
+        content: "";
+        width: 1px;
+        height: 100%;
+        box-shadow: 0 0 1px 1px rgba(128, 128, 128,.2);
+        background-color: grey;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+#createAccountArticle > p {
+    padding: 5px 10px 0px 20px;
+    text-indent: -1rem;
+    font-size: .9rem;
+}
+
+#createAccountWrapper2_3 {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-column-gap: 70px;
+    width: 100%;
+    box-sizing: border-box;
+    /*border: 2px solid blue;*/
+}
+
+
+#createAccountWrapper3_1 {
+    display: grid;
+    grid-template-columns: 200px minmax(150px,1fr);
+    grid-template-rows: repeat(10,auto);
+    grid-row-gap: 20px;
+}
+
+    #createAccountWrapper3_1 > label {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0 10px 0 0;
+        font-size: .9rem;
+    }
+
+.newAccountsInputDiv {
+    position: relative;
+    width: 100%;
+}
+
+
+.newAccountsInputs {
+    box-sizing: border-box;
+    padding: 5px;
+    outline: none;
+    position: relative;
+    width: 100%;
+}
+
+.validationCommentsForUserInput {
+    padding: 0;
+    margin: 0;
+    color: grey;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: blue;
+    font-weight: 300;
+    font-size: .8rem;
+}
+
+#createAccountWrapper4_1_agreement {
+    margin-top: 50px;
+    grid-area: 9/1 / span 1 / span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /*border: 1px solid red;*/
+}
+
+    #createAccountWrapper4_1_agreement div {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    #createAccountWrapper4_1_agreement > div > input {
+        margin: 0;
+        width: 20px;
+        height: 20px;
+    }
+
+    #createAccountWrapper4_1_agreement > div > label {
+        margin: 0 0 0 10px;
+        font-size: .9rem;
+    }
+
+#createAccountWrapper4_2_proceedCreateAcct {
+    grid-area: 10/1 / span 1 / span 2;
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
+}
+
+    #createAccountWrapper4_2_proceedCreateAcct > h3 {
+        padding: 5px 15px;
+        margin: 0;
+        border: 1px solid grey;
+        border-radius: 5px;
+        background: linear-gradient(90deg,#262626,#505050,#262626);
+        color: white;
+        cursor: pointer;
+        font-weight: 400;
+        font-size: .9rem;
+    }
+
+#createAccountWrapper3_2 {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#createAccountWrapper4_1_photoIdDiv {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid rgba(100,100,100,.5);
+    border-radius: 50%;
+}
+
+#createAccountWrapper5_canvass {
+}
+
+#createAccountWrapper4_1_photoIdDiv > img {
+    max-width: 100%;
+}
+
+#createAccountWrapper2_4 {
+    grid-area: 3/1 / span 3 / span 2;
+    display: grid;
+    grid-template-columns: 1fr 100px 100px;
+    /*border:1px solid red;*/
+    position: relative;
+    margin-top: 30px;
+    padding: 10px 0 10px 0;
+}
+
+    #createAccountWrapper2_4::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: grey;
+        position: absolute;
+        left: 0;
+        top: 0px;
+    }
+
+#createAccountNotesH5 {
+    width: 100%;
+    position: relative;
+    font-size: .85rem;
+    font-weight: 300;
+}
+
+#createAccountDataPrivacyH5 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#createAccountWrapper2_4 a {
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+    font-size: .9rem;
+}
+
+#createAccountTermsH5 {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.invalid {
+    border: 1px solid red;
+}
+
+.invalidCheckedBox {
+    outline: 2px solid red;
+    outline-offset: 3px;
+}
+
+
+
+/*--------------------------------PARTIAL VIEW NEW ACCOUNT SUCCESSFUL SIGN-UP------------------------*/
+#newAccountSuccess_Wrapper0 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 30px 30px 30px;
+}
+
+.newAccountSuccessH3_Message:first-child {
+    font-size: 2rem;
+    color: grey;
+    margin: 20px;
+}
+
+.newAccountSuccessH3_Message:nth-child(2) {
+    font-size: 1.5rem;
+    margin: 10px;
+    color: blue;
+}
+
+.newAccountSuccessH3_Message:nth-child(3) {
+    font-size: 1.1rem;
+    margin: 10px;
+    font-weight: 400;
+}
+
+.newAccountSuccessH3_Message:nth-child(4) {
+    font-size: 1.1rem;
+    margin: 10px;
+    font-weight: 400;
+}
+
+.newAccountSuccessH3_Message:last-child {
+    font-size: 1.1rem;
+    margin: 10px;
+    font-weight: 400;
+}
+
+/*--------------------------------PARTIAL VIEW NEW ACCOUNT SERVER ERROR FAILED SIGN-UP ------------------------*/
+#newAccountServerErr_Wrapper0 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 30px 30px 30px;
+}
+
+.newAccntServerErrH3_Message:first-child {
+    font-size: 2rem;
+    color: grey;
+    margin: 20px;
+}
+
+.newAccntServerErrH3_Message:nth-child(2) {
+    font-size: 1.5rem;
+    margin: 10px;
+    color: blue;
+}
+
+.newAccntServerErrH3_Message:nth-child(3) {
+    font-size: 1.1rem;
+    margin: 10px;
+    font-weight: 400;
+}
+
+.newAccntServerErrH3_Message:last-child {
+    font-size: 1.1rem;
+    margin: 10px;
+    font-weight: 400;
+}
+
+/*--------------------------------PARTIAL VIEW HAS EXISTING EMAIL FAILED SIGN-UP ------------------------*/
+
+#newAccntExistEmail_Wrapper0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(150,150,150,.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#newAccntExistEmail_Wrapper1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    padding: 30px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    box-shadow: 0 0 10px 3px rgba(150,150,150,.5);
+}
+
+.newAccntExistEmailH3_Message {
+    font-weight: 400;
+    padding: 5px;
+}
+
+    .newAccntExistEmailH3_Message:nth-child(2) > span {
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+
+.newAccntExistEmailH3_Btn {
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+    .newAccntExistEmailH3_Btn:first-child {
+        background-color: dodgerblue;
+        color: white;
+    }
+
+    .newAccntExistEmailH3_Btn:last-child {
+        border: 1px solid dodgerblue;
+    }
+
+#newAccntExistEmail_btnContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-top: 30px;
+}

@@ -1,0 +1,205 @@
+﻿/*--------------------------------------USER ACCOUNT LAYOUT--------------------*/
+*{
+    font-family:Roboto,sans-serif,Arial, Helvetica;
+}
+#customerLayoutBody {
+    width: 100%;
+    min-width: 800px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#customerLayoutHeader {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(90deg,#660000, black,#660000,black);
+    position: fixed;
+    /*border:5px solid red;*/
+    box-sizing: border-box;
+}
+
+#customerLayoutHeaderWrapper1 {
+    display: grid;
+    grid-template-columns: minmax(250px,15%) minmax(350px,20%) 1fr auto;
+    height: 100%;
+    width: 100%;
+    min-width: 900px;
+    max-width: 2200px;
+    /*border: 5px solid green;*/
+}
+
+    #customerLayoutHeaderWrapper1 > div {
+        width: 100%;
+        height: 100%;
+        /*border: 1px solid white;*/
+    }
+
+#customerLayoutHeaderWrapper2_logo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0 0 10px 0;
+    box-sizing: border-box;
+}
+
+    #customerLayoutHeaderWrapper2_logo > img {
+        width: 250px;
+    }
+
+#customerLayoutHeaderWrapper2_search {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    padding: 0 30px 0 30px;
+    /*border: 1px solid blue;*/
+    box-sizing: border-box;
+}
+
+#customerLayoutHeaderWrapper3_search {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    /*border: 1px solid rgba(255,255,255,.3);*/
+    background-color: rgba(255,255,255,.2);
+    height: 40px;
+    border-radius: 20px;
+    width: 100%;
+    overflow: hidden;
+}
+
+    #customerLayoutHeaderWrapper3_search > label {
+        padding: 5px 5px 5px 10px;
+        margin: 0 10px 0 0;
+        font-size: 1rem;
+        color: white;
+    }
+
+    #customerLayoutHeaderWrapper3_search > input {
+        padding: 10px;
+        margin: 0;
+        font-size: 1rem;
+        width: 100%;
+        outline: none;
+        border: none;
+        background: none;
+        color: white;
+        position: relative
+    }
+
+    #customerLayoutHeaderWrapper3_search > div {
+        height: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        /*border: 1px solid orange;*/
+    }
+
+        #customerLayoutHeaderWrapper3_search > div > img {
+            max-height: 100%;
+        }
+
+
+#customerLayoutHeaderWrapper2_miscMenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-rows: 1fr 1fr;
+    /*border: 1px solid orange;*/
+    width: 100%;
+}
+
+.loginNameAndCircleIconDiv0 {
+    display: flex;
+    justify-content: flex-end;
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+    /*border: 1px solid white;*/
+    padding-bottom:10px;
+    box-sizing:border-box;
+}
+
+.loginNameAndCircleIconDiv1 {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    /*width: auto;
+    height: auto;*/
+    /*border: 1px solid blue;*/
+    padding: 0px;
+    height: 40px;
+}
+
+    .loginNameAndCircleIconDiv1 > h2:first-child {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: white;
+        box-sizing: border-box;
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+        /*border: 1px solid red;*/
+        letter-spacing:.1rem;
+    }
+
+
+
+    .loginNameAndCircleIconDiv1 > h2:last-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255,255,255,.3);
+        color: grey;
+        font-family: 'Arial Rounded MT';
+        font-size: 1.2rem;
+    }
+
+#customerLayoutHeaderWrapper2_logout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /*border: 1px solid blue;*/
+    padding:0 30px 10px 30px;
+    box-sizing: border-box;
+}
+
+#userLayoutRigthMenuIconDiv {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+}
+
+    #userLayoutRigthMenuIconDiv > div {
+        width: 30px;
+        height: 5px;
+        margin: 3px;
+        padding: 0;
+        background-color: #d4d4d4;
+    }
+
+#customerLayoutContent {
+    height: 100%;
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    z-index:-1;
+}
+
+#customerLayoutFooter {
+    height: 30px;
+    width: 100%;
+    background: linear-gradient(90deg,#001a33,#004280,#001a33,#004280);
+    position: fixed;
+    bottom: 0;
+}

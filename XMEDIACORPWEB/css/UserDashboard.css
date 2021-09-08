@@ -1,0 +1,423 @@
+﻿/*--------------------------------------USER DASHBOARD------------------------*/
+
+.customerDashboardWrapper0 {
+    width: 100%;
+    height: 100%;
+    /*border: 10px solid red;*/
+}
+
+.customerDashboardWrapper1 {
+    display: grid;
+    grid-template-columns: minmax(250px, 15%) 1fr minmax(250px, 15%);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /*background: linear-gradient(90deg,#fCC0000, #d9d9d9,#CC0000,#e6e6e6);*/
+    background-color: #fff;
+    box-sizing: border-box;
+    /*background: #f2f2f2;*/
+}
+
+.customerDashboardWrapper2 {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    /*border: 1px solid red;*/
+}
+
+    .customerDashboardWrapper2:first-child {
+    }
+
+    .customerDashboardWrapper2:nth-child(2) {
+        border-left: 1px solid #D3D3D3;
+        border-right: 1px solid #D3D3D3;
+    }
+
+    .customerDashboardWrapper2:nth-child(3) {
+    }
+
+
+.custDashLeftPanel_Top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    
+}
+
+    .custDashLeftPanel_Top > div {
+        width: 100px;
+        height: 100px;
+        background-color: #363d46;
+        border-radius: 50%;
+        background-color: white;
+        /*border: 2px solid blue;*/
+        overflow: hidden;
+    }
+
+        .custDashLeftPanel_Top > div > img {
+            max-width: 100%;
+        }
+
+.custDashLeftPanel_menu {
+    /*margin-top: 150px;*/
+    padding: 30px 15px 30px 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+    .custDashLeftPanel_menu > h3 {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 40px;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        font-weight: 400;
+        cursor: pointer;
+    }
+
+        .custDashLeftPanel_menu > h3:hover {
+            color: #336699;
+        }
+
+        .custDashLeftPanel_menu > h3:active {
+            color: #3366FF;
+        }
+
+        .custDashLeftPanel_menu > h3 > i {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .custDashLeftPanel_menu > h3:first-child > i > img {
+            max-width: 22px;
+        }
+
+        .custDashLeftPanel_menu > h3:nth-child(2) > i > img {
+            max-width: 22px;
+        }
+
+        .custDashLeftPanel_menu > h3:last-child > i > img {
+            max-width: 26px;
+        }
+
+.custDashLeftPanel_bottom {
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0px 15px 0px 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+    .custDashLeftPanel_bottom > h3 {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 40px;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        font-weight: 400;
+        cursor: pointer;
+        /*  position: relative;*/
+    }
+
+
+        .custDashLeftPanel_bottom > h3 > i {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+            .custDashLeftPanel_bottom > h3 > i > img {
+                max-width: 22px;
+            }
+/*--------------------------------PARTIAL VIEW USER PROFILE------------------------*/
+#userProfileWrapper0 {
+    --margin-left-wrapper3: 30%;
+    --margin-right-wrapper3: 30%;
+    --inputAndSelect-border: 1px solid #ccc;
+}
+
+#userProfileWrapper0 {
+    width: 100%; /*
+    border: 1px solid blue;*/
+}
+
+.userProfileWrapper1 {
+    width: 100%; /*
+    height: 300px;*/ /*
+    border: 2px solid green;*/
+}
+
+#userProfileWrapper1_personalInfo {
+    display: grid;
+    grid-template-rows: 50px auto;
+}
+
+.userProfileTitleH2 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid red;*/
+    padding-left: 100px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+#userProfileWrapper2_personalInfo {
+    display: grid;
+    grid-template-columns: 1fr 7% 1fr;
+}
+
+.userProfileWrapper3_persolInfo {
+    width: 100%;
+    /*border: 1px solid red;*/
+}
+
+    .userProfileWrapper3_persolInfo:first-child {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        grid-template-rows: repeat(4,auto);
+        grid-column-gap: 10px;
+        grid-row-gap: 20px;
+        width: calc(100% - var(--margin-left-wrapper3));
+        margin: 0 0 0 var(--margin-left-wrapper3);
+    }
+
+    .userProfileWrapper3_persolInfo:nth-child(2) {
+        display: grid;
+        grid-column-start: 3;
+        grid-template-columns: 100px 1fr;
+        grid-template-rows: repeat(4,auto);
+        grid-column-gap: 10px;
+        grid-row-gap: 20px;
+        width: calc(100% - var(--margin-right-wrapper3));
+        margin: 0 var(--margin-right-wrapper3) 0 0;
+    }
+
+.userProfileLabel {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    font-weight: 300;
+}
+
+.userProfileInput {
+    width: 100%;
+    font-weight: 400;
+    padding: 7px 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: var(--inputAndSelect-border);
+    outline: none;
+}
+
+.userProfileSelect {
+    width: 100%;
+    font-weight: 400;
+    padding: 7px 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: var(--inputAndSelect-border);
+    outline: none;
+}
+
+#userProfileWrapper1_address {
+    display: grid;
+    grid-template-rows: 50px auto;
+    margin: 40px 0;
+}
+
+#userProfileWrapper2_address {
+    display: grid;
+    grid-template-columns: 1fr 7% 1fr;
+}
+
+.userProfileWrapper3_address:first-child {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: repeat(4,auto);
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
+    width: calc(100% - var(--margin-left-wrapper3));
+    margin: 0 0 0 var(--margin-left-wrapper3);
+}
+
+.userProfileWrapper3_address:nth-child(2) {
+    display: grid;
+    grid-column-start: 3;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: repeat(4,auto);
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
+    width: calc(100% - var(--margin-right-wrapper3));
+    margin: 0 var(--margin-right-wrapper3) 0 0;
+}
+
+/*------------------------------_UserMyAccountMain-------------------------*/
+.userMyAccountMain_Wrapper0 {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "Title Title" "LeftPanel Content";
+    width: 100%;
+    
+}
+
+.userMyAccountMain_Title {
+    grid-area: Title;
+    font-size: 3rem;
+    
+}
+
+    .userMyAccountMain_Title > h2 {
+        font-size: 2.5rem;
+        padding: 0 30px;
+        margin: 20px;
+        border-bottom: 1px solid #D3D3D3;
+    }
+
+.userMyAccountMain_LeftPanel {
+    grid-area: LeftPanel;
+    width: 100%;
+    /*border: 1px solid red;*/
+}
+
+    .userMyAccountMain_LeftPanel > h3 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 40px;
+        font-weight: 400;
+        padding: 10px;
+        padding-left: 20%;
+        padding-right: 20%;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+
+.userMyAccountMain_Content {
+    grid-area: Content;
+    width: 100%;
+}
+/*------------------------------_UserMyAccountPersonalInfo-----------------------*/
+#userPersonalInfo_Wrapper0 {
+    width: 100%;
+}
+
+#userPersonalInfo_Title {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    grid-area: userPersonalInfo_Title;
+    padding-left: 20px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+#userPersonalInfo_MainContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+
+.userPersonalInfoMainContainerDiv {
+    display: grid;
+    grid-template-columns: minmax(150px,4fr) 200px minmax(50px,4fr);
+    margin: 0 30px 0 10px;
+    box-sizing: border-box;
+    /*border-bottom:1px solid red;*/
+    position: relative;
+}
+
+    .userPersonalInfoMainContainerDiv::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: #D0D0D0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+.userPersonalInfoLabel {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+}
+
+.userMyAccountPersInfoInput {
+    background: none;
+    padding: 7px;
+    margin: 20px 0;
+    border: none;
+    outline: none;
+}
+
+.userPersonalInfoSelect {
+    background: none;
+    padding: 7px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+}
+
+.userMyAccountPersInfoEditH3 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: dodgerblue;
+    /*border:1px solid red;*/
+}
+
+    .userMyAccountPersInfoEditH3:hover {
+        text-decoration: underline;
+    }
+
+.userPersonalInfoSaveCancelDiv {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.userPersonalInfoCancel {
+    display: flex;
+    justify-content: center;
+    border: 1px solid dodgerblue;
+    width: 60px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.userPersonalInfoSave {
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    /*border: 1px solid blue;*/
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    background-color: dodgerblue;
+}

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2AB7149A-16C1-4715-BAB8-05FE1A3100D2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessModel</RootNamespace>
+    <AssemblyName>BusinessModel</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel.Routing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\ForgotPassword\IAcceptNewPassword.cs" />
+    <Compile Include="Interfaces\Generics\IGetDatabaseCollectionData.cs" />
+    <Compile Include="Interfaces\Generics\IGetDatabaseData.cs" />
+    <Compile Include="Interfaces\IEmailStatusAndConfirmation.cs" />
+    <Compile Include="Interfaces\IGetLoginReturnDataFromDB.cs" />
+    <Compile Include="Interfaces\Generics\IPostDatabaseCollectionData.cs" />
+    <Compile Include="Interfaces\Generics\IPostDatabaseData.cs" />
+    <Compile Include="Interfaces\IConfirmEmailAddressInDatabase.cs" />
+    <Compile Include="Interfaces\ISaveNewUserAccountToServerAndDB.cs" />
+    <Compile Include="Interfaces\UserDashboard\IGetPersonalInformation.cs" />
+    <Compile Include="Interfaces\UserDashboard\ISaveMyAccountPersInfo.cs" />
+    <Compile Include="ObjectClass\EmailSenderHelperClass.cs" />
+    <Compile Include="ObjectModel\ForgotPassword\DmlInsertNewPassword.cs" />
+    <Compile Include="ObjectModel\ForgotPassword\EmailStatusAndConfirmationObjectModel.cs" />
+    <Compile Include="ObjectModel\DmlInsertNewUserAccountObjectModel.cs" />
+    <Compile Include="Abstract\ErrorStatus.cs" />
+    <Compile Include="ObjectModel\DmlReturnDataFromDbObjectModel.cs" />
+    <Compile Include="ObjectModel\EmailSenderParameterObjectModel.cs" />
+    <Compile Include="ObjectModel\ForgotPassword\AcceptNewPasswordObjectModel.cs" />
+    <Compile Include="ObjectModel\LoginInformationFromUserObjectModel.cs" />
+    <Compile Include="ObjectModel\LoginReturnInformationObjectModel.cs" />
+    <Compile Include="ObjectModel\LoginStatusAndResultsObjectModel.cs" />
+    <Compile Include="ObjectModel\NewAccountInfoObjectModel.cs" />
+    <Compile Include="ObjectModel\DashboardModel\PersonalInformationObjectModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
