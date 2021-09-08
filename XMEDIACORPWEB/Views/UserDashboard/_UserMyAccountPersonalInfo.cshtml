@@ -1,0 +1,70 @@
+﻿@*code:userPersonalInfo user*@
+
+@model BusinessModel.ObjectModel.DashboardModel.PersonalInformationObjectModel
+
+<div name="personalInformation" id="userPersonalInfo_Wrapper0" class="userProfwrapper">
+    <h1 id="userPersonalInfo_Title">Personal Information</h1>
+    <div id="userPersonalInfo_MainContent">
+        <div class="userPersonalInfoMainContainerDiv">
+            <label class="userPersonalInfoLabel">First Name</label>
+            <div class="userMyAccountPersInfoInputContainer">
+                <input name="FirstName" id="userMyAccountPersInfoInput_FirstName" class="userMyAccountPersInfoInput" value="@Model.FirstName" disabled/>
+            </div>
+            <h3 class="userMyAccountPersInfoEditH3">edit</h3>
+        </div>
+
+        <div class="userPersonalInfoMainContainerDiv">
+            <label class="userPersonalInfoLabel">Middle Name</label>
+            <div class="userMyAccountPersInfoInputContainer">
+                <input name="MiddleName" id="userMyAccountPersInfoInput_MiddleName" class="userMyAccountPersInfoInput"value="@Model.MiddleName" disabled/>
+            </div>
+            <h3 class="userMyAccountPersInfoEditH3">edit</h3>
+        </div>
+
+        <div class="userPersonalInfoMainContainerDiv">
+            <label class="userPersonalInfoLabel">Last Name</label>
+            <div class="userMyAccountPersInfoInputContainer">
+                <input name="LastName" id="userMyAccountPersInfoInput_LastName" class="userMyAccountPersInfoInput" value="@Model.LastName" disabled/>
+            </div>
+            <h3 class="userMyAccountPersInfoEditH3">edit</h3>
+        </div>
+
+        <div class="userPersonalInfoMainContainerDiv">
+            <label class="userPersonalInfoLabel">Gender</label>
+            <div class="userMyAccountPersInfoInputContainer">
+                <select name="GenderID" id="userPersonalInfoGender" class="userMyAccountPersInfoInput" disabled data-GenderID="@Model.GenderID">
+                    <option selected data-id="0" class="genderOptions">Select</option>
+                    <option  data-id="1" class="genderOptions">Male</option>
+                    <option data-id="2" class="genderOptions">Female</option>
+                </select>
+            </div>
+            <h3 class="userMyAccountPersInfoEditH3">edit</h3>
+        </div>
+
+        <div class="userPersonalInfoMainContainerDiv">
+            <label class="userPersonalInfoLabel">Birth Date</label>
+            <div class="userMyAccountPersInfoInputContainer">
+                <input name="BirthDate" id="userPersonalInfoBirthdate" type="date" class="userMyAccountPersInfoInput" value="@Model.BirthDate" disabled/>
+            </div>
+            <h3 class="userMyAccountPersInfoEditH3">edit</h3>
+        </div>
+
+        <div class="userPersonalInfoMainContainerDiv">
+            <label class="userPersonalInfoLabel">Citizenship</label>
+            <div class="userMyAccountPersInfoInputContainer">
+                <input name="Citizenship" id="userPersonalInfoCitizenship" class="userMyAccountPersInfoInput" value="@Model.Citizenship" disabled/>
+            </div>
+            <h3 class="userMyAccountPersInfoEditH3">edit</h3>
+        </div>
+
+        <div class="userPersonalInfoMainContainerDiv">
+            <label class="userPersonalInfoLabel">Profession</label>
+            <div class="userMyAccountPersInfoInputContainer">
+                <input name="Profession" id="userPersonalInfoProfession" class="userMyAccountPersInfoInput" value="@Model.Profession"disabled/>
+            </div>
+            <h3 class="userMyAccountPersInfoEditH3">edit</h3>
+        </div>
+
+    </div>
+
+</div>
