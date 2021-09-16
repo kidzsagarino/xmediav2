@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "VinylStickers";
+    Layout = "~/Views/Shared/_LayoutSubProducts.cshtml";
+}
+
+<div class="prodDets-cont-00">
+    <div class="prodDetsCont-divCont-01-images">
+
+    </div>
+    <div class="prodDetsCont-divCont-01-config">
+        <div class="prodDetsCont-divCont-02-config-title">
+            <h2 class="prodDetsCont-divCont-03-config-title">Details &amp; Cost </h2>
+        </div>
+        <div class="prodDetsCont-divCont-02-config-po">
+            <div class="prodDetsCont-divCont-02-config">
+                <h4 class="prodDets-config-label">Select Size</h4>
+                <select class="prodDets-config-select">
+                    <option>A4 (21.0 x 29.7cm)</option>
+                    <option>A5 (14.8 x 21.0cm)</option>
+                    <option>A6 (10.5 x 14.8cm)</option>
+                    <option>Custom Size</option>
+                </select>
+                <i class="prodDetsCont-icon-checked"><img src="~/images/icon/checked-green.png" /></i>
+            </div>
+            <div class="prodDetsCont-div-02-custom0">
+                <h4>Custom dimension?</h4>
+                <div class="prodDetsCont-div-02-custom">
+                    <input placeholder="width" />
+                    <input placeholder="heigth" />
+                </div>
+            </div>
+        </div>
+
+        <div class="prodDetsCont-divCont-02-config">
+            <h4 class="prodDets-config-label">Select Paper </h4>
+            <select class="prodDets-config-select">
+                <option>Bond Paper Sub20</option>
+                <option>Bond Paper Sub16</option>
+                <option>News Print</option>
+                <option>Colored Paper Sub20</option>
+                <option>Colored Paper Sub16</option>
+                <option>Carbonize 1 copy</option>
+                <option>Carbonize 2 copies</option>
+                <option>Carbonize 3 Copies</option>
+                <option>Carbonize 4 Copies</option>
+            </select>
+            <i class="prodDetsCont-icon-checked"><img src="~/images/icon/checked-green.png" /></i>
+        </div>
+
+        <div class="prodDetsCont-divCont-02-config">
+            <h4 class="prodDets-config-label">Select Color </h4>
+            <select class="prodDets-config-select">
+                <option>Monotone / Black &amp; White</option>
+                <option>Colored - 2 tone</option>
+                <option>Colored - 3 tone</option>
+            </select>
+            <i class="prodDetsCont-icon-checked"><img src="~/images/icon/checked-green.png" /></i>
+        </div>
+        <div class="prodDetsCont-divCont-02-configPrice">
+            <div class="prodDetsCont-divCont-03-configPrice">
+                <h4 class="prodDets-config-price-label">Quantity : </h4>
+                <select class="prodDets-config-select-quantity"></select>
+                @*<input class="prodDets-config-input" />*@
+            </div>
+            <div class="prodDetsCont-divCont-03-configPrice">
+                <h4 class="prodDets-config-price-label">Unit Price : </h4>
+                <input class="prodDets-unitPrice-input" value="Php 1.25" disabled />
+            </div>
+            <div class="prodDetsCont-divCont-03-configPrice">
+                <h4 class="prodDets-config-price-label">Total Price : </h4>
+                <input class="prodDets-totalPrice-input" disabled value="Php 2,000.00" />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Uri{
+    <h5 class="prodDetsCont-uri">X-Media| Stickers | Purchase Order Forms</h5>
+}
+@section Title{
+    <h1 class="prodDetsCont-title">Purchase Order Forms</h1>
+}
+

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "LayoutSubProducts";
+    Layout = "~/Views/Shared/_LayoutMainpage.cshtml";
+}
+
+<div class="prodDets-divCont-00">
+    <div class="prodDets-divCont-01-prod">
+        <div class="prodDets-divCont-02-prod">
+            <div class="prodDets-divCont-03-prod-uri">
+                @RenderSection("Uri",false)
+            </div>
+            <div class="prodDets-divCont-03-prod-title">
+                @RenderSection("Title",false)
+            </div>
+            <div class="prodDets-divCont-03-prod-content">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>
+
