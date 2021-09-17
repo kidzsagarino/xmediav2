@@ -174,3 +174,30 @@
     font-size: 1.1rem;
     color: #333;
 }
+
+
+@media only screen and (max-width:767px) {
+    .prodDets-divCont-02-prod {
+        min-width: auto;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .prodDets-divCont-01-prod {
+        justify-content: normal;
+    }
+
+    .prodDets-cont-00 {
+        grid-template-columns: 1fr;
+        grid-row-gap: 10px;
+    }
+    .prodDetsCont-divCont-01-config {
+        padding: 10px 15px;
+    }
+    .prodDetsCont-divCont-01-images {
+        /*partial height*/
+        height: 400px;
+    }
+
+
+}

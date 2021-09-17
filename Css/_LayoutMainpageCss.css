@@ -348,3 +348,65 @@
 .xmedia-logo-text-graphics {
     fill: #fff;
 }
+
+.mobile-burder-menu {
+    display: none;
+}
+
+/*smartphones**/
+@media only screen and (max-width: 767px) {
+   
+    .nav01-divContainer-03-hotline,
+    .nav01-divContainer-03-search,
+    .nav01-divContainer-03-signin {
+        display: none;
+    }
+    .mobile-burder-menu {
+        display:flex;
+        position:absolute;
+        left: 15px;
+    }
+    .nav01-divContainer-01-top {
+        height:70px;
+    }
+    #xmediaHeaderLogo {
+        height:40px;
+    }
+
+    .nav01-divContainer-02-top {
+        grid-template-columns: 1fr;
+        width: 100%;
+        padding: 0 15px;
+        position:relative;
+    }
+    .nav01-divContainer-03-cart {
+        position:absolute;
+        right:15px;
+        width:35px;
+        bottom:0;
+    }
+    .nav01-divContainer-03-cart:before {
+        display:none;
+    }
+    .nav01-divContainer-01-bot {
+        height: auto;
+        display: block;
+    }
+    .nav01-divContainer-03-bot {
+        display:block;
+    }
+    .nav01-divContainer-02-bot {
+        display:block;
+    }
+    .nav01-divContainer-04-bot-button {
+        display:block;
+        width: 100%;
+        text-align:left;
+        padding: 5px 15px;
+    }
+}
+
+/*tablets**/
+@media only screen and (min-width: 768px) and (min-width: 1023px){
+
+}
