@@ -43,8 +43,22 @@
             e.target.style.display = 'none'
         }
     }
-    
+
 }
 
 LayoutMainPage();
+
+
+var clickMobileMenu = (function () {
+    var menuContainer = document.querySelector('.js-mobile-burger-menu');
+
+    let menu = document.querySelector('.js-nav01-divContainer-01-bot');
+
+    menuContainer.addEventListener('click', function (e) {
+
+        e.target.classList.toggle('active');
+        menu.classList.toggle('active');
+
+    });
+})();
 
