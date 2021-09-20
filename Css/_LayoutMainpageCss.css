@@ -377,12 +377,14 @@
     transform: rotate(45deg) translate(-8px, -5px)
 }
 
+.mobile-search-icon {
+    display:none;
+}
+
+
 /*smartphones**/
 @media only screen and (max-width: 767px) {
-   
-    .nav01-divContainer-03-hotline,
-    .nav01-divContainer-03-search,
-    .nav01-divContainer-03-signin {
+    .nav01-divContainer-03-hotline, .nav01-divContainer-03-search, .nav01-divContainer-03-signin {
         display: none;
     }
     .mobile-burger-menu {
@@ -413,10 +415,11 @@
     .nav01-divContainer-03-cart:before {
         display:none;
     }
+    
     .nav01-divContainer-01-bot {
-        display:block;
+        display: block;
         height: 0;
-        overflow:hidden;
+        overflow: hidden;
     }
     .nav01-divContainer-01-bot.active {
         height: auto;
