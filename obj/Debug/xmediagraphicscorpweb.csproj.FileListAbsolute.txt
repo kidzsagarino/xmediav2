@@ -162,3 +162,9 @@ C:\Users\MCBI-DEV1\source\repos\xmediav2\obj\Debug\xmediagraphicscorpweb.csproj.
 C:\Users\MCBI-DEV1\source\repos\xmediav2\obj\Debug\xmediagraphicscorpweb.csproj.CopyComplete
 C:\Users\MCBI-DEV1\source\repos\xmediav2\obj\Debug\xmediagraphicscorpweb.dll
 C:\Users\MCBI-DEV1\source\repos\xmediav2\obj\Debug\xmediagraphicscorpweb.pdb
+D:\Website\xmediav2\bin\BusinessLogic.dll
+D:\Website\xmediav2\bin\BusinessRef.dll
+D:\Website\xmediav2\bin\DataAcces.dll
+D:\Website\xmediav2\bin\BusinessLogic.pdb
+D:\Website\xmediav2\bin\BusinessRef.pdb
+D:\Website\xmediav2\bin\DataAcces.pdb

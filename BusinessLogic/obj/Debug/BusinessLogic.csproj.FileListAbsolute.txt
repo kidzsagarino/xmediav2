@@ -15,3 +15,8 @@ C:\Users\MCBI-DEV1\source\repos\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.c
 C:\Users\MCBI-DEV1\source\repos\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
 C:\Users\MCBI-DEV1\source\repos\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.dll
 C:\Users\MCBI-DEV1\source\repos\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.pdb
+D:\Website\xmediav2\BusinessLogic\bin\Debug\BusinessRef.dll
+D:\Website\xmediav2\BusinessLogic\bin\Debug\DataAcces.dll
+D:\Website\xmediav2\BusinessLogic\bin\Debug\BusinessRef.pdb
+D:\Website\xmediav2\BusinessLogic\bin\Debug\DataAcces.pdb
+D:\Website\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete

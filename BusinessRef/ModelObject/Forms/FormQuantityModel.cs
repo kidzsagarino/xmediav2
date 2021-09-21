@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace BusinessRef.ModelObject.Forms
 {
-    public class FormPaperQuantityModel
+    public class FormQuantityModel
     {
         public int ID { get; set; }
-
-        public int PaperQuantity { get; set; }
+        public int FormQuantity { get; set; }
+        public float QuantityFactor { get; set; }
     }
 }
