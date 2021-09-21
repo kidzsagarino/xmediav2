@@ -29,6 +29,8 @@ namespace DataAcces.Forms
 
             ICollection<FormsAssignedSizeModel> paperSizeList = new List<FormsAssignedSizeModel>();
             ICollection<FormPaperTypeModel> paperTypeList = new List<FormPaperTypeModel>();
+            ICollection<FormQuantityModel> formQuantities = new List<FormQuantityModel>();
+            ICollection<FormPrintColorModel> printColors = new List<FormPrintColorModel>();
 
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
@@ -70,7 +72,7 @@ namespace DataAcces.Forms
                                     paperSizeList.Add(dataList);
 
                                 }
-                                data.formsAssignedSizes = paperSizeList;
+                                data.FormsAssignedSizes = paperSizeList;
                             }
 
                             if (rdr.NextResult())
@@ -86,7 +88,46 @@ namespace DataAcces.Forms
                                         };
                                         paperTypeList.Add(dataList);
                                     }
-                                    data.formPaperTypes = paperTypeList;
+                                    data.FormPaperTypes = paperTypeList;
+                                }
+                            }
+
+                            if (rdr.NextResult())
+                            {
+                                if (rdr.HasRows)
+                                {
+                                    while (rdr.Read())
+                                    {
+                                        FormQuantityModel dataList = new FormQuantityModel
+                                        {
+                                            ID = (int)rdr["ID"],
+                                            FormQuantity = (int)rdr["FormQuantity"],
+                                            QuantityFactor = float.Parse(rdr["QuantityFactor"].ToString())
+                                        };
+
+                                        formQuantities.Add(dataList);
+                                    }
+
+                                    data.FormQuantities = formQuantities;
+                                }
+                            }
+
+                            if (rdr.NextResult())
+                            {
+                                if (rdr.HasRows)
+                                {
+                                    while (rdr.Read())
+                                    {
+                                        FormPrintColorModel dataList = new FormPrintColorModel
+                                        {
+                                            ID = (int)rdr["ID"],
+                                            PrintColor = rdr["PrintColor"].ToString()
+                                        };
+
+                                        printColors.Add(dataList);
+                                    }
+
+                                    data.FormPrintColors = printColors;
                                 }
                             }
 

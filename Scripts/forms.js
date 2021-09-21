@@ -82,8 +82,8 @@ var customDimension = (function () {
 
     paperSizeSelect.addEventListener('change', function (e) {
 
-        //  value is 4 for the custom size
-        if (e.target.value == 4) {
+        //  value is 0 for the custom size
+        if (e.target.value == 0) {
 
             customDimensionDiv.removeAttribute('style')
 

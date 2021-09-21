@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace BusinessRef.ModelObject.Forms
 {
-    public class FormPaperTypeModel
+    public class FormPrintColorModel
     {
         public int ID { get; set; }
-        public string PaperType { get; set; }
-
-        public string Thickness { get; set; }
+        public string PrintColor { get; set; }
     }
 }

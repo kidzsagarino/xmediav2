@@ -9,10 +9,11 @@ namespace BusinessRef.ModelObject.Forms
 {
     public class GetPurchaseOrderFormsInitialDataModel : SQlErrorMessageModel
     {
-        public ICollection<FormPaddingCostModel> formPaddings { get; set; }
-        public ICollection<FormPaperColorModel> formPaperColors { get; set; }
-        public ICollection<FormPaperQuantityModel> formPaperQuantities { get; set; }
-        public ICollection<FormPaperTypeModel> formPaperTypes { get; set; }
-        public ICollection<FormsAssignedSizeModel> formsAssignedSizes { get; set; }
+        public ICollection<FormPaddingCostModel> FormPaddings { get; set; }
+        public ICollection<FormPaperColorModel> FormPaperColors { get; set; }
+        public ICollection<FormQuantityModel> FormQuantities { get; set; }
+        public ICollection<FormPaperTypeModel> FormPaperTypes { get; set; }
+        public ICollection<FormsAssignedSizeModel> FormsAssignedSizes { get; set; }
+        public ICollection<FormPrintColorModel> FormPrintColors { get; set; }
     }
 }
