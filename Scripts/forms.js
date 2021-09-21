@@ -73,3 +73,25 @@ var withPadding = (function () {
     });
 
 })();
+
+var customDimension = (function () {
+
+    var customDimensionDiv = document.querySelector('.js-custom-dimension');
+
+    let paperSizeSelect = document.querySelector('.js-paperSize-select');
+
+    paperSizeSelect.addEventListener('change', function (e) {
+
+        //  value is 4 for the custom size
+        if (e.target.value == 4) {
+
+            customDimensionDiv.removeAttribute('style')
+
+        }
+        else {
+            customDimensionDiv.setAttribute('style', 'display:none');
+        }
+
+    });
+
+})();

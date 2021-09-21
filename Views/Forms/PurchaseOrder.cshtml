@@ -168,12 +168,15 @@
                     @for (int i = 0; i < 10; i++)
                     {
                         <tr>
-                            <td style="border-right:2px solid" height="30"></td>
+                            <td style="border-right:2px solid;" height="30"></td>
                             <td style="border-right:2px solid" height="30"></td>
                             <td style="border-right:2px solid" height="30"></td>
                             <td style="border-right:2px solid" height="30"></td>
                             <td colspan="2" style="border-right:2px solid" height="30"></td>
                             <td style="border-right:2px solid" height="30"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="7" style="border-bottom: 1px solid"></td>
                         </tr>
                     }
 
@@ -243,15 +246,15 @@
         <div class="prodDetsCont-divCont-02-config-po">
             <div class="prodDetsCont-divCont-02-config">
                 <h4 class="prodDets-config-label">Select Size</h4>
-                <select class="prodDets-config-select">
-                    <option>A4 (21.0 x 29.7cm)</option>
-                    <option>A5 (14.8 x 21.0cm)</option>
-                    <option>A6 (10.5 x 14.8cm)</option>
-                    <option>Custom Size</option>
+                <select class="prodDets-config-select js-paperSize-select">
+                    <option value="1">A4 (21.0 x 29.7cm)</option>
+                    <option value="2">A5 (14.8 x 21.0cm)</option>
+                    <option value="3">A6 (10.5 x 14.8cm)</option>
+                    <option value="4">Custom Size</option>
                 </select>
                 <i class="prodDetsCont-icon-checked"><img src="~/images/icon/checked-green.png" /></i>
             </div>
-            <div class="prodDetsCont-div-02-custom0">
+            <div class="prodDetsCont-div-02-custom0 js-custom-dimension" style="display: none">
                 <h4>Custom dimension?</h4>
                 <div class="prodDetsCont-div-02-custom">
                     <input placeholder="width" />
