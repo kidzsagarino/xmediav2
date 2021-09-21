@@ -1,0 +1,6 @@
+D:\Website\xmediav2\xmediagraphicscorpweb\DataAcces\bin\Debug\DataAcces.dll
+D:\Website\xmediav2\xmediagraphicscorpweb\DataAcces\bin\Debug\DataAcces.pdb
+D:\Website\xmediav2\xmediagraphicscorpweb\DataAcces\obj\Debug\DataAcces.csproj.AssemblyReference.cache
+D:\Website\xmediav2\xmediagraphicscorpweb\DataAcces\obj\Debug\DataAcces.csproj.CoreCompileInputs.cache
+D:\Website\xmediav2\xmediagraphicscorpweb\DataAcces\obj\Debug\DataAcces.dll
+D:\Website\xmediav2\xmediagraphicscorpweb\DataAcces\obj\Debug\DataAcces.pdb
