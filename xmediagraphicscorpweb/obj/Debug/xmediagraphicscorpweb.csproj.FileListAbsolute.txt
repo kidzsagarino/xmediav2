@@ -155,3 +155,4 @@ D:\APPS\XMEDIAV2.0\xmediagraphicscorpweb\obj\Debug\xmediagraphicscorpweb.csproj.
 D:\APPS\XMEDIAV2.0\xmediagraphicscorpweb\obj\Debug\xmediagraphicscorpweb.csproj.CopyComplete
 D:\APPS\XMEDIAV2.0\xmediagraphicscorpweb\obj\Debug\xmediagraphicscorpweb.dll
 D:\APPS\XMEDIAV2.0\xmediagraphicscorpweb\obj\Debug\xmediagraphicscorpweb.pdb
+D:\APPS\XMEDIAV2.0\xmediagraphicscorpweb\obj\Debug\xmediagraphicscorpweb.csproj.AssemblyReference.cache
