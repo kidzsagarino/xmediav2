@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using BusinessLogic.Forms;
+using BusinessRef.Interfaces.Forms;
 using System.Web.Mvc;
 
 namespace xmediagraphicscorpweb.Controllers
@@ -10,7 +8,9 @@ namespace xmediagraphicscorpweb.Controllers
     {
         public ActionResult PurchaseOrder()
         {
-            return View();
+            IGetPurchaseOrderFormsData data = new GetPurchaseOrderDataLogic(1);
+            var data1 = data.GetPurchaseOrderForms();
+            return View(data1);
         }
        
         

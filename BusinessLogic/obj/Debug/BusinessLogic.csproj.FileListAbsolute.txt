@@ -4,3 +4,14 @@ D:\Website\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReferen
 D:\Website\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
 D:\Website\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.dll
 D:\Website\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\MCBI-DEV1\source\repos\xmediav2\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\MCBI-DEV1\source\repos\xmediav2\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\MCBI-DEV1\source\repos\xmediav2\BusinessLogic\bin\Debug\BusinessRef.dll
+C:\Users\MCBI-DEV1\source\repos\xmediav2\BusinessLogic\bin\Debug\DataAcces.dll
+C:\Users\MCBI-DEV1\source\repos\xmediav2\BusinessLogic\bin\Debug\BusinessRef.pdb
+C:\Users\MCBI-DEV1\source\repos\xmediav2\BusinessLogic\bin\Debug\DataAcces.pdb
+C:\Users\MCBI-DEV1\source\repos\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\MCBI-DEV1\source\repos\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\MCBI-DEV1\source\repos\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
+C:\Users\MCBI-DEV1\source\repos\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\MCBI-DEV1\source\repos\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.pdb

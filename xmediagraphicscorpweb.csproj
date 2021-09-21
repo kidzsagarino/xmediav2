@@ -179,6 +179,16 @@
     <Content Include="Views\Forms\PurchaseOrder.cshtml" />
     <Content Include="Views\Map\PhilippineMap.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="BusinessLogic\BusinessLogic.csproj">
+      <Project>{926A2431-A601-4861-9CD1-BCDC922B69D5}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="BusinessRef\BusinessRef.csproj">
+      <Project>{55FA40F4-85BA-46B3-A320-815E767C2B29}</Project>
+      <Name>BusinessRef</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
