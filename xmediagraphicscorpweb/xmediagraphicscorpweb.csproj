@@ -148,6 +148,7 @@
     <Content Include="images\philippinesHigh.svg" />
     <Content Include="images\sample\150x150Sample.jpg" />
     <Content Include="images\xmedia-logo.png" />
+    <Content Include="Scripts\Home\svgToImg.js" />
     <Content Include="Scripts\Shared\_LayoutMainpage.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -162,7 +163,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\Home\" />
     <Folder Include="Views\Signage\" />
     <Folder Include="Views\Stickers\" />
   </ItemGroup>
