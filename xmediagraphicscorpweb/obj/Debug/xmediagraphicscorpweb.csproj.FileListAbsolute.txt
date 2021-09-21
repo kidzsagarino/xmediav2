@@ -151,7 +151,6 @@ D:\APPS\XMEDIAV2.0\xmediagraphicscorpweb\bin\System.Web.WebPages.Razor.xml
 D:\APPS\XMEDIAV2.0\xmediagraphicscorpweb\bin\Newtonsoft.Json.xml
 D:\APPS\XMEDIAV2.0\xmediagraphicscorpweb\bin\Antlr3.Runtime.pdb
 D:\APPS\XMEDIAV2.0\xmediagraphicscorpweb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\APPS\XMEDIAV2.0\xmediagraphicscorpweb\obj\Debug\xmediagraphicscorpweb.csproj.AssemblyReference.cache
 D:\APPS\XMEDIAV2.0\xmediagraphicscorpweb\obj\Debug\xmediagraphicscorpweb.csproj.CoreCompileInputs.cache
 D:\APPS\XMEDIAV2.0\xmediagraphicscorpweb\obj\Debug\xmediagraphicscorpweb.csproj.CopyComplete
 D:\APPS\XMEDIAV2.0\xmediagraphicscorpweb\obj\Debug\xmediagraphicscorpweb.dll
