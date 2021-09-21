@@ -1,0 +1,6 @@
+D:\Website\xmediav2\BusinessLogic\bin\Debug\BusinessLogic.dll
+D:\Website\xmediav2\BusinessLogic\bin\Debug\BusinessLogic.pdb
+D:\Website\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+D:\Website\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+D:\Website\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.dll
+D:\Website\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.pdb
