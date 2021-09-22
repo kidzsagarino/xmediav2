@@ -13,6 +13,8 @@
 *.sln.docstates
 bin/
 obj/
+BusinessLogic/obj/
+BusinessLogic/bin/
 
 # Build results
 [Dd]ebug/
