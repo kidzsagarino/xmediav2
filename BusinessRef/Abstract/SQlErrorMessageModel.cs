@@ -1,5 +1,4 @@
 ﻿
-
 namespace BusinessRef.Abstract
 {
     public abstract class SQlErrorMessageModel

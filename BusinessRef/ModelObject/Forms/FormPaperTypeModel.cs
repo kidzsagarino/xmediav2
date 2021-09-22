@@ -10,7 +10,6 @@ namespace BusinessRef.ModelObject.Forms
     {
         public int ID { get; set; }
         public string PaperType { get; set; }
-
         public string Thickness { get; set; }
     }
 }

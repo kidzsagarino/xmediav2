@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{926A2431-A601-4861-9CD1-BCDC922B69D5}</ProjectGuid>
+    <ProjectGuid>{314435ED-1ADB-4C60-971E-8B13D2A961E5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BusinessLogic</RootNamespace>
@@ -41,18 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Forms\GetPurchaseOrderDataLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessRef\BusinessRef.csproj">
-      <Project>{55fa40f4-85ba-46b3-a320-815e767c2b29}</Project>
+      <Project>{4b519af4-4ce7-41b9-8dbb-b691bccd95b1}</Project>
       <Name>BusinessRef</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataAcces\DataAcces.csproj">
-      <Project>{77d16ead-ed51-4790-9587-44e263b19f53}</Project>
-      <Name>DataAcces</Name>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{7aedb503-ef6b-40b2-a414-8fd9654d594c}</Project>
+      <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

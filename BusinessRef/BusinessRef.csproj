@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{55FA40F4-85BA-46B3-A320-815E767C2B29}</ProjectGuid>
+    <ProjectGuid>{4B519AF4-4CE7-41B9-8DBB-B691BCCD95B1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BusinessRef</RootNamespace>
@@ -41,19 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\SQlErrorMessageModel.cs" />
+    <Compile Include="Abstract\SQLErrorMessageModel.cs" />
     <Compile Include="Interfaces\Forms\IGetPurchaseOrderFormsData.cs" />
     <Compile Include="Interfaces\Generics\IGetDatabaseCollectionData.cs" />
     <Compile Include="Interfaces\Generics\IGetDatabaseData.cs" />
     <Compile Include="Interfaces\Generics\IPostDatabaseCollectionData.cs" />
     <Compile Include="Interfaces\Generics\IPostDatabaseData.cs" />
+    <Compile Include="ModelObject\Forms\FormAssignedSizeModel.cs" />
     <Compile Include="ModelObject\Forms\FormPaddingCostModel.cs" />
-    <Compile Include="ModelObject\Forms\FormQuantityModel.cs" />
+    <Compile Include="ModelObject\Forms\FormPaperColorModel.cs" />
     <Compile Include="ModelObject\Forms\FormPaperTypeModel.cs" />
     <Compile Include="ModelObject\Forms\FormPrintColorModel.cs" />
-    <Compile Include="ModelObject\Forms\FormsAssignedSizeModel.cs" />
+    <Compile Include="ModelObject\Forms\FormQuantityModel.cs" />
     <Compile Include="ModelObject\Forms\GetPurchaseOrderFormsInitialDataModel.cs" />
-    <Compile Include="ModelObject\Forms\FormPaperColorModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
