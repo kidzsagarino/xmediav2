@@ -51,23 +51,18 @@ var addDuplicateElem = function (el) {
 }
 
 
-var withPadding = (function () {
-
-    let paddingSelect = document.querySelector('.js-padding-select');
+var hideShowPadding = function (el) {
 
     let paddingContainer = document.querySelector('.padding-color-container');
 
-    paddingSelect.addEventListener('change', function (e) {
+    if (el.value == 2) {
+        paddingContainer.removeAttribute('style');
+    }
+    else {
+        paddingContainer.setAttribute('style', 'display: none');
+    }
 
-        if (e.target.value == 1) {
-            paddingContainer.setAttribute('style', 'display: none');
-        }
-        else {
-            paddingContainer.removeAttribute('style');
-        }
-    });
-
-})();
+};
 
 var customDimension = (function () {
 
@@ -129,6 +124,11 @@ var eventsListeners = function () {
 
         computePrice();
     });
+
+    document.querySelector('.js-padding-select').addEventListener('change', function (e) {
+        addSelectedAndChecked(this);
+        hideShowPadding(this);
+    })
 }
 
 
