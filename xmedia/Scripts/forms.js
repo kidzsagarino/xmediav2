@@ -137,8 +137,10 @@ var onChangePaperQuantity = (function () {
 
 var computePrice = function () {
 
+    // paper sizes
     let paperSizeSelect = document.querySelector('.js-paperSize-select');
-    let sizeFactor = paperSizeSelect.options[paperSizeSelect.selectedIndex].getAttribute('data-formsizefactor');
+    let divisorFactor = paperSizeSelect.options[paperSizeSelect.selectedIndex].getAttribute('data-DivisorFactor');
+    let laborFactor = paperSizeSelect.options[paperSizeSelect.selectedIndex].getAttribute('data-LaborFactor');
 
 
     // paper type and its corresponding cost

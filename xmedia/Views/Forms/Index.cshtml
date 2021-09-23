@@ -26,7 +26,7 @@
 
                     @foreach (var item in Model.FormAssignedSizes)
                     {
-                        <option value="@item.FormSizeID" data-formSizeFactor="@item.FormSizeFactor">@item.FormSizes</option>
+                        <option value="@item.FormSizeID" data-DivisorFactor="@item.DivisorFactor" data-LaborFactor="@item.LaborFactor">@item.PaperSize</option>
                     }
 
                 </select>

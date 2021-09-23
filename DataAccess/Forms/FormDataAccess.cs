@@ -67,9 +67,9 @@ namespace DataAccess.Forms
                                     {
                                         ID = (int)rdr["ID"],
                                         FormSizeID = (int)rdr["FormSizeID"],
-                                        FormSizes = rdr["FormSizes"].ToString(),
-                                        FormSizeFactor = float.Parse(rdr["FormSizeFactor"].ToString())
-
+                                        PaperSize = rdr["PaperSize"].ToString(),
+                                        DivisorFactor = float.Parse(rdr["DivisorFactor"].ToString()),
+                                        LaborFactor = float.Parse(rdr["LaborFactor"].ToString())
                                     };
                                     paperSizeList.Add(dataList);
 
