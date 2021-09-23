@@ -1,0 +1,160 @@
+﻿
+@model BusinessRef.ModelObject.Forms.GetPurchaseOrderFormsInitialDataModel
+
+@{
+    ViewBag.Title = "VinylStickers";
+    Layout = "~/Views/Shared/_LayoutSubProducts.cshtml";
+}
+
+<div class="prodDets-cont-00">
+    <div class="prodDetsCont-divCont-01-images">
+        <div class="purchase-order-form-container">
+            @{Html.RenderPartial("~/Views/Forms/PurchaseOrder/PurchaseOrder1.cshtml");}
+        </div>
+        <div class="form-thumbnails">
+            thumbnails here
+        </div>
+    </div>
+    <div class="prodDetsCont-divCont-01-config">
+        <div class="prodDetsCont-divCont-02-config-title">
+            <h2 class="prodDetsCont-divCont-03-config-title">Details &amp; Cost </h2>
+        </div>
+        <div class="prodDetsCont-divCont-02-config-po">
+            <div class="prodDetsCont-divCont-02-config">
+                <h4 class="prodDets-config-label">Select Size</h4>
+                <select class="prodDets-config-select js-paperSize-select">
+                    <option value="0">Select</option>
+                    @foreach (var item in Model.FormAssignedSizes)
+                    {
+                        <option value="@item.FormSizeID" data-DivisorFactor="@item.DivisorFactor" data-LaborFactor="@item.LaborFactor">@item.PaperSize</option>
+                    }
+
+                </select>
+                <i class="prodDetsCont-icon-checked"><img src="~/images/icon/checked-green.png" /></i>
+            </div>
+            <div class="prodDetsCont-div-02-custom0 js-custom-dimension" style="display: none">
+                <h4>Custom dimension?</h4>
+                <div class="prodDetsCont-div-02-custom">
+                    <input placeholder="width" />
+                    <input placeholder="heigth" />
+                </div>
+            </div>
+        </div>
+
+        <div class="prodDetsCont-divCont-02-config">
+            <h4 class="prodDets-config-label">Select Paper </h4>
+            <select class="prodDets-config-select js-paperType-select">
+                <option value="0">Select</option>
+                @foreach (var item in Model.FormPaperTypes)
+                {
+                    <option value="@item.ID" data-paperCost="@item.PaperCostAtA3" data-laborCost="@item.LaborCostAtA3" data-PrintCostBW="@item.PrintingCostAtA3BW" data-PrintCostColored="@item.PrintingCostAtA3Colored">
+                        @item.PaperType - @item.Thickness
+                    </option>
+                }
+            </select>
+            <i class="prodDetsCont-icon-checked"><img src="~/images/icon/checked-green.png" /></i>
+        </div>
+
+        <div class="prodDetsCont-divCont-02-config">
+            <h4 class="prodDets-config-label">No. of Duplicates </h4>
+            <select class="prodDets-config-select js-no-ofDuplicates">
+                <option value="0" data-value="1">No Duplicates</option>
+                <option value="1" data-value="2">1</option>
+                <option value="2" data-value="3">2</option>
+                <option value="3" data-value="4">3</option>
+                <option value="4" data-value="5">4</option>
+                <option value="5" data-value="6">5</option>
+                <option value="6" data-value="7">6</option>
+            </select>
+            <i class="prodDetsCont-icon-checked"><img src="~/images/icon/checked-green.png" /></i>
+        </div>
+
+        <div class="duplicate-color-container js-duplicate-container">
+            @*<div class="duplicate-container">
+                <label>Duplicate 1</label>
+                <select class="duplicateColor-select"></select>
+                <label>Paper Type</label>
+                <select class="duplicatePaperType-select"></select>
+            </div>*@
+        </div>
+
+        <div class="prodDetsCont-divCont-02-config">
+            <h4 class="prodDets-config-label">Select Print Color </h4>
+            <select class="prodDets-config-select js-printcolor-select">
+                <option value="0">Select</option>
+                @foreach (var item in Model.FormPrintColors)
+                {
+                    <option value="@item.ID">@item.PrintColor</option>
+                }
+
+            </select>
+            <i class="prodDetsCont-icon-checked"><img src="~/images/icon/checked-green.png" /></i>
+        </div>
+        <div class="prodDetsCont-divCont-02-config">
+            <h4 class="prodDets-config-label">With Padding Glue </h4>
+            <select class="prodDets-config-select js-padding-select">
+                <option value="0">Select</option>
+                <option value="1">No</option>
+                <option value="2">Yes</option>
+            </select>
+            <i class="prodDetsCont-icon-checked"><img src="~/images/icon/checked-green.png" /></i>
+        </div>
+        <div class="padding-color-container" style="display: none">
+            <div class="duplicate-container">
+                <label>No of Set Per Pad</label>
+                <select class="duplicateColor-select">
+                    <option value="">100</option>
+                    <option value="">200</option>
+                    <option value="">300</option>
+                    <option value="">400</option>
+                    <option value="">500</option>
+                    <option value="">600</option>
+                    <option value="">700</option>
+                    <option value="">800</option>
+                    <option value="">900</option>
+                    <option value="">1000</option>
+                </select>
+            </div>
+            <div class="duplicate-container">
+                <label>Which Side ?</label>
+                <select class="duplicateColor-select">
+                    <option value="">Short Side</option>
+                    <option value="">Long Side</option>
+                </select>
+            </div>
+        </div>
+        <div class="prodDetsCont-divCont-02-configPrice">
+            <div class="prodDetsCont-divCont-03-configPrice">
+                <h4 class="prodDets-config-price-label">Quantity : </h4>
+                <select class="prodDets-config-select-quantity js-paperQuantity-select">
+                    <option value="0">Select</option>
+                    @foreach (var item in Model.FormQuantities)
+                    {
+                        <option value="@item.ID" data-quantityFactor="@item.QuantityFactor">@item.FormQuantity</option>
+                    }
+                </select>
+            </div>
+            <div class="prodDetsCont-divCont-03-configPrice">
+                <h4 class="prodDets-config-price-label">Unit Price : </h4>
+                <input class="prodDets-unitPrice-input js-prod-unitPrice" value="" disabled />
+            </div>
+            <div class="prodDetsCont-divCont-03-configPrice">
+                <h4 class="prodDets-config-price-label">Total Price : </h4>
+                <input class="prodDets-totalPrice-input js-prod-totalPrice" disabled value="" />
+            </div>
+        </div>
+
+        <div class="prodDets-submitButton">
+            <button class="submitBtn" type="button">Proceed to Order</button>
+        </div>
+
+    </div>
+</div>
+
+@section Uri{
+    <h5 class="prodDetsCont-uri">X-Media| Stickers | Purchase Order Forms</h5>
+}
+@section Title{
+    <h1 class="prodDetsCont-title">Purchase Order Forms</h1>
+}
+

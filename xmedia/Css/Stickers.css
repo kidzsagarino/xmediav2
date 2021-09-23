@@ -94,6 +94,7 @@
     position: absolute;
     right: 30px;
     top: 10px;
+    display:none;
 }
 .prodDets-config-label {
     font-weight: 600;
@@ -103,21 +104,26 @@
     color: #888;
 }
 
-    .prodDets-config-label:after {
-        content: url('../images/icon/question-mark.png');
-        position:absolute;
-        right:-20px;
-        top:2px;
-    }
+.prodDets-config-label:after {
+    content: url('../images/icon/question-mark.png');
+    position:absolute;
+    right:-20px;
+    top:2px;
+}
 
 .prodDets-config-select {
     outline: none;
     border: 1px solid rgba(90,90,90,.3);
-    border: 2px solid #059e00;
     width: 270px;
     padding: 12px;
     font-size: 1rem;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.prodDets-config-select.selected {
+    border: 2px solid #059e00;
+}
+.prodDetsCont-icon-checked.checked {
+    display: flex;
 }
 .prodDets-config-select-quantity {
     outline: none;
@@ -190,12 +196,13 @@
     outline:none;
 }
 
-.color-select {
-    padding:10px;
+.duplicateColor-select,
+.duplicatePaperType-select {
+    padding: 10px;
     border: 1px solid rgba(90, 90, 90, .5);
     border-radius: 5px;
-    width:200px;
-    margin:5px;
+    width: 140px;
+    margin: 5px;
 }
 .duplicate-color-container,
 .padding-color-container {
@@ -204,11 +211,34 @@
     flex-direction: column;
 }
 
+.prodDets-submitButton {
+    display: flex;
+    justify-content: center;
+    margin-top:20px;
+}
+
+.prodDets-submitButton button {
+    width: 300px;
+    height: 50px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    background: #059e00;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.prodDets-submitButton button:hover {
+    background: #097506;
+}
+
+
 @media only screen and (max-width:767px) {
     .prodDets-divCont-02-prod {
-        min-width: auto;
-        width: 100%;
-        padding: 15px;
+    min-width: auto;
+    width: 100%;
+    padding: 15px;
     }
 
     .prodDets-divCont-01-prod {
@@ -225,6 +255,10 @@
     .prodDetsCont-divCont-01-images {
         /*partial height*/
         /*height: 400px;*/
+    }
+
+    .prodDets-submitButton button {
+        width: 100%;
     }
 
 }

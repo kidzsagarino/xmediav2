@@ -11,5 +11,9 @@ namespace BusinessRef.ModelObject.Forms
         public int ID { get; set; }
         public string PaperType { get; set; }
         public string Thickness { get; set; }
+        public float PaperCostAtA3 { get; set; }
+        public float LaborCostAtA3 { get; set; }
+        public float PrintingCostAtA3BW { get; set; }
+        public float PrintingCostAtA3Colored { get; set; }
     }
 }
