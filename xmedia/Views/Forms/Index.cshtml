@@ -23,7 +23,7 @@
             <div class="prodDetsCont-divCont-02-config">
                 <h4 class="prodDets-config-label">Select Size</h4>
                 <select class="prodDets-config-select js-paperSize-select">
-
+                    <option value="0">Select</option>
                     @foreach (var item in Model.FormAssignedSizes)
                     {
                         <option value="@item.FormSizeID" data-DivisorFactor="@item.DivisorFactor" data-LaborFactor="@item.LaborFactor">@item.PaperSize</option>
@@ -44,7 +44,7 @@
         <div class="prodDetsCont-divCont-02-config">
             <h4 class="prodDets-config-label">Select Paper </h4>
             <select class="prodDets-config-select js-paperType-select">
-
+                <option value="0">Select</option>
                 @foreach (var item in Model.FormPaperTypes)
                 {
                     <option value="@item.ID" data-paperCost="@item.PaperCostAtA3" data-laborCost="@item.LaborCostAtA3" data-PrintCostBW="@item.PrintingCostAtA3BW" data-PrintCostColored="@item.PrintingCostAtA3Colored">
@@ -80,8 +80,8 @@
 
         <div class="prodDetsCont-divCont-02-config">
             <h4 class="prodDets-config-label">Select Print Color </h4>
-            <select class="prodDets-config-select">
-
+            <select class="prodDets-config-select js-printcolor-select">
+                <option value="0">Select</option>
                 @foreach (var item in Model.FormPrintColors)
                 {
                     <option value="@item.ID">@item.PrintColor</option>
@@ -101,7 +101,7 @@
         <div class="padding-color-container" style="display: none">
             <div class="duplicate-container">
                 <label>No of Set Per Pad</label>
-                <select class="color-select">
+                <select class="duplicateColor-select">
                     <option value="">100</option>
                     <option value="">200</option>
                     <option value="">300</option>
@@ -116,7 +116,7 @@
             </div>
             <div class="duplicate-container">
                 <label>Which Side ?</label>
-                <select class="color-select">
+                <select class="duplicateColor-select">
                     <option value="">Short Side</option>
                     <option value="">Long Side</option>
                 </select>
@@ -126,6 +126,7 @@
             <div class="prodDetsCont-divCont-03-configPrice">
                 <h4 class="prodDets-config-price-label">Quantity : </h4>
                 <select class="prodDets-config-select-quantity js-paperQuantity-select">
+                    <option value="0">Select</option>
                     @foreach (var item in Model.FormQuantities)
                     {
                         <option value="@item.ID" data-quantityFactor="@item.QuantityFactor">@item.FormQuantity</option>
