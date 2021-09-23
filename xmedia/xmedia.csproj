@@ -169,8 +169,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Views\Forms\PurchaseOrder.cshtml" />
+    <Content Include="Views\Forms\PurchaseOrder\PurchaseOrder1.cshtml" />
     <Content Include="Views\Shared\_LayoutSubProducts.cshtml" />
+    <Content Include="Views\Forms\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">

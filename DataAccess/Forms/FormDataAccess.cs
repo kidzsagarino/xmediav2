@@ -87,7 +87,12 @@ namespace DataAccess.Forms
                                         {
                                             ID = (int)rdr["PaperTypeID"],
                                             PaperType = rdr["PaperType"].ToString(),
-                                            Thickness = rdr["Thickness"].ToString()
+                                            Thickness = rdr["Thickness"].ToString(),
+                                            PaperCostAtA3 = float.Parse(rdr["PaperCostAtA3"].ToString()),
+                                            LaborCostAtA3 = float.Parse(rdr["LaborCostAtA3"].ToString()),
+                                            PrintingCostAtA3BW = float.Parse(rdr["PrintingCostAtA3BW"].ToString()),
+                                            PrintingCostAtA3Colored = float.Parse(rdr["PrintingCostAtA3Colored"].ToString())
+
                                         };
                                         paperTypeList.Add(dataList);
                                     }

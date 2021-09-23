@@ -12,5 +12,7 @@ namespace BusinessRef.ModelObject.Forms
         public int FormSizeID { get; set; }
         public string FormSizes { get; set; }
         public float FormSizeFactor { get; set; }
+        public float DivisorFactor { get; set; }
+        public float LaborFactor { get; set; }
     }
 }

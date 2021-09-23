@@ -11,7 +11,7 @@ namespace xmedia.Controllers
         {
             IGetPurchaseOrderFormsData data = new GetPurchaseOrderDataLogic(1);
             var data1 = data.GetPurchaseOrderForms();
-            return View(data1);
+            return View("~/Views/Forms/Index.cshtml",data1);
         }
     }
 }
