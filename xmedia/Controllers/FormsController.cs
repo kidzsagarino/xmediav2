@@ -13,5 +13,7 @@ namespace xmedia.Controllers
             var data1 = data.GetPurchaseOrderForms();
             return View("~/Views/Forms/Index.cshtml",data1);
         }
+        
     }
+
 }
