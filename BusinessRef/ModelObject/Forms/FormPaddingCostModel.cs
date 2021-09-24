@@ -9,7 +9,6 @@ namespace BusinessRef.ModelObject.Forms
     public class FormPaddingCostModel
     {
         public int ID { get; set; }
-
         public float Cost { get; set; }
     }
 }
