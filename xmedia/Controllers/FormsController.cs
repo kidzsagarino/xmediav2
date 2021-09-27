@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Web.Mvc;
 using System;
 using BusinessRef.ModelObject.Forms;
+using System.Threading.Tasks;
 
 namespace xmedia.Controllers
 {
@@ -19,33 +20,28 @@ namespace xmedia.Controllers
             return View("~/Views/Forms/Index.cshtml",data1);
         }
 
-        public ActionResult PurchaseOrder1()
+        public async Task<ActionResult> PurchaseOrder1()
         {
             GetPurchaseOrderFormsInitialDataModel model = null;
 
             using(var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44308/api/");
+                client.BaseAddress = new Uri("https://localhost:44309/api/");
+                
+                var responseTask = await client.GetAsync("forms/GetDropdownData");
 
-                var responseTask = client.GetAsync("forms/purchaseorder");
-
-                responseTask.Wait();
-
-                var result = responseTask.Result;
-
-                if (result.IsSuccessStatusCode)
+                if (responseTask.IsSuccessStatusCode)
                 {
-                    var readTask = result.Content.ReadAsAsync<GetPurchaseOrderFormsInitialDataModel>();
+                    var readTask = await responseTask.Content.ReadAsAsync<GetPurchaseOrderFormsInitialDataModel>();
 
-                    readTask.Wait();
-
-                    model = readTask.Result;
+                    model = readTask;
                 }
             }
 
             return View("~/Views/Forms/Index.cshtml", model);
         }
+
         
     }
 
-}
+} 
