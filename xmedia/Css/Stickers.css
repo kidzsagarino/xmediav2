@@ -196,12 +196,34 @@
     outline:none;
 }
 
+.duplicate-container {
+    /*border-bottom: 1px solid gray;*/
+    background: #f0f5f5;
+    padding: 5px;
+    width:98%;
+}
+.duplicate-container .duplicate-header p {
+    margin-bottom: 5px;
+    font-size:18px;
+}
+.duplicate-container .duplicate-content small.unitCost-label {
+    font-weight: bold;
+}
+.duplicate-container .duplicate-content small.unitCost-value {
+    background: #f4f4f4;
+    padding: 10px 0;
+    margin-left: 5px;
+}
+.duplicate-container .duplicate-content {
+    border-bottom: 1px solid #9e9d9d;
+}
+
 .duplicateColor-select,
 .duplicatePaperType-select {
-    padding: 10px;
+    padding: 5px;
     border: 1px solid rgba(90, 90, 90, .5);
     border-radius: 5px;
-    width: 140px;
+    width: 100px;
     margin: 5px;
 }
 .duplicate-color-container,
@@ -233,12 +255,25 @@
     background: #097506;
 }
 
-.purchase-order-header {
+.purchase-order-header-01 {
+    font-size: .9rem;
+    background: #d1d2d4;
+    font-weight: 700;
+    height: 30px;
+    padding-left:5px;
+}
+.purchase-order-table .px-5 {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.purchase-order-header-02 {
     text-align: center;
     font-size: .7rem;
     background: #d1d2d4;
     border-right: 1px solid;
     font-weight: 800;
+    height: 30px;
 }
 .purchase-order-header.no-border-right {
     border-right: none;
@@ -260,6 +295,10 @@
 }
 .purchase-order-table td.border-left {
     border-left: 1px solid;
+}
+.purchase-order-table .purchase-order-tbl-footer {
+    font-size: 13px;
+    text-align: right;
 }
 
 @media only screen and (max-width:767px) {

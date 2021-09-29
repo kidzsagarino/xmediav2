@@ -1,8 +1,8 @@
 ﻿<table class="purchase-order-table">
     <colgroup>
-        <col width="11" />
+        <col width="16" />
         <col width="46" />
-        <col width="11" />
+        <col width="16" />
         <col width="10" />
         <col width="5" />
         <col width="14" />
@@ -19,37 +19,34 @@
             </td>
         </tr>
         <tr>
-            <td colspan="4">
+            <td colspan="4" class="px-5">
                 LOGO / COMPANY NAME
             </td>
-            <td class="border-left"></td>
-            <td>
+            <td colspan="2" class="border-left px-5">
                 P.O. No:
             </td>
             <td>
-                <input type="text" name="PONumber" disabled/>
+                <input type="text" name="PONumber" disabled />
             </td>
         </tr>
         <tr>
-            <td colspan="4">
+            <td colspan="4" class="px-5">
                 <small>COMPANY ADDRESS</small>
             </td>
-            <td class="border-left"></td>
-            <td>
+            <td colspan="2" class="border-left px-5">
                 Cust ID:
             </td>
             <td>
-                <input type="text" name="CustomerID" disabled/>
+                <input type="text" name="CustomerID" disabled />
             </td>
         </tr>
         <tr>
             <td colspan="4"></td>
-            <td class="border-left"></td>
-            <td>
+            <td colspan="2" class="border-left px-5">
                 Date:
             </td>
             <td>
-                <input type="text" name="Date" disabled/>
+                <input type="text" name="Date" disabled />
             </td>
         </tr>
         <tr>
@@ -64,10 +61,10 @@
             <td colspan="7" class="border-top"></td>
         </tr>
         <tr>
-            <td colspan="2" style="font-size: 15px; background: #d1d2d4;">
+            <td colspan="2" class="purchase-order-header-01">
                 VENDOR
             </td>
-            <td colspan="5" style="font-size: 15px; background: #d1d2d4;" class="border-left">
+            <td colspan="5" class="purchase-order-header-01 border-left">
                 SHIP TO
             </td>
         </tr>
@@ -75,51 +72,51 @@
             <td colspan="7" class="border-top"></td>
         </tr>
         <tr>
-            <td style="font-size:13px;">Name:</td>
+            <td class="px-5" style="font-size:13px;">Name:</td>
             <td>
                 <input type="text" name="VendorName" />
             </td>
-            <td style="font-size:13px">Name:</td>
+            <td class="px-5" style="font-size:13px">Name:</td>
             <td colspan="4">
                 <input type="text" name="CustomerName" />
             </td>
         </tr>
         <tr>
-            <td style="font-size:13px;">Company:</td>
+            <td class="px-5" style="font-size:13px;">Company:</td>
             <td>
                 <input type="text" name="VendorCompanyName" />
             </td>
-            <td style="font-size:13px">Company:</td>
+            <td class="px-5" style="font-size:13px">Company:</td>
             <td colspan="4">
                 <input type="text" name="CustomerCompanyName" />
             </td>
         </tr>
         <tr>
-            <td style="font-size:13px;">Address:</td>
+            <td class="px-5" style="font-size:13px;">Address:</td>
             <td>
                 <input type="text" name="VendorAddress" />
             </td>
-            <td style="font-size:13px">Address:</td>
+            <td class="px-5" style="font-size:13px">Address:</td>
             <td colspan="4">
                 <input type="text" name="CustomerAddress" />
             </td>
         </tr>
         <tr>
-            <td style="font-size:13px;">Cel No:</td>
+            <td class="px-5" style="font-size:13px;">Cel No:</td>
             <td>
                 <input type="text" name="VendorCelNo" />
             </td>
-            <td style="font-size:13px">Cel No:</td>
+            <td class="px-5" style="font-size:13px">Cel No:</td>
             <td colspan="4">
                 <input type="text" name="CustomerCelNo" />
             </td>
         </tr>
         <tr>
-            <td style="font-size:13px;">Tel No:</td>
+            <td class="px-5" style="font-size:13px;">Tel No:</td>
             <td>
                 <input type="text" name="VendorTelNo" />
             </td>
-            <td style="font-size:13px">Tel No:</td>
+            <td class="px-5" style="font-size:13px">Tel No:</td>
             <td colspan="4">
                 <input type="text" name="CustomerTelNo" />
             </td>
@@ -133,22 +130,22 @@
             <td colspan="7" class="border-top"></td>
         </tr>
         <tr>
-            <td class="purchase-order-header">
+            <td class="purchase-order-header-02">
                 ITEM NO
             </td>
-            <td class="purchase-order-header">
+            <td class="purchase-order-header-02">
                 DESCRIPTION
             </td>
-            <td class="purchase-order-header">
+            <td class="purchase-order-header-02">
                 UNITS
             </td>
-            <td class="purchase-order-header">
+            <td class="purchase-order-header-02">
                 QTY
             </td>
-            <td class="purchase-order-header" colspan="2">
+            <td colspan="2" class="purchase-order-header-02">
                 UNIT PRICE
             </td>
-            <td class="purchase-order-header no-border-right">
+            <td class="purchase-order-header-02 no-border-right">
                 AMOUNT
             </td>
         </tr>
@@ -176,7 +173,7 @@
         </tr>
         <tr>
             <td colspan="3" height="25"></td>
-            <td colspan="3" style="font-size:13px; text-align:right">Amount >></td>
+            <td colspan="3" class="purchase-order-tbl-footer px-5">Amount >></td>
             <td class="border-left"></td>
         </tr>
         <tr>
@@ -184,12 +181,12 @@
         </tr>
         <tr>
             <td colspan="3" height="25"></td>
-            <td colspan="3" style="font-size:13px; text-align:right">12% VAT >></td>
+            <td colspan="3" class="purchase-order-tbl-footer px-5">12% VAT >></td>
             <td class="border-left"></td>
         </tr>
         <tr>
             <td colspan="3" height="25"></td>
-            <td colspan="3" style="font-size:13px; text-align:right">Total Amount >></td>
+            <td colspan="3" class="purchase-order-tbl-footer px-5">Total Amount >></td>
             <td class="border-left"></td>
         </tr>
         <tr>
@@ -202,23 +199,22 @@
             <td colspan="7" height="40"></td>
         </tr>
         <tr>
-            <td colspan="3" style="font-size:14px;">PREPARED BY:</td>
-            <td colspan="4" style="font-size:14px;">APPROVED BY:</td>
+            <td colspan="3" class="px-5" style="font-size:14px;">PREPARED BY:</td>
+            <td colspan="4" class="px-5" style="font-size:14px;">APPROVED BY:</td>
         </tr>
 
         <tr>
             <td colspan="7" height="10"></td>
         </tr>
         <tr>
-            <td colspan="2">
+            <td colspan="2" class="px-5">
                 <input type="text" name="PreparedBy" />
             </td>
             <td></td>
-            <td colspan="4">
-                <input type="text" name="ApprovedBy"/>
+            <td colspan="4" class="px-5">
+                <input type="text" name="ApprovedBy" />
             </td>
         </tr>
-
         <tr>
             <td colspan="7" height="15"></td>
         </tr>

@@ -20,26 +20,26 @@ namespace xmedia.Controllers
             return View("~/Views/Forms/Index.cshtml",data1);
         }
 
-        public async Task<ActionResult> PurchaseOrder1()
-        {
-            GetPurchaseOrderFormsInitialDataModel model = null;
+        //public async Task<ActionResult> PurchaseOrder1()
+        //{
+        //    GetPurchaseOrderFormsInitialDataModel model = null;
 
-            using(var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri("https://localhost:44309/api/");
+        //    using(var client = new HttpClient())
+        //    {
+        //        client.BaseAddress = new Uri("https://localhost:44309/api/");
                 
-                var responseTask = await client.GetAsync("forms/GetDropdownData");
+        //        var responseTask = await client.GetAsync("forms/GetDropdownData");
 
-                if (responseTask.IsSuccessStatusCode)
-                {
-                    var readTask = await responseTask.Content.ReadAsAsync<GetPurchaseOrderFormsInitialDataModel>();
+        //        if (responseTask.IsSuccessStatusCode)
+        //        {
+        //            var readTask = await responseTask.Content.ReadAsAsync<GetPurchaseOrderFormsInitialDataModel>();
 
-                    model = readTask;
-                }
-            }
+        //            model = readTask;
+        //        }
+        //    }
 
-            return View("~/Views/Forms/Index.cshtml", model);
-        }
+        //    return View("~/Views/Forms/Index.cshtml", model);
+        //}
 
         
     }
