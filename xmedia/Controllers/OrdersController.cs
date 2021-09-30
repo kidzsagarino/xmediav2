@@ -12,12 +12,14 @@ namespace xmedia.Controllers
         [HttpPost]
         public JsonResult InsertUserFormOrders(UserFormOrdersModel Model)
         {
-            //if hasDuplicate
-            IPostDatabaseData<ConfirmInsertDataModel> data = new PostUserOrderFormsDataLogic(Model);
-            
-            //else
-            //IPostDatabaseData<ConfirmInsertDataModel> data = new PostUserOrderFormsWithoutTVPDataLogic(Model);
+            IPostDatabaseData<ConfirmInsertDataModel> data = new PostUserOrderFormsWithoutTVPDataLogic(Model);
+            return Json(data.PostDatabaseData());
+        }
 
+        [HttpPost]
+        public JsonResult InsertUserFormOrdersWihtDuplicates(UserFormOrdersModel Model)
+        {
+            IPostDatabaseData<ConfirmInsertDataModel> data = new PostUserOrderFormsDataLogic(Model);
             return Json(data.PostDatabaseData());
         }
     }
