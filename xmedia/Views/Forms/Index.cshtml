@@ -57,7 +57,7 @@
 
         <div class="prodDetsCont-divCont-02-config">
             <h4 class="prodDets-config-label">No. of Duplicates </h4>
-            <select class="prodDets-config-select js-no-ofDuplicates">
+            <select class="prodDets-config-select js-no-ofDuplicates" disabled>
                 <option value="0" data-value="1">No Duplicates</option>
                 <option value="1" data-value="2">1</option>
                 <option value="2" data-value="3">2</option>
@@ -71,10 +71,17 @@
 
         <div class="duplicate-color-container js-duplicate-container">
             @*<div class="duplicate-container">
-                <label>Duplicate 1</label>
-                <select class="duplicateColor-select"></select>
-                <label>Paper Type</label>
-                <select class="duplicatePaperType-select"></select>
+                <div class="duplicate-header">
+                    <p>Original</p>
+                </div>
+                <div class="duplicate-content">
+                    <label>Color</label>
+                    <select class="duplicateColor-select"></select>
+                    <label>Paper Type</label>
+                    <select class="duplicatePaperType-select"></select>
+                    <small class="js-unitCost-label unitCost-label">Unit Cost:</small>
+                    <small class="js-unitCost-value unitCost-value">Php 1.00</small>
+                </div>
             </div>*@
         </div>
 
@@ -100,7 +107,7 @@
             <i class="prodDetsCont-icon-checked"><img src="~/images/icon/checked-green.png" /></i>
         </div>
         <div class="padding-color-container" style="display: none">
-            <div class="duplicate-container">
+            <div class="padding-container">
                 <label>No of Set Per Pad</label>
                 <select class="duplicateColor-select">
                     <option value="">100</option>
@@ -115,7 +122,7 @@
                     <option value="">1000</option>
                 </select>
             </div>
-            <div class="duplicate-container">
+            <div class="padding-container">
                 <label>Which Side ?</label>
                 <select class="duplicateColor-select">
                     <option value="">Short Side</option>
@@ -158,3 +165,9 @@
     <h1 class="prodDetsCont-title">Purchase Order Forms</h1>
 }
 
+<script>
+
+    @*console.log(@Html.Raw(Json.Encode(Model.FormPaperTypes)));
+
+    sessionStorage.setItem('FormPaperTypes', JSON.stringify(@Html.Raw(Json.Encode(Model.FormPaperTypes))));*@
+</script>
