@@ -19,7 +19,7 @@ namespace DataAccess.Orders
         public ConfirmInsertDataModel PostDatabaseData()
         {
             string ConnectionString = ConfigurationManager.ConnectionStrings["XMEDIA_DB"].ConnectionString;
-            string sp = "[orders].[spPostUserFormsOrder]";
+            string sp = "[orders].[spInsertUserFormsOrder]";
 
             ConfirmInsertDataModel data = new ConfirmInsertDataModel();
 
