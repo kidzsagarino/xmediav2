@@ -1,0 +1,68 @@
+﻿.cart-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+}
+
+.cart-container .cart-item {
+    display: grid;
+    grid-template-columns: 20% 50% auto;
+}
+
+.cart-container .cart-item .cart-item-03 {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-column-gap: 15px;
+}
+.cart-item .cart-item-03 .cart-item-opt {
+    display: flex;
+    justify-content: flex-end;
+}
+.cart-item-opt button {
+    padding: 10px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all .5s ease;
+    background: #ececec;
+}
+.cart-item-opt button:hover {
+    background: #b9b9b9;
+}
+.cart-item-opt button.cart-editBtn {
+    margin-right: 5px;
+}
+
+.cart-footer-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+}
+
+.cart-footer-btn button {
+    height: 50px;
+    width: 200px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: all .5s ease;
+    font-weight: 700;
+    border-radius: 3px;
+}
+.cart-footer-btn button.continueBtn {
+    margin-right: 10px;
+    background: #ececec;
+}
+.cart-footer-btn button.continueBtn:hover {
+    background: #b9b9b9;
+}
+.cart-footer-btn button.checkoutBtn {
+    background: #049040;
+    border: 1px solid #049040;
+    color: #fff;
+}
+.cart-footer-btn button.checkoutBtn:hover {
+    background: #0c6b34;
+    border-color: #0c6b34;
+}

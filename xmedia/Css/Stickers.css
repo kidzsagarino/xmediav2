@@ -209,10 +209,13 @@
 .duplicate-container .duplicate-content small.unitCost-label {
     font-weight: bold;
 }
-.duplicate-container .duplicate-content small.unitCost-value {
+.duplicate-container .duplicate-content input.unitCost-value {
     background: #f4f4f4;
     padding: 10px 0;
-    margin-left: 5px;
+    /*margin-left: 5px;*/
+    width:58px;
+    border:none;
+    pointer-events: none;
 }
 .duplicate-container .duplicate-content {
     border-bottom: 1px solid #9e9d9d;
@@ -253,6 +256,9 @@
 }
 .prodDets-submitButton button:hover {
     background: #097506;
+}
+form.prod-form select.has-error {
+    border: 1px solid #ff0000;
 }
 
 .purchase-order-header-01 {
