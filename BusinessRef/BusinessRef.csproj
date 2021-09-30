@@ -47,6 +47,7 @@
     <Compile Include="Interfaces\Generics\IGetDatabaseData.cs" />
     <Compile Include="Interfaces\Generics\IPostDatabaseCollectionData.cs" />
     <Compile Include="Interfaces\Generics\IPostDatabaseData.cs" />
+    <Compile Include="ModelObject\ConfirmInsertDataModel.cs" />
     <Compile Include="ModelObject\Forms\FormAssignedSizeModel.cs" />
     <Compile Include="ModelObject\Forms\FormPaddingCostModel.cs" />
     <Compile Include="ModelObject\Forms\FormPaperColorModel.cs" />
@@ -54,10 +55,14 @@
     <Compile Include="ModelObject\Forms\FormPrintColorModel.cs" />
     <Compile Include="ModelObject\Forms\FormQuantityModel.cs" />
     <Compile Include="ModelObject\Forms\GetPurchaseOrderFormsInitialDataModel.cs" />
+    <Compile Include="ModelObject\Orders\OrderFormDuplicatesModel.cs" />
+    <Compile Include="ModelObject\Orders\OrderFormsModel.cs" />
+    <Compile Include="ModelObject\Orders\UserFormOrdersModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HelperObject\" />
+    <Folder Include="Interfaces\Orders\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

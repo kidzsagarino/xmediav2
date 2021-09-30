@@ -10,3 +10,9 @@ D:\Website\xmediav2\BusinessRef\obj\Debug\BusinessRef.csproj.AssemblyReference.c
 D:\Website\xmediav2\BusinessRef\obj\Debug\BusinessRef.csproj.CoreCompileInputs.cache
 D:\Website\xmediav2\BusinessRef\obj\Debug\BusinessRef.dll
 D:\Website\xmediav2\BusinessRef\obj\Debug\BusinessRef.pdb
+C:\Users\MCBI-DEV1\source\repos\XMEDIA_latest\xmediav2\BusinessRef\bin\Debug\BusinessRef.dll
+C:\Users\MCBI-DEV1\source\repos\XMEDIA_latest\xmediav2\BusinessRef\bin\Debug\BusinessRef.pdb
+C:\Users\MCBI-DEV1\source\repos\XMEDIA_latest\xmediav2\BusinessRef\obj\Debug\BusinessRef.csproj.AssemblyReference.cache
+C:\Users\MCBI-DEV1\source\repos\XMEDIA_latest\xmediav2\BusinessRef\obj\Debug\BusinessRef.csproj.CoreCompileInputs.cache
+C:\Users\MCBI-DEV1\source\repos\XMEDIA_latest\xmediav2\BusinessRef\obj\Debug\BusinessRef.dll
+C:\Users\MCBI-DEV1\source\repos\XMEDIA_latest\xmediav2\BusinessRef\obj\Debug\BusinessRef.pdb

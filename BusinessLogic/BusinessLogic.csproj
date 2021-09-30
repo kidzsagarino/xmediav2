@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\GetPurchaseOrderDataLogic.cs" />
+    <Compile Include="Orders\PostUserOrderFormsDataLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
