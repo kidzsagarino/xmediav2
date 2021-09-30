@@ -23,7 +23,7 @@ namespace DataAccess.Orders
 
             ConfirmInsertDataModel data = new ConfirmInsertDataModel();
 
-            SqlParameter[] sqlParameters = new SqlParameter[6];
+            SqlParameter[] sqlParameters = new SqlParameter[12];
 
             sqlParameters[0] = new SqlParameter("@OrderFormsCategory_ID", SqlDbType.Int)
             {
@@ -50,37 +50,51 @@ namespace DataAccess.Orders
                 Value = this.Model.TotalPrice
             };
 
-            #region TVP Oder Forms
-            DataTable orderFormsDT = new DataTable();
-            orderFormsDT.Columns.Add("UserOrderForms_ID");
-            orderFormsDT.Columns.Add("FormsMasterData_ID");
-            orderFormsDT.Columns.Add("FormsPaperSizesRef_ID");
-            orderFormsDT.Columns.Add("PaperTypeRef_ID");
-            orderFormsDT.Columns.Add("PaperColorRef_ID");
-            orderFormsDT.Columns.Add("PaddingGlue_ID");
-            orderFormsDT.Columns.Add("UnitPrice");
-            orderFormsDT.Columns.Add("Quantity");
-            orderFormsDT.Columns.Add("hasDuplicate");
-
-            foreach (var orderFormsData in this.Model.Orderforms)
-            {
-                DataRow row = orderFormsDT.NewRow();
-                row["UserOrderForms_ID"] = orderFormsData.UserOrderForms_ID;
-                row["FormsMasterData_ID"] = orderFormsData.FormsMasterData_ID;
-                row["FormsPaperSizesRef_ID"] = orderFormsData.FormsPaperSizesRef_ID;
-                row["PaperTypeRef_ID"] = orderFormsData.PaperTypeRef_ID;
-                row["PaperColorRef_ID"] = orderFormsData.PaperColorRef_ID;
-                row["UnitPrice"] = orderFormsData.UnitPrice;
-                row["Quantity"] = orderFormsData.Quantity;
-                row["hasDuplicate"] = orderFormsData.hasDuplicate;
-            }
-
-            sqlParameters[4] = new SqlParameter("@TVP_OrderForms", SqlDbType.Structured)
+            sqlParameters[4] = new SqlParameter("@UserOrderForms_ID", SqlDbType.Int)
             {
                 Direction = ParameterDirection.Input,
-                Value = this.Model.Orderforms
+                Value = this.Model.Orderforms.UserOrderForms_ID
             };
-            #endregion
+            sqlParameters[5] = new SqlParameter("@FormsMasterData_ID", SqlDbType.Int)
+            {
+                Direction = ParameterDirection.Input,
+                Value = this.Model.Orderforms.FormsMasterData_ID
+            };
+            sqlParameters[6] = new SqlParameter("@FormsPaperSizesRef_ID", SqlDbType.Int)
+            {
+                Direction = ParameterDirection.Input,
+                Value = this.Model.Orderforms.FormsPaperSizesRef_ID
+            };
+            sqlParameters[7] = new SqlParameter("@PaperTypeRef_ID", SqlDbType.Int)
+            {
+                Direction = ParameterDirection.Input,
+                Value = this.Model.Orderforms.PaperTypeRef_ID
+            };
+            sqlParameters[8] = new SqlParameter("@PaperColorRef_ID", SqlDbType.Int)
+            {
+                Direction = ParameterDirection.Input,
+                Value = this.Model.Orderforms.PaperColorRef_ID
+            };
+            sqlParameters[9] = new SqlParameter("@PaddingGlue_ID", SqlDbType.Int)
+            {
+                Direction = ParameterDirection.Input,
+                Value = this.Model.Orderforms.PaddingGlue_ID
+            };
+            sqlParameters[10] = new SqlParameter("@UnitPrice", SqlDbType.Float)
+            {
+                Direction = ParameterDirection.Input,
+                Value = this.Model.Orderforms.UnitPrice
+            };
+            sqlParameters[11] = new SqlParameter("@Quantity", SqlDbType.Int)
+            {
+                Direction = ParameterDirection.Input,
+                Value = this.Model.Orderforms.Quantity
+            };
+            sqlParameters[12] = new SqlParameter("@hasDuplicate", SqlDbType.Bit)
+            {
+                Direction = ParameterDirection.Input,
+                Value = this.Model.Orderforms.hasDuplicate
+            };
 
             #region TVP Duplicates
             DataTable duplicatesFormDT = new DataTable();
@@ -102,7 +116,7 @@ namespace DataAccess.Orders
                 row["isOriginal"] = duplicateData.isOriginal;
             }
 
-            sqlParameters[5] = new SqlParameter("@TVP_DuplicateForms", SqlDbType.Structured)
+            sqlParameters[13] = new SqlParameter("@TVP_DuplicateForms", SqlDbType.Structured)
             {
                 Direction = ParameterDirection.Input,
                 Value = this.Model.OrderFormDuplicates
