@@ -58,6 +58,7 @@
     <Compile Include="ModelObject\Orders\OrderFormDuplicatesModel.cs" />
     <Compile Include="ModelObject\Orders\OrderFormsModel.cs" />
     <Compile Include="ModelObject\Orders\UserFormOrdersModel.cs" />
+    <Compile Include="ModelObject\Orders\UserFormOrdersNoDuplicateModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

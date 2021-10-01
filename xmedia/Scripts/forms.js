@@ -116,9 +116,10 @@ var addDuplicateElem = function (el) {
         unitCostLabel.textContent = 'Unit Cost:';
         divContent.appendChild(unitCostLabel);
 
-        let unitCostValue = document.createElement('small');
+        let unitCostValue = document.createElement('input');
         unitCostValue.setAttribute('class', 'js-unitCost-value unitCost-value');
-        unitCostValue.textContent = '';
+        unitCostValue.setAttribute('name', 'duplicate-unitCost');
+        unitCostValue.value = '';
         if (isOriginal) {
             unitCostValue.classList.add('original-value');
         }
@@ -221,7 +222,6 @@ var eventsListeners = function () {
         hideShowPadding(this);
     })
 
-
     document.querySelector('.js-duplicate-container').addEventListener('change', function (e) {
 
         if (e.target.matches('.js-duplicatePaperType-select')) {
@@ -231,6 +231,10 @@ var eventsListeners = function () {
             computePrice(e.target);
         }
 
+    });
+
+    document.querySelector('.js-submitBtn').addEventListener('click', function (e) {
+        addToCart();
     });
 }
 
@@ -309,13 +313,13 @@ var computePrice = function (paperType = null) {
 
             let cost = 'Php ' + parseFloat(unitCost).toFixed(2).toString();
 
-            paperType.closest('.js-duplicate-content').querySelector('.js-unitCost-value').textContent = cost;
+            paperType.closest('.js-duplicate-content').querySelector('.js-unitCost-value').value = cost;
 
         }
         else {
 
             if (duplicatesSelect.value > 0) {
-                document.querySelector('small.original-value').textContent = 'Php ' + parseFloat(unitCost).toFixed(2).toString();
+                document.querySelector('input.original-value').value = 'Php ' + parseFloat(unitCost).toFixed(2).toString();
             }
 
             unitPriceInput.value = 'Php ' + parseFloat(unitCost).toFixed(2).toString();
@@ -335,11 +339,11 @@ var computePrice = function (paperType = null) {
 
                     let duplicateCost = item.querySelector('.js-unitCost-value');
 
-                    if (!duplicateCost.classList.contains('original-value') && duplicateCost.textContent !== '') {
+                    if (!duplicateCost.classList.contains('original-value') && duplicateCost.value !== '') {
 
                         //console.log(parseInt(duplicateCost.textContent));
 
-                        total += (parseFloat(quantityValue) * parseFloat(quantityFactor)) * parseFloat(duplicateCost.textContent.slice(3));
+                        total += (parseFloat(quantityValue) * parseFloat(quantityFactor)) * parseFloat(duplicateCost.value.slice(3));
                     }
 
                 });
@@ -353,8 +357,22 @@ var computePrice = function (paperType = null) {
     }
     else {
         unitPriceInput.value = 'Php 0.00';
+
+        if (duplicatesSelect.value > 0) {
+            document.querySelectorAll('.js-unitCost-value').forEach((item) => {
+                item.value = 'Php 0.00';
+            })
+        }
     }
 
+};
+
+
+var addToCart = function () {
+
+    let form = document.querySelector('.js-prod-form');
+
+    console.log(form);
 };
 
 

@@ -123,6 +123,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\FormsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
@@ -132,6 +133,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Css\Cart.css" />
     <Content Include="Css\Stickers.css" />
     <Content Include="Css\_LayoutMainpageCss.css" />
     <Content Include="Css\_LayoutSubProducts.css" />
@@ -177,6 +179,7 @@
     <Content Include="Views\Forms\PurchaseOrder\PurchaseOrder1.cshtml" />
     <Content Include="Views\Shared\_LayoutSubProducts.cshtml" />
     <Content Include="Views\Forms\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
