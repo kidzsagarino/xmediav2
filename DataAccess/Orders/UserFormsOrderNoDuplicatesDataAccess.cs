@@ -8,10 +8,10 @@ using model = BusinessRef.ModelObject.Orders.UserFormOrdersModel;
 
 namespace DataAccess.Orders
 {
-    public class UserFormsOrderWithoutTVPDataAccess : IPostDatabaseData<ConfirmInsertDataModel>
+    public class UserFormsOrderNoDuplicatesDataAccess : IPostDatabaseData<ConfirmInsertDataModel>
     {
         private model Model;
-        public UserFormsOrderWithoutTVPDataAccess(model DataModel)
+        public UserFormsOrderNoDuplicatesDataAccess(model DataModel)
         {
             this.Model = DataModel;
         }
@@ -22,7 +22,7 @@ namespace DataAccess.Orders
 
             ConfirmInsertDataModel data = new ConfirmInsertDataModel();
 
-            SqlParameter[] sqlParameters = new SqlParameter[11];
+            SqlParameter[] sqlParameters = new SqlParameter[14];
 
             sqlParameters[0] = new SqlParameter("@OrderFormsCategory_ID", SqlDbType.Int)
             {
@@ -79,17 +79,32 @@ namespace DataAccess.Orders
                 Direction = ParameterDirection.Input,
                 Value = this.Model.Orderforms.PaddingGlue_ID
             };
-            sqlParameters[10] = new SqlParameter("@UnitPrice", SqlDbType.Float)
+            sqlParameters[10] = new SqlParameter("@hasPaddingGlue", SqlDbType.Bit)
+            {
+                Direction = ParameterDirection.Input,
+                Value = this.Model.Orderforms.hasPaddingGlue
+            };
+            sqlParameters[11] = new SqlParameter("@NoOfSetPad", SqlDbType.Int)
+            {
+                Direction = ParameterDirection.Input,
+                Value = this.Model.Orderforms.NoOfSetPad
+            };
+            sqlParameters[12] = new SqlParameter("@PadSide", SqlDbType.VarChar, 15)
+            {
+                Direction = ParameterDirection.Input,
+                Value = this.Model.Orderforms.PadSide
+            };
+            sqlParameters[13] = new SqlParameter("@UnitPrice", SqlDbType.Float)
             {
                 Direction = ParameterDirection.Input,
                 Value = this.Model.Orderforms.UnitPrice
             };
-            sqlParameters[11] = new SqlParameter("@Quantity", SqlDbType.Int)
+            sqlParameters[14] = new SqlParameter("@Quantity", SqlDbType.Int)
             {
                 Direction = ParameterDirection.Input,
                 Value = this.Model.Orderforms.Quantity
             };
-            sqlParameters[12] = new SqlParameter("@hasDuplicate", SqlDbType.Bit)
+            sqlParameters[15] = new SqlParameter("@hasDuplicate", SqlDbType.Bit)
             {
                 Direction = ParameterDirection.Input,
                 Value = this.Model.Orderforms.hasDuplicate
