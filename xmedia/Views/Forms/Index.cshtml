@@ -23,7 +23,7 @@
             <div class="prodDetsCont-divCont-02-config-po">
                 <div class="prodDetsCont-divCont-02-config">
                     <h4 class="prodDets-config-label">Select Size</h4>
-                    <select class="prodDets-config-select js-paperSize-select">
+                    <select class="prodDets-config-select js-paperSize-select" required>
                         <option value="0">Select</option>
                         @foreach (var item in Model.FormAssignedSizes)
                         {
@@ -43,7 +43,7 @@
 
             <div class="prodDetsCont-divCont-02-config">
                 <h4 class="prodDets-config-label">Select Paper </h4>
-                <select class="prodDets-config-select js-paperType-select">
+                <select class="prodDets-config-select js-paperType-select" required>
                     <option value="0">Select</option>
                     @foreach (var item in Model.FormPaperTypes)
                     {
@@ -88,7 +88,7 @@
 
             <div class="prodDetsCont-divCont-02-config">
                 <h4 class="prodDets-config-label">Select Print Color </h4>
-                <select class="prodDets-config-select js-printcolor-select">
+                <select class="prodDets-config-select js-printcolor-select" required>
                     <option value="0">Select</option>
                     @foreach (var item in Model.FormPrintColors)
                     {
@@ -100,7 +100,7 @@
             </div>
             <div class="prodDetsCont-divCont-02-config">
                 <h4 class="prodDets-config-label">With Padding Glue </h4>
-                <select class="prodDets-config-select js-padding-select">
+                <select class="prodDets-config-select js-padding-select" required>
                     <option value="0">Select</option>
                     <option value="1">No</option>
                     <option value="2">Yes</option>
@@ -134,7 +134,7 @@
             <div class="prodDetsCont-divCont-02-configPrice">
                 <div class="prodDetsCont-divCont-03-configPrice">
                     <h4 class="prodDets-config-price-label">Quantity : </h4>
-                    <select class="prodDets-config-select-quantity js-paperQuantity-select">
+                    <select class="prodDets-config-select-quantity js-paperQuantity-select" required>
                         <option value="0">Select</option>
                         @foreach (var item in Model.FormQuantities)
                         {
