@@ -2,7 +2,7 @@
 using BusinessRef.ModelObject;
 using DataAccess.Orders;
 
-using model = BusinessRef.ModelObject.Orders.UserFormOrdersModel;
+using model = BusinessRef.ModelObject.Orders.UserFormOrdersNoDuplicateModel;
 
 namespace BusinessLogic.Orders
 {

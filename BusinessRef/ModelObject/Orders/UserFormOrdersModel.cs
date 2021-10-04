@@ -12,6 +12,6 @@ namespace BusinessRef.ModelObject.Orders
         public DateTime OrderDate { get; set; }
         public float TotalPrice { get; set; }
         public OrderFormsModel Orderforms { get; set; }
-        public List<OrderFormDuplicatesModel> OrderFormDuplicates { get; set; }
+        public IEnumerable<OrderFormDuplicatesModel> OrderFormDuplicates { get; set; }
     }
 }

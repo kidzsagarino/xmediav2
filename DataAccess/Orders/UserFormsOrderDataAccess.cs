@@ -23,7 +23,7 @@ namespace DataAccess.Orders
 
             ConfirmInsertDataModel data = new ConfirmInsertDataModel();
 
-            SqlParameter[] sqlParameters = new SqlParameter[12];
+            SqlParameter[] sqlParameters = new SqlParameter[14];
 
             sqlParameters[0] = new SqlParameter("@OrderFormsCategory_ID", SqlDbType.Int)
             {

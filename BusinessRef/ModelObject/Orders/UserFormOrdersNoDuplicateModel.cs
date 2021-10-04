@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BusinessRef.Abstract;
+using System;
 
 namespace BusinessRef.ModelObject.Orders
 {
-    public class UserFormOrdersNoDuplicateModel
+    public class UserFormOrdersNoDuplicateModel : SQlErrorMessageModel
     {
         public int ID { get; set; }
         public int OrderFormsCategory_ID { get; set; }
