@@ -6,6 +6,7 @@ using BusinessRef.ModelObject;
 
 using model = BusinessRef.ModelObject.Orders.UserFormOrdersModel;
 
+
 namespace DataAccess.Orders
 {
     public class UserFormsOrderDataAccess : IPostDatabaseData<ConfirmInsertDataModel>
@@ -23,7 +24,7 @@ namespace DataAccess.Orders
 
             ConfirmInsertDataModel data = new ConfirmInsertDataModel();
 
-            SqlParameter[] sqlParameters = new SqlParameter[12];
+            SqlParameter[] sqlParameters = new SqlParameter[16];
 
             sqlParameters[0] = new SqlParameter("@OrderFormsCategory_ID", SqlDbType.Int)
             {
@@ -50,47 +51,57 @@ namespace DataAccess.Orders
                 Value = this.Model.TotalPrice
             };
 
-            sqlParameters[4] = new SqlParameter("@UserOrderForms_ID", SqlDbType.Int)
-            {
-                Direction = ParameterDirection.Input,
-                Value = this.Model.Orderforms.UserOrderForms_ID
-            };
-            sqlParameters[5] = new SqlParameter("@FormsMasterData_ID", SqlDbType.Int)
+            sqlParameters[4] = new SqlParameter("@FormsMasterData_ID", SqlDbType.Int)
             {
                 Direction = ParameterDirection.Input,
                 Value = this.Model.Orderforms.FormsMasterData_ID
             };
-            sqlParameters[6] = new SqlParameter("@FormsPaperSizesRef_ID", SqlDbType.Int)
+            sqlParameters[5] = new SqlParameter("@FormsPaperSizesRef_ID", SqlDbType.Int)
             {
                 Direction = ParameterDirection.Input,
                 Value = this.Model.Orderforms.FormsPaperSizesRef_ID
             };
-            sqlParameters[7] = new SqlParameter("@PaperTypeRef_ID", SqlDbType.Int)
+            sqlParameters[6] = new SqlParameter("@PaperTypeRef_ID", SqlDbType.Int)
             {
                 Direction = ParameterDirection.Input,
                 Value = this.Model.Orderforms.PaperTypeRef_ID
             };
-            sqlParameters[8] = new SqlParameter("@PaperColorRef_ID", SqlDbType.Int)
+            sqlParameters[7] = new SqlParameter("@PaperColorRef_ID", SqlDbType.Int)
             {
                 Direction = ParameterDirection.Input,
                 Value = this.Model.Orderforms.PaperColorRef_ID
             };
-            sqlParameters[9] = new SqlParameter("@PaddingGlue_ID", SqlDbType.Int)
+            sqlParameters[8] = new SqlParameter("@PaddingGlue_ID", SqlDbType.Int)
             {
                 Direction = ParameterDirection.Input,
                 Value = this.Model.Orderforms.PaddingGlue_ID
             };
-            sqlParameters[10] = new SqlParameter("@UnitPrice", SqlDbType.Float)
+            sqlParameters[9] = new SqlParameter("@hasPaddingGlue", SqlDbType.Bit)
+            {
+                Direction = ParameterDirection.Input,
+                Value = this.Model.Orderforms.hasPaddingGlue
+            };
+            sqlParameters[10] = new SqlParameter("@NoOfSetPad", SqlDbType.Int)
+            {
+                Direction = ParameterDirection.Input,
+                Value = this.Model.Orderforms.NoOfSetPad
+            };
+            sqlParameters[11] = new SqlParameter("@PadSide", SqlDbType.VarChar, 15)
+            {
+                Direction = ParameterDirection.Input,
+                Value = this.Model.Orderforms.PadSide
+            };
+            sqlParameters[12] = new SqlParameter("@UnitPrice", SqlDbType.Float)
             {
                 Direction = ParameterDirection.Input,
                 Value = this.Model.Orderforms.UnitPrice
             };
-            sqlParameters[11] = new SqlParameter("@Quantity", SqlDbType.Int)
+            sqlParameters[13] = new SqlParameter("@Quantity", SqlDbType.Int)
             {
                 Direction = ParameterDirection.Input,
                 Value = this.Model.Orderforms.Quantity
             };
-            sqlParameters[12] = new SqlParameter("@hasDuplicate", SqlDbType.Bit)
+            sqlParameters[14] = new SqlParameter("@hasDuplicate", SqlDbType.Bit)
             {
                 Direction = ParameterDirection.Input,
                 Value = this.Model.Orderforms.hasDuplicate
@@ -98,6 +109,7 @@ namespace DataAccess.Orders
 
             #region TVP Duplicates
             DataTable duplicatesFormDT = new DataTable();
+            duplicatesFormDT.Columns.Add("ID");
             duplicatesFormDT.Columns.Add("OrderForms_ID");
             duplicatesFormDT.Columns.Add("FormsPaperSizesRef_ID");
             duplicatesFormDT.Columns.Add("PaperTypeRef_ID");
@@ -108,18 +120,21 @@ namespace DataAccess.Orders
             foreach (var duplicateData in this.Model.OrderFormDuplicates)
             {
                 DataRow row = duplicatesFormDT.NewRow();
+                row["ID"] = 0;
                 row["OrderForms_ID"] = duplicateData.OrderForms_ID;
                 row["FormsPaperSizesRef_ID"] = duplicateData.FormsPaperSizesRef_ID;
                 row["PaperTypeRef_ID"] = duplicateData.PaperTypeRef_ID;
                 row["PaperColorRef_ID"] = duplicateData.PaperColorRef_ID;
                 row["UnitPrice"] = duplicateData.UnitPrice;
                 row["isOriginal"] = duplicateData.isOriginal;
+                duplicatesFormDT.Rows.Add(row);
             }
 
-            sqlParameters[13] = new SqlParameter("@TVP_DuplicateForms", SqlDbType.Structured)
+            sqlParameters[15] = new SqlParameter("@TVP_DuplicateForms", SqlDbType.Structured)
             {
                 Direction = ParameterDirection.Input,
-                Value = this.Model.OrderFormDuplicates
+                TypeName = "[tvp].DuplicateForms",
+                Value = duplicatesFormDT
             };
             #endregion
 

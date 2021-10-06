@@ -2,20 +2,20 @@
 using BusinessRef.ModelObject;
 using DataAccess.Orders;
 
-using model = BusinessRef.ModelObject.Orders.UserFormOrdersModel;
+using model = BusinessRef.ModelObject.Orders.UserFormOrdersNoDuplicateModel;
 
 namespace BusinessLogic.Orders
 {
-    public class PostUserOrderFormsWithoutTVPDataLogic : IPostDatabaseData<ConfirmInsertDataModel>
+    public class PostUserOrderFormsNoDuplicatesDataLogic : IPostDatabaseData<ConfirmInsertDataModel>
     {
         private model Model;
-        public PostUserOrderFormsWithoutTVPDataLogic(model DataModel)
+        public PostUserOrderFormsNoDuplicatesDataLogic(model DataModel)
         {
             this.Model = DataModel;
         }
         public ConfirmInsertDataModel PostDatabaseData()
         {
-            IPostDatabaseData<ConfirmInsertDataModel> returnData = new UserFormsOrderWithoutTVPDataAccess(this.Model);
+            IPostDatabaseData<ConfirmInsertDataModel> returnData = new UserFormsOrderNoDuplicatesDataAccess(this.Model);
             ConfirmInsertDataModel returnValue = returnData.PostDatabaseData();
 
             return returnValue;

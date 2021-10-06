@@ -10,9 +10,9 @@ namespace xmedia.Controllers
     {
         // GET: Orders
         [HttpPost]
-        public JsonResult InsertUserFormOrders(UserFormOrdersModel Model)
+        public JsonResult InsertUserFormOrders(UserFormOrdersNoDuplicateModel Model)
         {
-            IPostDatabaseData<ConfirmInsertDataModel> data = new PostUserOrderFormsWithoutTVPDataLogic(Model);
+            IPostDatabaseData<ConfirmInsertDataModel> data = new PostUserOrderFormsNoDuplicatesDataLogic(Model);
             return Json(data.PostDatabaseData(), JsonRequestBehavior.AllowGet);
         }
 

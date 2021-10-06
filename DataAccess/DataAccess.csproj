@@ -62,8 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\FormDataAccess.cs" />
+    <Compile Include="Login\LoginReturnInformationDataAccess.cs" />
     <Compile Include="Orders\UserFormsOrderDataAccess.cs" />
-    <Compile Include="Orders\UserFormsOrderWithoutTVPDataAccess.cs" />
+    <Compile Include="Orders\UserFormsOrderNoDuplicatesDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
