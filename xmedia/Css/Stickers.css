@@ -257,8 +257,9 @@
 .prodDets-submitButton button:hover {
     background: #097506;
 }
-form.prod-form select.has-error {
-    border: 1px solid #ff0000;
+form.prod-form select.has-error,
+form.prod-form input.has-error {
+    border: 1px solid #ff0000 !important;
 }
 
 .purchase-order-header-01 {

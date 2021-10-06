@@ -380,8 +380,24 @@
 .mobile-search-icon {
     display:none;
 }
-
-
+.nav01-divContainer-03-cart {
+    position:relative;
+    cursor: pointer;
+}
+.nav01-divContainer-03-cart .notification-badge {
+    position: absolute;
+    background: #b4b4b4;
+    color: #000000;
+    padding: 3px;
+    border-radius: 50%;
+    left: 22px;
+    font-size: 12px;
+    bottom: 17px;
+    width: 12px;
+    height: 12px;
+    text-align: center;
+    font-weight: 700;
+}
 /*smartphones**/
 @media only screen and (max-width: 767px) {
     .nav01-divContainer-03-hotline, .nav01-divContainer-03-search, .nav01-divContainer-03-signin {
