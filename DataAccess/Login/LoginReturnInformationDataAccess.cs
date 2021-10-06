@@ -24,20 +24,7 @@ namespace DataAccess.Login
 
             model data = new model();
 
-            SqlParameter[] sqlParameters = new SqlParameter[2];
-
-            sqlParameters[0] = new SqlParameter("@EmailAddress", SqlDbType.VarChar, 25)
-            {
-                Direction = ParameterDirection.Input,
-                Value = this.Model.EmailAddress
-
-            };
-
-            sqlParameters[1] = new SqlParameter("@IStillLoveYou", SqlDbType.VarChar, 25)
-            {
-                Direction = ParameterDirection.Input,
-                Value = this.Model.IStillLoveYou
-            };
+            
 
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
@@ -46,7 +33,14 @@ namespace DataAccess.Login
                 {
                     CommandType = CommandType.StoredProcedure
                 };
-                cmd.Parameters.AddRange(sqlParameters);
+                SqlParameter EmailAddress = new SqlParameter("@EmailAddress", SqlDbType.VarChar, 25);
+                cmd.Parameters.Add(EmailAddress);
+                cmd.Parameters["@EmailAddress"].Value = this.Model.EmailAddress;
+
+                SqlParameter IStillLoveYou = new SqlParameter("@IStillLoveYou", SqlDbType.VarChar, 25);
+                cmd.Parameters.Add(IStillLoveYou);
+                cmd.Parameters["@IStillLoveYou"].Value = this.Model.IStillLoveYou;
+
                 using (SqlDataReader rdr = cmd.ExecuteReader())
                 {
                     if (rdr.GetSchemaTable().Rows[0].ItemArray[0].ToString() == "ErrorMessage")
