@@ -152,6 +152,7 @@
     <Content Include="images\philippinesHigh.svg" />
     <Content Include="images\sample\150x150Sample.jpg" />
     <Content Include="images\xmedia-logo.png" />
+    <Content Include="Scripts\cart.js" />
     <Content Include="Scripts\forms.js" />
     <Content Include="Scripts\Shared\_LayoutMainpage.js" />
     <Content Include="Web.config" />

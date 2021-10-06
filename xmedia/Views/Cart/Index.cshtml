@@ -4,35 +4,42 @@
     Layout = "~/Views/Shared/_LayoutSubProducts.cshtml";
 }
 
-<div class="cart-container">
-    @for (var i = 0; i < 5; i++)
-    {
-        <div class="cart-item">
-            <div class="cart-item-01">
-                image
-            </div>
-            <div class="cart-item-02">
-                details
-            </div>
-            <div class="cart-item-03">
-                <div class="cart-item-price">
-                    price
-                </div>
-                <div class="cart-item-opt">
-                    <button class="cart-editBtn">Edit</button>
-                    <button class="cart-removeBtn">Remove</button>
-                </div>
-            </div>
-        </div>
-    }
+<div class="cart-container js-cart-container">
 
-    <div class="cart-footer-btn">
-        <button class="continueBtn">Continue Shopping</button>
-        <button class="checkoutBtn">Checkout</button>
-    </div>
+    @*@for (var i = 0; i < 5; i++)
+        {
+            <div class="cart-item">
+                <div class="cart-item-01">
+                    image
+                </div>
+                <div class="cart-item-02">
+                    details
+                </div>
+                <div class="cart-item-03">
+                    <div class="cart-item-price">
+                        price
+                    </div>
+                    <div class="cart-item-opt">
+                        <button class="cart-editBtn">Edit</button>
+                        <button class="cart-removeBtn">Remove</button>
+                    </div>
+                </div>
+            </div>
+        }*@
+
+</div>
+<div class="cart-footer-btn">
+    <button class="continueBtn">Continue Shopping</button>
+    <button class="checkoutBtn">Checkout</button>
 </div>
 
 
 @section Title{
     <h1 class="prodDetsCont-title">Shopping Cart</h1>
+}
+
+@section JS {
+
+    <script src="~/Scripts/cart.js"></script>
+
 }

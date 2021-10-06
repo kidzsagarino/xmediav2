@@ -62,3 +62,21 @@ var clickMobileMenu = (function () {
     });
 })();
 
+
+var cartNotif = (function () {
+
+    let notif = document.querySelector('.js-cart-notification');
+
+    let count = 0;
+
+    if (localStorage.getItem('Cart')) {
+
+        let data = JSON.parse(localStorage.getItem('Cart'));
+
+        count += data.length;
+    }
+
+    notif.textContent = count;
+
+})();
+
