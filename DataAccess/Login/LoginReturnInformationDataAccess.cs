@@ -26,14 +26,14 @@ namespace DataAccess.Login
 
             SqlParameter[] sqlParameters = new SqlParameter[2];
 
-            sqlParameters[0] = new SqlParameter("@EmailAddress", SqlDbType.Int)
+            sqlParameters[0] = new SqlParameter("@EmailAddress", SqlDbType.VarChar, 25)
             {
                 Direction = ParameterDirection.Input,
                 Value = this.Model.EmailAddress
 
             };
 
-            sqlParameters[1] = new SqlParameter("@IStillLoveYou", SqlDbType.Int)
+            sqlParameters[1] = new SqlParameter("@IStillLoveYou", SqlDbType.VarChar, 25)
             {
                 Direction = ParameterDirection.Input,
                 Value = this.Model.IStillLoveYou
