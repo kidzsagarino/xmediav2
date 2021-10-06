@@ -1,0 +1,50 @@
+﻿.login-container {
+    max-width: 400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.login-container .form-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap:5px;
+    margin-top: 20px;
+    transition: all .3s ease;
+}
+
+.login-container .form-content input {
+    border: 1px solid gray;
+    outline: none;
+    padding: 10px;
+    border-radius: 3px;
+}
+.login-container .form-content input:focus {
+    border-color: #000;
+}
+.login-container .form-footer button {
+    width: 100%;
+    height: 40px;
+    font-size: 17px;
+    cursor: pointer;
+    margin-top: 20px;
+    background: #059e00;
+    transition: all .3s ease;
+    border: 1px solid #059e00;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 3px;
+}
+.login-container .form-footer button:hover {
+    background: #097506;
+}
+.login-container .form-content input.has-error {
+    border: 1px solid #ff0000;
+}
+.login-container .form-content.forgot-password-btn {
+    margin-top:7px;
+}
+.login-container p.error-message {
+    color: #ff0000;
+}
