@@ -11,7 +11,7 @@
     grid-template-columns: 1fr;
     grid-row-gap:5px;
     margin-top: 20px;
-    transition: all .3s ease;
+    transition: all .5s ease;
 }
 
 .login-container .form-content input {
@@ -30,7 +30,7 @@
     cursor: pointer;
     margin-top: 20px;
     background: #059e00;
-    transition: all .3s ease;
+    transition: all .5s ease;
     border: 1px solid #059e00;
     color: #fff;
     font-weight: 700;
@@ -47,4 +47,18 @@
 }
 .login-container p.error-message {
     color: #ff0000;
+}
+.login-container .form-footer.sign-up-container {
+    margin-top:10px;
+    border-top: 1px solid gray;
+    padding-top:10px;
+}
+.login-container .form-footer button.signUpBtn {
+    background: #ececec;
+    border-color: #ececec;
+    color: #000000;
+    margin-top:5px;
+}
+.login-container .form-footer button.signUpBtn:hover {
+    background: #b9b9b9;
 }
