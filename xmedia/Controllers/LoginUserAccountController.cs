@@ -17,6 +17,7 @@ namespace xmedia.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public JsonResult UserLoginAccount(LoginInfoUserModel Model)
         {
