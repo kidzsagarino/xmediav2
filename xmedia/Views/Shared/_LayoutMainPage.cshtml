@@ -12,6 +12,7 @@
     <link href="~/Css/_LayoutSubProducts.css" rel="stylesheet" />
     <link href="~/Css/Stickers.css" rel="stylesheet" />
     <link href="~/Css/Cart.css" rel="stylesheet"/>
+    <link href="~/Css/login.css" rel="stylesheet"/>
     @*<script src="~/Plugins/fontawesome-pro-5.15.4-web/fontawesome-pro-5.15.4-web/js/all.js"></script>*@
 </head>
 
@@ -172,6 +173,12 @@
     </content>
     <footer class="footer01">
     </footer>
+    <script>
+         var AppGlobal = {
+            baseUrl: "@Url.Content("~/")",
+            SessionID: "@Session["LoginDataID"]"
+        }
+    </script>
     <script src="~/Scripts/Shared/_LayoutMainpage.js"></script>
 
     @RenderSection("Scripts", required: false)

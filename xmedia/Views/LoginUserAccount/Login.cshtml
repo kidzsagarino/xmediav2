@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Login Page";
+    Layout = "~/Views/Shared/_LayoutSubProducts.cshtml";
+}
+
+
+<div class="login-container">
+    <form class="js-login-form" autocomplete="off">
+        <div class="form-content">
+            <label>Email: </label>
+            <input type="text" name="Email" value="" />
+        </div>
+        <div class="form-content">
+            <label>Password: </label>
+            <input type="password" name="Password" value="" />
+        </div>
+        <div class="form-content forgot-password-btn">
+            <small>Forgot Password?</small>
+        </div>
+        <div class="form-footer">
+            <button type="button" class="js-loginBtn">Login</button>
+        </div>
+        <div class="form-footer sign-up-container">
+            <small>Don't have an account?</small>
+            <button type="button" class="signUpBtn js-signupBtn">Sign Up</button>
+        </div>
+    </form>
+</div>
+
+
+
+@section Title{
+    <h1 class="prodDetsCont-title">Login</h1>
+}
+
+
+@section JS {
+
+    <script src="~/Scripts/LoginUserAccount/login.js"></script>    
+}

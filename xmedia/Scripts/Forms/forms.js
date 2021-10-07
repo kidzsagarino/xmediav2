@@ -493,7 +493,13 @@ var formAddToCart = function () {
             console.log('Redirect to Cart');
         }
         else {
+
             console.log('Redirect to login');
+
+            localStorage.setItem('Cart', JSON.stringify(cartData));
+
+            window.location.href = '/LoginUserAccount/Index';
+
         }
 
         //if (localStorage.getItem('Cart')) {

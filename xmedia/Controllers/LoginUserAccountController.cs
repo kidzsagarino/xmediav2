@@ -15,7 +15,7 @@ namespace xmedia.Controllers
         // GET: LoginUserAccount
         public ActionResult Index()
         {
-            return View();
+            return View("~/Views/LoginUserAccount/Login.cshtml");
         }
 
         [HttpPost]
