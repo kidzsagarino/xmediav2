@@ -17,7 +17,7 @@ namespace xmedia.Controllers
         }
 
         [HttpPost]
-        public JsonResult InsertUserFormOrdersWihtDuplicates(UserFormOrdersModel Model)
+        public JsonResult InsertUserFormOrdersWithDuplicates(UserFormOrdersModel Model)
         {
             IPostDatabaseData<ConfirmInsertDataModel> data = new PostUserOrderFormsDataLogic(Model);
             return Json(data.PostDatabaseData(), JsonRequestBehavior.AllowGet);

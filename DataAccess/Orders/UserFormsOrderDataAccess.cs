@@ -42,9 +42,6 @@ namespace DataAccess.Orders
                 cmd.Parameters.Add(UsersID);
                 cmd.Parameters["@UsersID"].Value = this.Model.UsersID;
 
-                SqlParameter OrderDate = new SqlParameter("@OrderDate", SqlDbType.DateTime);
-                cmd.Parameters.Add(OrderDate);
-                cmd.Parameters["@OrderDate"].Value = this.Model.OrderDate;
 
                 SqlParameter TotalPrice = new SqlParameter("@TotalPrice", SqlDbType.Float);
                 cmd.Parameters.Add(TotalPrice);
