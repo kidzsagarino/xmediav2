@@ -31,7 +31,7 @@ namespace DataAccess.Orders
                 };
                 SqlParameter OrderFormsCategory_ID = new SqlParameter("@OrderFormsCategory_ID", SqlDbType.Int);
                 cmd.Parameters.Add(OrderFormsCategory_ID);
-                cmd.Parameters["@OrderFormsCategory_ID"].Value = this.Model.OrderFormsCategory_ID;
+                cmd.Parameters["@OrderID"].Value = this.Model.OrderID;
 
                 SqlParameter UsersID = new SqlParameter("@UsersID", SqlDbType.Int);
                 cmd.Parameters.Add(UsersID);
