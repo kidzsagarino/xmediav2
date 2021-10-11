@@ -25,16 +25,28 @@ var loginFunc = function () {
         })
             .then(response => response.json())
             .then(function (data) {
-                console.log(data);
+                //console.log(data);
 
                 if (data.LoginStatusCode.LoginStatusNumberCode == 1) {
 
-                    // check if there are pending cart
+                    //save userID into localStorage
+                    let userID = data.PersonalInfo.UserID;
+                    localStorage.setItem('UserID', userID);
 
+                    // check if there are pending cart
                     if (localStorage.getItem('Cart')) {
+
                         let jsonData = JSON.parse(localStorage.getItem('Cart'));
 
+                        //update the userID in Cart
+                        jsonData.UserID = userID;
+
+                        console.log(jsonData);
                         // if there are pending. then save !!
+                    }
+                    else {
+                        // proceed to index page
+                        window.location.href = AppGlobal.baseUrl;
                     }
                 }
                 else {

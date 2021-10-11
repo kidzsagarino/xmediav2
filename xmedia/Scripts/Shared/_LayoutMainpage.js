@@ -1,4 +1,4 @@
-﻿function LayoutMainPage() {
+﻿(function LayoutMainPage() {
 
     const nav01MenuButton = document.querySelectorAll('.js-nav01-button');
 
@@ -44,13 +44,11 @@
         }
     }
 
-}
-
-LayoutMainPage();
+})();
 
 
-var clickMobileMenu = (function () {
-    var menuContainer = document.querySelector('.js-mobile-burger-menu');
+(function clickMobileMenu() {
+    const menuContainer = document.querySelector('.js-mobile-burger-menu');
 
     let menu = document.querySelector('.js-nav01-divContainer-01-bot');
 
@@ -63,20 +61,43 @@ var clickMobileMenu = (function () {
 })();
 
 
-var cartNotif = (function () {
+(function cartNotif() {
+    const notif = document.querySelector('.js-cart-notification');
 
-    let notif = document.querySelector('.js-cart-notification');
 
-    let count = 0;
+    //if (localStorage.getItem('Cart')) {
 
-    if (localStorage.getItem('Cart')) {
+    //    let data = localStorage.getItem('Cart');
 
-        let data = JSON.parse(localStorage.getItem('Cart'));
+    //    console.log(data);
 
-        count += data.length;
+    //    for (var pair of data.entries()) {
+    //        console.log(pair[0] + ', ' + pair[1]);
+    //    }
+    //}
+
+
+    if (localStorage.getItem('UserID')) {
+
+        let count = 0;
+
+        // change source into db
+        if (localStorage.getItem('Cart')) {
+
+            let data = JSON.parse(localStorage.getItem('Cart'));
+
+            count += data.length;
+        }
+        notif.textContent = count;
     }
-
-    notif.textContent = count;
+    else {
+        notif.style.display = 'none';
+    }
 
 })();
 
+
+function saveOrder(data) {
+
+   
+}

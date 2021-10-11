@@ -138,22 +138,73 @@ var addDuplicateElem = function (el) {
 
 var hideShowPadding = function (el) {
 
-    let paddingContainer = document.querySelector('.padding-color-container');
+    let paddingContainer = document.querySelector('.js-paddingGlue-container');
+
+    paddingContainer.innerHTML = '';
 
     if (el.value == 2) {
 
-        paddingContainer.removeAttribute('style');
-        
-        paddingContainer.querySelectorAll('select').forEach((item) => {
-            item.setAttribute('required', 'required');
-        });
+        paddingContainer.appendChild(addPaddingOpt());
     }
-    else {
 
-        paddingContainer.setAttribute('style', 'display: none');
-        paddingContainer.querySelectorAll('select').forEach((item) => {
-            item.removeAttribute('required');
+
+    function addPaddingOpt() {
+
+        let mainDiv1 = document.createElement('div');
+        mainDiv1.setAttribute('style', 'text-align:right');
+
+        let container1 = document.createElement('div');
+        container1.setAttribute('class', 'padding-container');
+
+        let label1 = document.createElement('label');
+        label1.textContent = 'No of Set Per Pad';
+        container1.appendChild(label1);
+
+        let select1 = document.createElement('select');
+        select1.setAttribute('class', 'duplicateColor-select js-no-ofSet-perPad');
+        select1.setAttribute('required', 'required');
+
+        let setperPad = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+
+        setperPad.forEach((item) => {
+
+            let option1 = document.createElement('option');
+            option1.value = item;
+            option1.textContent = item;
+
+            select1.appendChild(option1);
         });
+
+        container1.appendChild(select1);
+
+
+        let container2 = document.createElement('div');
+        container2.setAttribute('class', 'padding-container');
+
+        let label2 = document.createElement('label');
+        label2.textContent = 'Which Side ?';
+        container2.appendChild(label2);
+
+        let select2 = document.createElement('select');
+        select2.setAttribute('class', 'duplicateColor-select js-padSide');
+        select2.setAttribute('required', 'required');
+
+        let option2_1 = document.createElement('option');
+        option2_1.value = '1';
+        option2_1.textContent = 'Short Side';
+        select2.appendChild(option2_1);
+
+        let option2_2 = document.createElement('option');
+        option2_2.value = '2';
+        option2_2.textContent = 'Long Side';
+        select2.appendChild(option2_2);
+
+        container2.appendChild(select2);
+
+        mainDiv1.appendChild(container1);
+        mainDiv1.appendChild(container2);
+
+        return mainDiv1;
     }
 
 };
@@ -478,57 +529,65 @@ var formAddToCart = function () {
             });
         }
 
-        let cartData = {
-            User: 'user',
-            PaperSize: form.querySelector('.js-paperSize-select').value,
-            PaperType: form.querySelector('.js-paperType-select').value,
-            PrintColor: form.querySelector('.js-printcolor-select').value,
-            UnitCost: form.querySelector('.js-prod-unitPrice').getAttribute('data-value'),
-            Duplicate: duplicates,
-            Quantity: form.querySelector('.js-paperQuantity-select').options[form.querySelector('.js-paperQuantity-select').selectedIndex].textContent
+
+        let orderFormDetailsJSON = {
+            FormsPaperSizesRef_ID : form.querySelector('.js-paperSize-select').value,
+            PaperTypeRef_ID : form.querySelector('.js-paperType-select').value,
+            PaperColorRef_ID : form.querySelector('.js-printcolor-select').value,
+            PaddingGlue_ID : form.querySelector('.js-padding-select').value,
+            hasPaddingGlue : 1,
+            NoOfSetPad: form.querySelector('.js-no-ofSet-perPad') != null ? form.querySelector('.js-no-ofSet-perPad').value : 0,
+            PadSide : form.querySelector('.js-padSide') != null ? form.querySelector('.js-padSide').value : 0,
+            UnitPrice: form.querySelector('.js-prod-unitPrice').getAttribute('data-value'),
+            Quantity: form.querySelector('.js-paperQuantity-select').options[form.querySelector('.js-paperQuantity-select').selectedIndex].textContent,
+            hasDuplicate: 0
         };
+
+        let orderFormDataJSON = {
+            UserID: localStorage.getItem('UserID') || 0,
+            TotalPrice: form.querySelector('.js-prod-totalPrice').getAttribute('data-value'),
+            OrderStatusID: 1,
+            Orderforms: orderFormDetailsJSON
+        };
+
+        //let orderFormsDetailsData = new FormData();
+        //orderFormsDetailsData.append('FormsPaperSizesRef_ID', form.querySelector('.js-paperSize-select').value);
+        //orderFormsDetailsData.append('PaperTypeRef_ID', form.querySelector('.js-paperType-select').value);
+        //orderFormsDetailsData.append('PaperColorRef_ID', form.querySelector('.js-printcolor-select').value);
+        //orderFormsDetailsData.append('PaddingGlue_ID', form.querySelector('.js-padding-select').value);
+        //orderFormsDetailsData.append('hasPaddingGlue', 1);
+        //orderFormsDetailsData.append('NoOfSetPad', form.querySelector('.js-no-ofSet-perPad') != null ? form.querySelector('.js-no-ofSet-perPad').value : 0);
+        //orderFormsDetailsData.append('PadSide', form.querySelector('.js-padSide') != null ? form.querySelector('.js-padSide').value : 0);
+        //orderFormsDetailsData.append('UnitPrice', form.querySelector('.js-prod-unitPrice').getAttribute('data-value'));
+        //orderFormsDetailsData.append('Quantity', form.querySelector('.js-paperQuantity-select').options[form.querySelector('.js-paperQuantity-select').selectedIndex].textContent);
+        //orderFormsDetailsData.append('hasDuplicate', 0);
+
+        //let orderFormData = new FormData();
+        //orderFormData.append('UserID', localStorage.getItem('UserID') || 0);
+        //orderFormData.append('TotalPrice', form.querySelector('.js-prod-totalPrice').getAttribute('data-value'));
+        //orderFormData.append('OrderStatusID', 1);
+        //orderFormData.append('Orderforms', orderFormsDetailsData);
+
+        //for (var pair of orderFormData.entries()) {
+        //    console.log(pair[0] + ', ' + pair[1]);
+        //}
 
 
         if (localStorage.getItem('UserID')) {
+
+            //save then redirect to cart
             console.log('Redirect to Cart');
         }
         else {
 
             console.log('Redirect to login');
 
-            localStorage.setItem('Cart', JSON.stringify(cartData));
+            localStorage.setItem('Cart', JSON.stringify(orderFormDataJSON));
 
             window.location.href = '/LoginUserAccount/Index';
 
         }
 
-        //if (localStorage.getItem('Cart')) {
-
-        //    let jsonData = [];
-
-        //    jsonData.push(cartData);
-
-        //    let data = JSON.parse(localStorage.getItem('Cart'));
-
-        //    data.forEach((item) => {
-        //        jsonData.push(item);
-        //    });
-            
-        //    //jsonData.push(cartData);
-
-        //    localStorage.setItem('Cart', JSON.stringify(jsonData));
-        //}
-        //else {
-
-        //    let jsonData = [];
-        //    jsonData.push(cartData);
-
-        //    localStorage.setItem('Cart', JSON.stringify(jsonData));
-        //}
-
-        console.log('Save to Session');
-
-        window.location = '/Cart/Index';
     }
     else {
         // error occured

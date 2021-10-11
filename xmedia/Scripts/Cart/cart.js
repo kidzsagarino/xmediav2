@@ -1,10 +1,10 @@
 ﻿
 
-var displayCartItem = (function () {
-
+(function displayCartItem() {
     let cartContainer = document.querySelector('.js-cart-container');
     cartContainer.innerHTML = '';
 
+    // chang source into db
     if (localStorage.getItem('Cart')) {
 
         let data = JSON.parse(localStorage.getItem('Cart'));
@@ -65,3 +65,4 @@ var displayCartItem = (function () {
     }
 
 })();
+
