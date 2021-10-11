@@ -17,6 +17,7 @@ namespace xmedia.Controllers
         {
             return View("~/Views/LoginUserAccount/Login.cshtml");
         }
+
         [HttpPost]
         public JsonResult UserLoginAccount(LoginInfoUserModel Model)
         {

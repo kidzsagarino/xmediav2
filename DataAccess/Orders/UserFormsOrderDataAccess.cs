@@ -36,15 +36,11 @@ namespace DataAccess.Orders
                 };
                 SqlParameter OrderFormsCategory_ID = new SqlParameter("@OrderFormsCategory_ID", SqlDbType.Int);
                 cmd.Parameters.Add(OrderFormsCategory_ID);
-                cmd.Parameters["@OrderFormsCategory_ID"].Value = this.Model.OrderFormsCategory_ID;
+                cmd.Parameters["@OrderID"].Value = this.Model.OrderID;
 
                 SqlParameter UsersID = new SqlParameter("@UsersID", SqlDbType.Int);
                 cmd.Parameters.Add(UsersID);
                 cmd.Parameters["@UsersID"].Value = this.Model.UsersID;
-
-                SqlParameter OrderDate = new SqlParameter("@OrderDate", SqlDbType.DateTime);
-                cmd.Parameters.Add(OrderDate);
-                cmd.Parameters["@OrderDate"].Value = this.Model.OrderDate;
 
                 SqlParameter TotalPrice = new SqlParameter("@TotalPrice", SqlDbType.Float);
                 cmd.Parameters.Add(TotalPrice);
@@ -93,6 +89,10 @@ namespace DataAccess.Orders
                 SqlParameter Quantity = new SqlParameter("@Quantity", SqlDbType.Int);
                 cmd.Parameters.Add(Quantity);
                 cmd.Parameters["@Quantity"].Value = this.Model.Orderforms.Quantity;
+
+                SqlParameter ImageFilename = new SqlParameter("@ImageFilename", SqlDbType.Int);
+                cmd.Parameters.Add(ImageFilename);
+                cmd.Parameters["@ImageFilename"].Value = this.Model.Orderforms.ImageFilename;
 
                 SqlParameter hasDuplicate = new SqlParameter("@hasDuplicate", SqlDbType.Bit);
                 cmd.Parameters.Add(hasDuplicate);
