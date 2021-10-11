@@ -42,7 +42,6 @@ namespace DataAccess.Orders
                 cmd.Parameters.Add(UsersID);
                 cmd.Parameters["@UsersID"].Value = this.Model.UsersID;
 
-
                 SqlParameter TotalPrice = new SqlParameter("@TotalPrice", SqlDbType.Float);
                 cmd.Parameters.Add(TotalPrice);
                 cmd.Parameters["@TotalPrice"].Value = this.Model.TotalPrice;
