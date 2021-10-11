@@ -90,6 +90,10 @@ namespace DataAccess.Orders
                 cmd.Parameters.Add(Quantity);
                 cmd.Parameters["@Quantity"].Value = this.Model.Orderforms.Quantity;
 
+                SqlParameter ImageFilename = new SqlParameter("@ImageFilename", SqlDbType.Int);
+                cmd.Parameters.Add(ImageFilename);
+                cmd.Parameters["@ImageFilename"].Value = this.Model.Orderforms.ImageFilename;
+
                 SqlParameter hasDuplicate = new SqlParameter("@hasDuplicate", SqlDbType.Bit);
                 cmd.Parameters.Add(hasDuplicate);
                 cmd.Parameters["@hasDuplicate"].Value = this.Model.Orderforms.hasDuplicate;

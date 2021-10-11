@@ -1,4 +1,6 @@
-﻿namespace BusinessRef.ModelObject.Orders
+﻿using System.Web;
+
+namespace BusinessRef.ModelObject.Orders
 {
     public class OrderFormsModel
     {
@@ -14,6 +16,8 @@
         public string PadSide { get; set; }
         public float UnitPrice { get; set; }
         public int Quantity { get; set; }
+        public HttpPostedFileBase File { get; set; }
+        public string ImageFilename { get; set; }
         public bool hasDuplicate { get; set; }
     }
 }
