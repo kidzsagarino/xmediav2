@@ -544,7 +544,8 @@ var formAddToCart = function () {
         };
 
         let orderFormDataJSON = {
-            UserID: localStorage.getItem('UserID') || 0,
+            UsersID: localStorage.getItem('UserID') || 0,
+            OrderID: 1,
             TotalPrice: form.querySelector('.js-prod-totalPrice').getAttribute('data-value'),
             OrderStatusID: 1,
             Orderforms: orderFormDetailsJSON
@@ -562,11 +563,11 @@ var formAddToCart = function () {
         //orderFormsDetailsData.append('Quantity', form.querySelector('.js-paperQuantity-select').options[form.querySelector('.js-paperQuantity-select').selectedIndex].textContent);
         //orderFormsDetailsData.append('hasDuplicate', 0);
 
-        //let orderFormData = new FormData();
-        //orderFormData.append('UserID', localStorage.getItem('UserID') || 0);
-        //orderFormData.append('TotalPrice', form.querySelector('.js-prod-totalPrice').getAttribute('data-value'));
-        //orderFormData.append('OrderStatusID', 1);
-        //orderFormData.append('Orderforms', orderFormsDetailsData);
+        ////let orderFormData = new FormData();
+        //window.cartData.append('UsersID', localStorage.getItem('UserID') || 0);
+        //window.cartData.append('TotalPrice', form.querySelector('.js-prod-totalPrice').getAttribute('data-value'));
+        //window.cartData.append('OrderStatusID', 1);
+        //window.cartData.append('Orderforms', orderFormsDetailsData);
 
         //for (var pair of orderFormData.entries()) {
         //    console.log(pair[0] + ', ' + pair[1]);
@@ -576,7 +577,7 @@ var formAddToCart = function () {
         if (localStorage.getItem('UserID')) {
 
             //save then redirect to cart
-            console.log('Redirect to Cart');
+            console.log('save and Redirect to Cart');
         }
         else {
 

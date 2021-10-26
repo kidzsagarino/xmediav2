@@ -62,42 +62,43 @@
 
 
 (function cartNotif() {
-    const notif = document.querySelector('.js-cart-notification');
 
+    let notifContainer = document.querySelector('.js-cart-notification-container');
 
-    //if (localStorage.getItem('Cart')) {
+    const notif = document.createElement('span');
+    notif.setAttribute('class', 'notification-badge js-cart-notification');
 
-    //    let data = localStorage.getItem('Cart');
-
-    //    console.log(data);
-
-    //    for (var pair of data.entries()) {
-    //        console.log(pair[0] + ', ' + pair[1]);
-    //    }
-    //}
-
-
-    if (localStorage.getItem('UserID')) {
-
-        let count = 0;
-
-        // change source into db
-        if (localStorage.getItem('Cart')) {
-
-            let data = JSON.parse(localStorage.getItem('Cart'));
-
-            count += data.length;
-        }
-        notif.textContent = count;
-    }
-    else {
-        notif.style.display = 'none';
-    }
+    // get data in database
 
 })();
 
 
+//global variable for cartData to be saved!!
+
+//if (!window.cartData) {
+//    var cartData = new FormData();
+//}
+
 function saveOrder(data) {
 
+    let url = AppGlobal.baseUrl + 'Orders/InsertUserFormOrders/';
+
+    console.log(data);
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+        
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch((error) => {
+        console.log('Error: ', error);
+    });
    
 }

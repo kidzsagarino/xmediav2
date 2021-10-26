@@ -68,12 +68,12 @@
                     </div>
                 </div>
                 <div class="nav01-divContainer-03-signin">
-                    <a href="#">Sign-in</a>
+                    <a href="@Url.Action("Index", "LoginUserAccount")">Sign-in</a>
                     <h4>My Account</h4>
                 </div>
-                <div class="nav01-divContainer-03-cart">
+                <div class="nav01-divContainer-03-cart js-cart-notification-container">
                     <img src="~/images/icon/shopping-cart.svg" />
-                    <span class="notification-badge js-cart-notification">0</span>
+                    @*<span class="notification-badge js-cart-notification"></span>*@
                 </div>
 
             </div>
@@ -110,7 +110,6 @@
                                     <a href="#"><i><svg class="bullet-square" viewBox="0 0 20 20"><path d="m0 0 h 20 v 20 h -20 z" /></svg></i>Customize Receipts</a>
                                 </div>
                                 <div class="nav01-divCont-07-sl-img">
-
                                     <img src="~/images/icon/forms-liquidation.png" />
                                 </div>
                             </div>
@@ -182,7 +181,6 @@
     <script src="~/Scripts/Shared/_LayoutMainpage.js"></script>
 
     @RenderSection("Scripts", required: false)
-
 
 </body>
 </html>

@@ -68,7 +68,7 @@ namespace DataAccess.Orders
                 SqlParameter hasPaddingGlue = new SqlParameter("@hasPaddingGlue", SqlDbType.Bit);
                 cmd.Parameters.Add(hasPaddingGlue);
                 cmd.Parameters["@hasPaddingGlue"].Value = this.Model.Orderforms.hasPaddingGlue;
-
+                 
                 SqlParameter NoOfSetPad = new SqlParameter("@NoOfSetPad", SqlDbType.Int);
                 cmd.Parameters.Add(NoOfSetPad);
                 cmd.Parameters["@NoOfSetPad"].Value = this.Model.Orderforms.NoOfSetPad;

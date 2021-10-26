@@ -31,18 +31,22 @@ var loginFunc = function () {
 
                     //save userID into localStorage
                     let userID = data.PersonalInfo.UserID;
-                    localStorage.setItem('UserID', userID);
+                    localStorage.setItem('UsersID', userID);
 
                     // check if there are pending cart
                     if (localStorage.getItem('Cart')) {
 
                         let jsonData = JSON.parse(localStorage.getItem('Cart'));
 
-                        //update the userID in Cart
-                        jsonData.UserID = userID;
+                        //let formData = window.cartData;
 
-                        console.log(jsonData);
+                        //update the userID in Cart
+                        jsonData.UsersID = userID;
+                        //formData.set('UsersID', userID);
+
+                        //console.log(jsonData);
                         // if there are pending. then save !!
+                        saveOrder(jsonData);
                     }
                     else {
                         // proceed to index page
