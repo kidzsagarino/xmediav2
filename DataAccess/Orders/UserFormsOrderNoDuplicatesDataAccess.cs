@@ -29,7 +29,7 @@ namespace DataAccess.Orders
                 {
                     CommandType = CommandType.StoredProcedure
                 };
-                SqlParameter OrderFormsCategory_ID = new SqlParameter("@OrderFormsCategory_ID", SqlDbType.Int);
+                SqlParameter OrderFormsCategory_ID = new SqlParameter("@OrderID", SqlDbType.Int);
                 cmd.Parameters.Add(OrderFormsCategory_ID);
                 cmd.Parameters["@OrderID"].Value = this.Model.OrderID;
 

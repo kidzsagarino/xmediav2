@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Login Page";
+    Layout = "~/Views/Shared/_LayoutSubProducts.cshtml";
+}
+
+
+<div class="signup-content-container">
+    <form action="" id="signupForm" autocomplete="off">
+        <div class="personal-info-container">
+            <div class="double-col">
+                <div class="form-group">
+                    <label>Firstname</label>
+                    <input type="text" name="Firstname" value="" />
+                </div>
+                <div class="form-group">
+                    <label>Lastname</label>
+                    <input type="text" name="Lastname" value="" />
+                </div>
+                <div class="form-group">
+                    <label>Landline No</label>
+                    <input type="text" name="LandlineNo" value="" />
+                </div>
+                <div class="form-group">
+                    <label>Mobile No</label>
+                    <input type="text" name="MobileNo" value="" />
+                </div>
+            </div>
+            <div class="single-col">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="Email" value="" />
+                </div>
+                <div class="form-group">
+                    <label>Company</label>
+                    <input type="text" name="Company" value="" />
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="Password" value="" />
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" name="ConfirmPassword" value="" />
+                </div>++
+            </div>
+        </div>
+        <div class="profile-pic-container">
+            <div class="pic-frame">
+                <label>
+                    <img />
+                    <span>Upload Photo</span>
+                    <input type="file" name="Photo" value="" onchange="previewProfileImage(event)" />
+                </label>
+            </div>
+        </div>
+        <div class="button-container">
+            <button type="button" class="js-create-account">Create Account</button>
+            <small>Already have an account? <a href="@Url.Action("Index", "LoginUserAccount")" class="returnToLogin">Login Here</a></small>
+        </div>
+    </form>
+</div>
+
+
+
+@section Title{
+    <h1 class="prodDetsCont-title">Sign Up</h1>
+}
+
+
+@section JS {
+
+    <script src="~/Scripts/LoginUserAccount/signup.js"></script>
+}

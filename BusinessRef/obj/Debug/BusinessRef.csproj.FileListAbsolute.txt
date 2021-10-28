@@ -16,3 +16,9 @@ D:\Website\xmediav2\BusinessRef\obj\Debug\BusinessRef.csproj.AssemblyReference.c
 D:\Website\xmediav2\BusinessRef\obj\Debug\BusinessRef.csproj.CoreCompileInputs.cache
 D:\Website\xmediav2\BusinessRef\obj\Debug\BusinessRef.dll
 D:\Website\xmediav2\BusinessRef\obj\Debug\BusinessRef.pdb
+D:\Web Dev\xmediav2\BusinessRef\bin\Debug\BusinessRef.dll
+D:\Web Dev\xmediav2\BusinessRef\bin\Debug\BusinessRef.pdb
+D:\Web Dev\xmediav2\BusinessRef\obj\Debug\BusinessRef.csproj.AssemblyReference.cache
+D:\Web Dev\xmediav2\BusinessRef\obj\Debug\BusinessRef.csproj.CoreCompileInputs.cache
+D:\Web Dev\xmediav2\BusinessRef\obj\Debug\BusinessRef.dll
+D:\Web Dev\xmediav2\BusinessRef\obj\Debug\BusinessRef.pdb

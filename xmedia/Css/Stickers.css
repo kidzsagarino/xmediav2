@@ -285,11 +285,20 @@ form.prod-form input.has-error {
 .purchase-order-header.no-border-right {
     border-right: none;
 }
-.purchase-order-table input {
+.purchase-order-table input[type=text] {
     border: none;
     border-bottom: 1px solid;
     width: 100%;
     background: #fff;
+}
+.purchase-order-table input[type=file] {
+    display: none
+}
+.purchase-order-table label.custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px 6px 0;
+    cursor: pointer;
+    font-size:15px
 }
 .purchase-order-table td.border-right {
     border-right: 1px solid;

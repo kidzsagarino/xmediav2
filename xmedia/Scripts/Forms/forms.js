@@ -529,6 +529,14 @@ var formAddToCart = function () {
             });
         }
 
+        let imgCompanyLogo = document.getElementById('js-companyLogoImg').files[0];
+
+        if (!localStorage.getItem('UserID')) {
+            // if user is not log in. save the image url in local storage
+            let imageUrl = getBase64Image(imgCompanyLogo);
+
+            localStorage.setItem('File', imageUrl);
+        }
 
         let orderFormDetailsJSON = {
             FormsPaperSizesRef_ID : form.querySelector('.js-paperSize-select').value,
@@ -540,7 +548,8 @@ var formAddToCart = function () {
             PadSide : form.querySelector('.js-padSide') != null ? form.querySelector('.js-padSide').value : 0,
             UnitPrice: form.querySelector('.js-prod-unitPrice').getAttribute('data-value'),
             Quantity: form.querySelector('.js-paperQuantity-select').options[form.querySelector('.js-paperQuantity-select').selectedIndex].textContent,
-            hasDuplicate: 0
+            hasDuplicate: 0,
+            File: null
         };
 
         let orderFormDataJSON = {
@@ -578,14 +587,22 @@ var formAddToCart = function () {
 
             //save then redirect to cart
             console.log('save and Redirect to Cart');
+
+            orderFormDataJSON.Orderforms.File = imgCompanyLogo;
+
+            console.log(orderFormDataJSON);
+
+            //saveOrder(orderFormDataJSON);
         }
         else {
 
             console.log('Redirect to login');
 
-            localStorage.setItem('Cart', JSON.stringify(orderFormDataJSON));
+            console.log(orderFormDataJSON);
 
-            window.location.href = '/LoginUserAccount/Index';
+            //localStorage.setItem('Cart', JSON.stringify(orderFormDataJSON));
+
+            //window.location.href = '/LoginUserAccount/Index';
 
         }
 
@@ -594,7 +611,6 @@ var formAddToCart = function () {
         // error occured
         console.log('Error');
     }
-
 
 };
 

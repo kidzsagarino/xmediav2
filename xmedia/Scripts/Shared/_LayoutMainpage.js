@@ -88,7 +88,7 @@ function saveOrder(data) {
     fetch(url, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
         
@@ -101,4 +101,19 @@ function saveOrder(data) {
         console.log('Error: ', error);
     });
    
+}
+
+
+function getBase64Image(img) {
+    const reader = new FileReader();
+
+    reader.addEventListener("load", function () {
+        //convert image file to base64 string
+        return reader.result;
+       // console.log(reader.result);
+    }, false);
+
+    if (img) {
+        reader.readAsDataURL(img);
+    }
 }

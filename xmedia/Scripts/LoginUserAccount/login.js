@@ -31,7 +31,7 @@ var loginFunc = function () {
 
                     //save userID into localStorage
                     let userID = data.PersonalInfo.UserID;
-                    localStorage.setItem('UsersID', userID);
+                    localStorage.setItem('UserID', userID);
 
                     // check if there are pending cart
                     if (localStorage.getItem('Cart')) {
@@ -42,7 +42,6 @@ var loginFunc = function () {
 
                         //update the userID in Cart
                         jsonData.UsersID = userID;
-                        //formData.set('UsersID', userID);
 
                         //console.log(jsonData);
                         // if there are pending. then save !!

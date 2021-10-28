@@ -24,5 +24,10 @@ namespace xmedia.Controllers
             IGetLoginReturnData data = new LoginExistingUserDataLogic(Model);
             return Json(data.GetLoginReturnData(), JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult SignUp()
+        {
+            return View("~/Views/LoginUserAccount/SignUp.cshtml");
+        }
     }
 }
