@@ -16,7 +16,11 @@
 
 
 function createAccount() {
+
+
     document.querySelector('.js-create-account').addEventListener('click', function (e) {
+
+        let errors = 0;
 
         let form = this.closest('form');
 
@@ -30,6 +34,8 @@ function createAccount() {
 
             if (!item.value) {
 
+                errors++;
+
                 if (item.type == 'file') {
                     item.closest('.pic-frame').setAttribute('style', 'border: 1px solid #FF0000');
                 }
@@ -37,11 +43,12 @@ function createAccount() {
                     item.classList.add('has-error');
                 }
             }
-            else {
-                save(form);
-            }
-
+            
         });
+
+        if (errors === 0) {
+            save(form);
+        }
 
     });
 
@@ -55,13 +62,33 @@ function createAccount() {
         if (password.value == confirmPassword.value) {
             // proceed to saving
 
-            let formData = new FormData();
+            let loginInfoFormData = new FormData();
+            loginInfoFormData.append('EmailAddress', form.querySelector('input[name=Email]').value);
+            loginInfoFormData.append('IStillLoveYou', form.querySelector('input[name=Password]').value);
 
-            formData.append('FirstName', form.querySelector('input[name=Firstname]').value);
-            formData.append('LastName', form.querySelector('input[name=Lastname]').value);
-            formData.append('MobileNo', form.querySelector('input[name=MobileNo]').value);
-            formData.append('LandlineNo', form.querySelector('input[name=LandlineNo]').value);
-            formData.append('EmailAddress', form.querySelector('input[name=Email]').value);
+            let personalInfoFormData = new FormData();
+            personalInfoFormData.append('FirstName', form.querySelector('input[name=Firstname]').value);
+            personalInfoFormData.append('LastName', form.querySelector('input[name=Lastname]').value);
+
+            let mainformData = new FormData();
+
+            mainformData.append('LoginInfo', loginInfoFormData);
+            mainformData.append('PersonalInfo', personalInfoFormData);
+            mainformData.append('MobileNo', form.querySelector('input[name=MobileNo]').value);
+            mainformData.append('LandlineNo', form.querySelector('input[name=LandlineNo]').value);
+            mainformData.append('Company', form.querySelector('input[name=Company]').value);
+
+            fetch(AppGlobal.baseUrl + 'LoginUserAccount/SignUp', {
+                method: 'POST',
+                body: mainformData
+            })
+            .then(response => response.json())
+            .then(function (data) {
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
         }
         else {
             password.classList.add('has-error');

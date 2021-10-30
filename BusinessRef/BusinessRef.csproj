@@ -62,7 +62,7 @@
     <Compile Include="ModelObject\Forms\FormQuantityModel.cs" />
     <Compile Include="ModelObject\Forms\GetPurchaseOrderFormsInitialDataModel.cs" />
     <Compile Include="ModelObject\Login\LoginInfoUserModel.cs" />
-    <Compile Include="ModelObject\Login\LoginUserAccountDataModel.cs" />
+    <Compile Include="ModelObject\Login\LoginNewUserAccountDataModel.cs" />
     <Compile Include="ModelObject\Orders\OrderFormDuplicatesModel.cs" />
     <Compile Include="ModelObject\Orders\OrderFormsModel.cs" />
     <Compile Include="ModelObject\Orders\UserFormOrdersModel.cs" />

@@ -9,7 +9,7 @@ using BusinessRef.DashBoardObject;
 
 namespace BusinessRef.ModelObject.Login
 {
-    public class LoginUserAccountDataModel: SQlErrorMessageModel
+    public class LoginNewUserAccountDataModel: SQlErrorMessageModel
     {
         public LoginInfoUserModel LoginInfo { get; set; }
         public PersonalInformationModel PersonalInfo { get; set; }

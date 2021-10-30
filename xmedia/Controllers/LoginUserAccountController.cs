@@ -29,5 +29,11 @@ namespace xmedia.Controllers
         {
             return View("~/Views/LoginUserAccount/SignUp.cshtml");
         }
+
+        [HttpPost]
+        public ActionResult SignUp(LoginNewUserAccountDataModel newUserAccountDataModel)
+        {
+            return null;
+        }
     }
 }
