@@ -79,19 +79,17 @@
 //    var cartData = new FormData();
 //}
 
-function saveOrder(data) {
+function saveOrder(formData) {
 
-    let url = AppGlobal.baseUrl + 'Orders/InsertUserFormOrders/';
+    for (var pair of formData.entries()) {
+        console.log(pair[0] + ', ' + pair[1]);
+    }
 
-    console.log(data);
+    //return;
 
-    fetch(url, {
+    fetch(AppGlobal.baseUrl + 'Orders/InsertUserFormOrders/', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-        
+        body: formData
     })
     .then(response => response.json())
     .then(data => {

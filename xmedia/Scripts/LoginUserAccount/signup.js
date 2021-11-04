@@ -17,7 +17,6 @@
 
 function createAccount() {
 
-
     document.querySelector('.js-create-account').addEventListener('click', function (e) {
 
         let errors = 0;
@@ -62,21 +61,16 @@ function createAccount() {
         if (password.value == confirmPassword.value) {
             // proceed to saving
 
-            let loginInfoFormData = new FormData();
-            loginInfoFormData.append('EmailAddress', form.querySelector('input[name=Email]').value);
-            loginInfoFormData.append('IStillLoveYou', form.querySelector('input[name=Password]').value);
-
-            let personalInfoFormData = new FormData();
-            personalInfoFormData.append('FirstName', form.querySelector('input[name=Firstname]').value);
-            personalInfoFormData.append('LastName', form.querySelector('input[name=Lastname]').value);
-
             let mainformData = new FormData();
 
-            mainformData.append('LoginInfo', loginInfoFormData);
-            mainformData.append('PersonalInfo', personalInfoFormData);
+            mainformData.append('LoginInfo.EmailAddress', form.querySelector('input[name=Email]').value);
+            mainformData.append('LoginInfo.IStillLoveYou', form.querySelector('input[name=Password]').value);
+            mainformData.append('PersonalInfo.FirstName', form.querySelector('input[name=Firstname]').value);
+            mainformData.append('PersonalInfo.LastName', form.querySelector('input[name=Lastname]').value);
             mainformData.append('MobileNo', form.querySelector('input[name=MobileNo]').value);
             mainformData.append('LandlineNo', form.querySelector('input[name=LandlineNo]').value);
             mainformData.append('Company', form.querySelector('input[name=Company]').value);
+            mainformData.append('File', form.querySelector('input[name=Photo]').files[0]);
 
             fetch(AppGlobal.baseUrl + 'LoginUserAccount/SignUp', {
                 method: 'POST',

@@ -156,6 +156,7 @@
     <Content Include="images\xmedia-logo.png" />
     <Content Include="Scripts\Cart\cart.js" />
     <Content Include="Scripts\Forms\forms.js" />
+    <Content Include="Scripts\LoginUserAccount\forgotPassword.js" />
     <Content Include="Scripts\LoginUserAccount\login.js" />
     <Content Include="Scripts\LoginUserAccount\signup.js" />
     <Content Include="Scripts\Shared\_LayoutMainpage.js" />
@@ -187,6 +188,7 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\LoginUserAccount\Login.cshtml" />
     <Content Include="Views\LoginUserAccount\SignUp.cshtml" />
+    <Content Include="Views\LoginUserAccount\ForgotPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">

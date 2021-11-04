@@ -6,20 +6,21 @@
     Layout = "~/Views/Shared/_LayoutSubProducts.cshtml";
 }
 
-<div class="prodDets-cont-00">
-    <div class="prodDetsCont-divCont-01-images">
-        <div class="purchase-order-form-container">
-            @{Html.RenderPartial("~/Views/Forms/PurchaseOrder/PurchaseOrder1.cshtml");}
+<form action="#" class="js-prod-form prod-form">
+    <div class="prodDets-cont-00">
+        <div class="prodDetsCont-divCont-01-images">
+            <div class="purchase-order-form-container">
+                @{Html.RenderPartial("~/Views/Forms/PurchaseOrder/PurchaseOrder1.cshtml");}
+            </div>
+            <div class="form-thumbnails">
+                thumbnails here
+            </div>
         </div>
-        <div class="form-thumbnails">
-            thumbnails here
-        </div>
-    </div>
-    <div class="prodDetsCont-divCont-01-config">
-        <div class="prodDetsCont-divCont-02-config-title">
-            <h2 class="prodDetsCont-divCont-03-config-title">Details &amp; Cost </h2>
-        </div>
-        <form action="#" class="js-prod-form prod-form">
+        <div class="prodDetsCont-divCont-01-config">
+            <div class="prodDetsCont-divCont-02-config-title">
+                <h2 class="prodDetsCont-divCont-03-config-title">Details &amp; Cost </h2>
+            </div>
+            
             <div class="prodDetsCont-divCont-02-config-po">
                 <div class="prodDetsCont-divCont-02-config">
                     <h4 class="prodDets-config-label">Select Size</h4>
@@ -71,19 +72,19 @@
 
             <div class="duplicate-color-container js-duplicate-container">
                 <!--<div class="duplicate-container">
-            <div class="duplicate-header">
-                <p>Original</p>
-            </div>
-            <div class="duplicate-content">
-                <label>Color</label>
-                <select class="duplicateColor-select"></select>
-                <label>Paper Type</label>
-                <select class="duplicatePaperType-select"></select>
-                <small class="js-unitCost-label unitCost-label">Unit Cost:</small>-->
+                <div class="duplicate-header">
+                    <p>Original</p>
+                </div>
+                <div class="duplicate-content">
+                    <label>Color</label>
+                    <select class="duplicateColor-select"></select>
+                    <label>Paper Type</label>
+                    <select class="duplicatePaperType-select"></select>
+                    <small class="js-unitCost-label unitCost-label">Unit Cost:</small>-->
                 @*<small class="js-unitCost-value unitCost-value">Php 1.00</small>*@
                 <!--<input type="text" name="duplicate-unitCost" class="unitCost-value" value="Php 1.00"/>
-            </div>
-        </div>-->
+                    </div>
+                </div>-->
             </div>
 
             <div class="prodDetsCont-divCont-02-config">
@@ -109,27 +110,27 @@
             </div>
             <div class="padding-color-container js-paddingGlue-container">
                 @*<div class="padding-container">
-                    <label>No of Set Per Pad</label>
-                    <select class="duplicateColor-select js-no-ofSet-perPad">
-                        <option value="100">100</option>
-                        <option value="200">200</option>
-                        <option value="300">300</option>
-                        <option value="400">400</option>
-                        <option value="500">500</option>
-                        <option value="600">600</option>
-                        <option value="700">700</option>
-                        <option value="800">800</option>
-                        <option value="900">900</option>
-                        <option value="100">1000</option>
-                    </select>
-                </div>
-                <div class="padding-container">
-                    <label>Which Side ?</label>
-                    <select class="duplicateColor-select js-padSide">
-                        <option value="1">Short Side</option>
-                        <option value="2">Long Side</option>
-                    </select>
-                </div>*@
+                        <label>No of Set Per Pad</label>
+                        <select class="duplicateColor-select js-no-ofSet-perPad">
+                            <option value="100">100</option>
+                            <option value="200">200</option>
+                            <option value="300">300</option>
+                            <option value="400">400</option>
+                            <option value="500">500</option>
+                            <option value="600">600</option>
+                            <option value="700">700</option>
+                            <option value="800">800</option>
+                            <option value="900">900</option>
+                            <option value="100">1000</option>
+                        </select>
+                    </div>
+                    <div class="padding-container">
+                        <label>Which Side ?</label>
+                        <select class="duplicateColor-select js-padSide">
+                            <option value="1">Short Side</option>
+                            <option value="2">Long Side</option>
+                        </select>
+                    </div>*@
             </div>
             <div class="prodDetsCont-divCont-02-configPrice">
                 <div class="prodDetsCont-divCont-03-configPrice">
@@ -156,10 +157,10 @@
                 <button class="submitBtn js-submitBtn" type="button">Proceed to Order</button>
             </div>
 
-        </form>
-        
+        </div>
     </div>
-</div>
+</form>
+
 
 @section Uri{
     <h5 class="prodDetsCont-uri">X-Media| Stickers | Purchase Order Forms</h5>

@@ -22,47 +22,6 @@ var addDuplicateElem = function (el) {
 
     function createDuplicateDiv(isOriginal, num = 0) {
 
-        //let DivEl = document.createElement('div');
-        //DivEl.setAttribute('class', 'duplicate-container js-duplicate-wrapper');
-
-        //let label = document.createElement('label');
-
-        //if (isOriginal) {
-        //    label.textContent = 'Color of Original';
-        //}
-        //else {
-        //    label.textContent = 'Duplicate ' + num;
-        //}
-
-        //let selectColor = document.createElement('select');
-        //selectColor.classList.add('duplicateColor-select');
-
-        //let paperTypeLabel = document.createElement('label');
-        //paperTypeLabel.textContent = 'Paper Type';
-        //let selectPaperType = document.createElement('select');
-        //selectPaperType.setAttribute('class', 'duplicatePaperType-select js-duplicatePaperType-select');
-
-        //let paperType = document.querySelector('.js-paperType-select');
-        //selectPaperType.innerHTML = paperType.innerHTML;
-
-        //if (num == 0) {
-        //    // original copy
-        //    selectPaperType.setAttribute('disabled', 'disabled');
-        //    selectPaperType.classList.remove('js-duplicatePaperType-select');
-        //    selectPaperType.classList.add('js-original-duplicate');
-
-        //    let selectedValue = paperType.options[paperType.selectedIndex].value;
-
-        //    selectPaperType.value = selectedValue;
-        //}
-        
-
-        //DivEl.appendChild(label);
-        //DivEl.appendChild(selectColor);
-        //DivEl.appendChild(paperTypeLabel);
-        //DivEl.appendChild(selectPaperType);
-
-
         let mainDiv = document.createElement('div');
         mainDiv.classList.add('duplicate-container');
 
@@ -483,26 +442,41 @@ var formAddToCart = function () {
 
     form.querySelectorAll('select[required], input[required]').forEach((item) => {
 
+        //remove errors first
         item.classList.remove('has-error');
 
-        // select element
+        if (item.type) {
+            if (item.type == 'file') {
+                item.closest('td').removeAttribute('style');
+            }
+        }
+
+        //select element
         if (item.tagName == 'SELECT') {
             if (item.value == 0) {
                 error += 1;
                 item.classList.add('has-error');
 
-                console.log(item);
+                //console.log(item);
             }
         }
-        // input element
+        //input element
         else {
 
-            console.log(item);
-
-            if (parseInt(item.getAttribute('data-value')) == 0) {
-                error += 1;
-                item.classList.add('has-error');
+            if (item.type == 'file') {
+                if (!item.value) {
+                    //console.log('test');
+                    error += 1;
+                    item.closest('td').setAttribute('style', 'border: 1px solid #FF0000');
+                }
             }
+            else {
+                if (parseInt(item.getAttribute('data-value')) == 0) {
+                    error += 1;
+                    item.classList.add('has-error');
+                }
+            }
+
         }
 
     });
@@ -529,7 +503,7 @@ var formAddToCart = function () {
             });
         }
 
-        let imgCompanyLogo = document.getElementById('js-companyLogoImg').files[0];
+        let imgCompanyLogo = form.querySelector('#js-companyLogoImg').files[0];
 
         if (!localStorage.getItem('UserID')) {
             // if user is not log in. save the image url in local storage
@@ -538,45 +512,43 @@ var formAddToCart = function () {
             localStorage.setItem('File', imageUrl);
         }
 
-        let orderFormDetailsJSON = {
-            FormsPaperSizesRef_ID : form.querySelector('.js-paperSize-select').value,
-            PaperTypeRef_ID : form.querySelector('.js-paperType-select').value,
-            PaperColorRef_ID : form.querySelector('.js-printcolor-select').value,
-            PaddingGlue_ID : form.querySelector('.js-padding-select').value,
-            hasPaddingGlue : 1,
-            NoOfSetPad: form.querySelector('.js-no-ofSet-perPad') != null ? form.querySelector('.js-no-ofSet-perPad').value : 0,
-            PadSide : form.querySelector('.js-padSide') != null ? form.querySelector('.js-padSide').value : 0,
-            UnitPrice: form.querySelector('.js-prod-unitPrice').getAttribute('data-value'),
-            Quantity: form.querySelector('.js-paperQuantity-select').options[form.querySelector('.js-paperQuantity-select').selectedIndex].textContent,
-            hasDuplicate: 0,
-            File: null
-        };
+        //let orderFormDetailsJSON = {
+        //    FormsPaperSizesRef_ID : form.querySelector('.js-paperSize-select').value,
+        //    PaperTypeRef_ID : form.querySelector('.js-paperType-select').value,
+        //    PaperColorRef_ID : form.querySelector('.js-printcolor-select').value,
+        //    PaddingGlue_ID : form.querySelector('.js-padding-select').value,
+        //    hasPaddingGlue : 1,
+        //    NoOfSetPad: form.querySelector('.js-no-ofSet-perPad') != null ? form.querySelector('.js-no-ofSet-perPad').value : 0,
+        //    PadSide : form.querySelector('.js-padSide') != null ? form.querySelector('.js-padSide').value : 0,
+        //    UnitPrice: form.querySelector('.js-prod-unitPrice').getAttribute('data-value'),
+        //    Quantity: form.querySelector('.js-paperQuantity-select').options[form.querySelector('.js-paperQuantity-select').selectedIndex].textContent,
+        //    hasDuplicate: 0,
+        //    File: null
+        //};
 
-        let orderFormDataJSON = {
-            UsersID: localStorage.getItem('UserID') || 0,
-            OrderID: 1,
-            TotalPrice: form.querySelector('.js-prod-totalPrice').getAttribute('data-value'),
-            OrderStatusID: 1,
-            Orderforms: orderFormDetailsJSON
-        };
+        //let orderFormDataJSON = {
+        //    UsersID: localStorage.getItem('UserID') || 0,
+        //    OrderID: 1,
+        //    TotalPrice: form.querySelector('.js-prod-totalPrice').getAttribute('data-value'),
+        //    OrderStatusID: 1,
+        //    Orderforms: orderFormDetailsJSON
+        //};
 
-        //let orderFormsDetailsData = new FormData();
-        //orderFormsDetailsData.append('FormsPaperSizesRef_ID', form.querySelector('.js-paperSize-select').value);
-        //orderFormsDetailsData.append('PaperTypeRef_ID', form.querySelector('.js-paperType-select').value);
-        //orderFormsDetailsData.append('PaperColorRef_ID', form.querySelector('.js-printcolor-select').value);
-        //orderFormsDetailsData.append('PaddingGlue_ID', form.querySelector('.js-padding-select').value);
-        //orderFormsDetailsData.append('hasPaddingGlue', 1);
-        //orderFormsDetailsData.append('NoOfSetPad', form.querySelector('.js-no-ofSet-perPad') != null ? form.querySelector('.js-no-ofSet-perPad').value : 0);
-        //orderFormsDetailsData.append('PadSide', form.querySelector('.js-padSide') != null ? form.querySelector('.js-padSide').value : 0);
-        //orderFormsDetailsData.append('UnitPrice', form.querySelector('.js-prod-unitPrice').getAttribute('data-value'));
-        //orderFormsDetailsData.append('Quantity', form.querySelector('.js-paperQuantity-select').options[form.querySelector('.js-paperQuantity-select').selectedIndex].textContent);
-        //orderFormsDetailsData.append('hasDuplicate', 0);
-
-        ////let orderFormData = new FormData();
-        //window.cartData.append('UsersID', localStorage.getItem('UserID') || 0);
-        //window.cartData.append('TotalPrice', form.querySelector('.js-prod-totalPrice').getAttribute('data-value'));
-        //window.cartData.append('OrderStatusID', 1);
-        //window.cartData.append('Orderforms', orderFormsDetailsData);
+        let orderFormsData = new FormData();
+        orderFormsData.append('UsersID', localStorage.getItem('UserID') || 0);
+        orderFormsData.append('OrderID', 1);
+        orderFormsData.append('TotalPrice', form.querySelector('.js-prod-totalPrice').getAttribute('data-value'));
+        orderFormsData.append('OrderStatusID', 1);
+        orderFormsData.append('Orderforms.FormsPaperSizesRef_ID', form.querySelector('.js-paperSize-select').value);
+        orderFormsData.append('Orderforms.PaperTypeRef_ID', form.querySelector('.js-paperType-select').value);
+        orderFormsData.append('Orderforms.PaperColorRef_ID', form.querySelector('.js-printcolor-select').value);
+        orderFormsData.append('Orderforms.PaddingGlue_ID', form.querySelector('.js-padding-select').value);
+        orderFormsData.append('Orderforms.hasPaddingGlue', 1);
+        orderFormsData.append('Orderforms.NoOfSetPad', form.querySelector('.js-no-ofSet-perPad') != null ? form.querySelector('.js-no-ofSet-perPad').value : 0);
+        orderFormsData.append('Orderforms.PadSide', form.querySelector('.js-padSide') != null ? form.querySelector('.js-padSide').value : 0);
+        orderFormsData.append('Orderforms.UnitPrice', form.querySelector('.js-prod-unitPrice').getAttribute('data-value'));
+        orderFormsData.append('Orderforms.Quantity', form.querySelector('.js-paperQuantity-select').options[form.querySelector('.js-paperQuantity-select').selectedIndex].textContent);
+        orderFormsData.append('Orderforms.hasDuplicate', 0);
 
         //for (var pair of orderFormData.entries()) {
         //    console.log(pair[0] + ', ' + pair[1]);
@@ -588,17 +560,15 @@ var formAddToCart = function () {
             //save then redirect to cart
             console.log('save and Redirect to Cart');
 
-            orderFormDataJSON.Orderforms.File = imgCompanyLogo;
+            orderFormsData.append('Orderforms.File', imgCompanyLogo);
 
-            console.log(orderFormDataJSON);
-
-            //saveOrder(orderFormDataJSON);
+            saveOrder(orderFormsData);
         }
         else {
 
             console.log('Redirect to login');
 
-            console.log(orderFormDataJSON);
+            //console.log(orderFormDataJSON);
 
             //localStorage.setItem('Cart', JSON.stringify(orderFormDataJSON));
 

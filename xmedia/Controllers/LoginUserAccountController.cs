@@ -35,5 +35,16 @@ namespace xmedia.Controllers
         {
             return null;
         }
+
+        public ActionResult ForgotPassword()
+        {
+            return View("~/Views/LoginUserAccount/ForgotPassword.cshtml");
+        }
+
+        [HttpPost]
+        public ActionResult ForgorPassword(LoginInfoUserModel loginInfo)
+        {
+            return null;
+        }
     }
 }
