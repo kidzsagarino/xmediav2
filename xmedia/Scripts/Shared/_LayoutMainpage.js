@@ -75,10 +75,6 @@
 
 //global variable for cartData to be saved!!
 
-//if (!window.cartData) {
-//    var cartData = new FormData();
-//}
-
 function saveOrder(formData) {
 
     for (var pair of formData.entries()) {
@@ -101,17 +97,30 @@ function saveOrder(formData) {
    
 }
 
-
-function getBase64Image(img) {
+function getBase64Image(img, callback) {
     const reader = new FileReader();
 
     reader.addEventListener("load", function () {
         //convert image file to base64 string
-        return reader.result;
-       // console.log(reader.result);
+        callback(reader.result);
     }, false);
 
     if (img) {
         reader.readAsDataURL(img);
     }
+}
+
+function dataURLtoFile(dataurl, filename, callback) {
+
+    var arr = dataurl.split(','),
+        mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]),
+        n = bstr.length,
+        u8arr = new Uint8Array(n);
+
+    while (n--) {
+        u8arr[n] = bstr.charCodeAt(n);
+    }
+
+    callback(new File([u8arr], filename, { type: mime }));
 }

@@ -9,5 +9,7 @@ namespace BusinessRef.ModelObject.Login
         public PersonalInformationModel PersonalInfo { get; set; }
         public string DisplayName { get; set; }
         public string NameInitial { get; set; }
+        public bool HasExistingEmail { get; set; }
+        public bool IsSuccessful { get; set; }
     }
 }

@@ -12,7 +12,9 @@ namespace xmedia.Controllers
         [HttpPost]
         public JsonResult InsertUserFormOrders(UserFormOrdersNoDuplicateModel Model)
         {
-            IPostDatabaseData<ConfirmInsertDataModel> data = new PostUserOrderFormsNoDuplicatesDataLogic(Model);
+            string root = Server.MapPath("~/files/companyLogo");
+
+            IPostDatabaseData<ConfirmInsertDataModel> data = new PostUserOrderFormsNoDuplicatesDataLogic(Model, root);
             return Json(data.PostDatabaseData(), JsonRequestBehavior.AllowGet);
         }
 

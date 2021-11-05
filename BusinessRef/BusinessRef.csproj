@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Abstract\SQLErrorMessageModel.cs" />
     <Compile Include="DashBoardObject\PersonalInformationModel.cs" />
+    <Compile Include="HelperObject\FileUploadHelper.cs" />
     <Compile Include="HelperObject\PadSideDataModel.cs" />
     <Compile Include="Interfaces\Forms\IGetPurchaseOrderFormsData.cs" />
     <Compile Include="Interfaces\Generics\IGetDatabaseCollectionData.cs" />

@@ -13,9 +13,8 @@ namespace BusinessRef.ModelObject.Login
     {
         public LoginInfoUserModel LoginInfo { get; set; }
         public PersonalInformationModel PersonalInfo { get; set; }
-        public HttpPostedFileBase File { get; set; }
         public string MobileNo { get; set; }
         public string LandlineNo { get; set; }
-        public string Company { get; set; }
+        public string CompanyName { get; set; }
     }
 }

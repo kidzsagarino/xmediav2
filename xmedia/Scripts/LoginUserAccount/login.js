@@ -19,13 +19,14 @@ var loginFunc = function () {
         formData.append('EmailAddress', email.value);
         formData.append('IStillLoveYou', password.value);
 
-        fetch(AppGlobal.baseUrl + 'LoginUserAccount/UserLoginAccount', {
+        fetch(AppGlobal.baseUrl + 'LoginUserAccount/Login', {
             method: 'POST',
             body: formData
         })
             .then(response => response.json())
             .then(function (data) {
-                //console.log(data);
+
+                console.log(data);
 
                 if (data.LoginStatusCode.LoginStatusNumberCode == 1) {
 
@@ -38,18 +39,30 @@ var loginFunc = function () {
 
                         let jsonData = JSON.parse(localStorage.getItem('Cart'));
 
-                        //let formData = window.cartData;
-
                         //update the userID in Cart
                         jsonData.UsersID = userID;
 
                         //console.log(jsonData);
-                        // if there are pending. then save !!
-                        saveOrder(jsonData);
+                        
+                        dataURLtoFile(jsonData['Orderforms.File'], 'companylogo.jpg', function (file) {
+
+                            jsonData['Orderforms.File'] = file;
+
+                            console.log(jsonData);
+
+                            var formData = new FormData();
+                            for (var key in jsonData) {
+                                formData.append(key, jsonData[key]);
+                            }
+                            //save here!!
+                            saveOrder(formData);
+                        })
+
                     }
                     else {
                         // proceed to index page
-                        window.location.href = AppGlobal.baseUrl;
+
+                        //window.location.href = AppGlobal.baseUrl;
                     }
                 }
                 else {
@@ -57,19 +70,19 @@ var loginFunc = function () {
 
                     errorMsg.innerHTML = 'Login Failed';
 
-                    loginForm.insertBefore(errorMsg, loginForm.querySelectorAll('.form-content')[0]);
+                    loginForm.insertBefore(errorMsg, loginForm.querySelectorAll('.form-group')[0]);
                 }
 
             })
             .catch(function (data) {
-                console.log('Error');
+                console.log(data);
             })
 
     }
     else {
         // error occured
         if (!email.value) {
-            email.classList.add('has-error')
+            email.classList.add('has-error');
 
         }
         if (!password.value) {

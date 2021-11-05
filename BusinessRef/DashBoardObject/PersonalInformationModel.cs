@@ -1,4 +1,5 @@
 ﻿using BusinessRef.Abstract;
+using System.Web;
 
 namespace BusinessRef.DashBoardObject
 {
@@ -13,5 +14,6 @@ namespace BusinessRef.DashBoardObject
         public string Citizenship { get; set; }
         public string Profession { get; set; }
         public string PhotoImageFileName { get; set; }
+        public HttpPostedFileBase File { get; set; }
     }
 }

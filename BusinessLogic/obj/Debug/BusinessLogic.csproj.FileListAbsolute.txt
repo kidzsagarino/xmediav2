@@ -39,6 +39,6 @@ D:\Web Dev\xmediav2\BusinessLogic\bin\Debug\BusinessRef.pdb
 D:\Web Dev\xmediav2\BusinessLogic\bin\Debug\DataAccess.pdb
 D:\Web Dev\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
 D:\Web Dev\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
-D:\Web Dev\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
 D:\Web Dev\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.dll
 D:\Web Dev\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.pdb
+D:\Web Dev\xmediav2\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete

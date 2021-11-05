@@ -13,13 +13,13 @@ namespace xmedia.Controllers
     public class LoginUserAccountController : Controller
     {
         // GET: LoginUserAccount
-        public ActionResult Index()
+        public ActionResult Login()
         {
             return View("~/Views/LoginUserAccount/Login.cshtml");
         }
 
         [HttpPost]
-        public JsonResult UserLoginAccount(LoginInfoUserModel Model)
+        public JsonResult Login(LoginInfoUserModel Model)
         {
             IGetLoginReturnData data = new LoginExistingUserDataLogic(Model);
             return Json(data.GetLoginReturnData(), JsonRequestBehavior.AllowGet);
@@ -31,9 +31,12 @@ namespace xmedia.Controllers
         }
 
         [HttpPost]
-        public ActionResult SignUp(LoginNewUserAccountDataModel newUserAccountDataModel)
+        public ActionResult SignUp(LoginNewUserAccountDataModel model)
         {
-            return null;
+            string root = Server.MapPath("~/files/profileimage/");
+
+            IGetLoginReturnData data = new LoginNewUserAccountDataLogic(model, root);
+            return Json(data.GetLoginReturnData(), JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult ForgotPassword()

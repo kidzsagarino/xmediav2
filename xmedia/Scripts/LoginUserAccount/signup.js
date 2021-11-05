@@ -23,7 +23,7 @@ function createAccount() {
 
         let form = this.closest('form');
 
-        form.querySelectorAll('input').forEach((item) => {
+        form.querySelectorAll('input[required]').forEach((item) => {
 
             item.classList.remove('has-error');
 
@@ -69,8 +69,8 @@ function createAccount() {
             mainformData.append('PersonalInfo.LastName', form.querySelector('input[name=Lastname]').value);
             mainformData.append('MobileNo', form.querySelector('input[name=MobileNo]').value);
             mainformData.append('LandlineNo', form.querySelector('input[name=LandlineNo]').value);
-            mainformData.append('Company', form.querySelector('input[name=Company]').value);
-            mainformData.append('File', form.querySelector('input[name=Photo]').files[0]);
+            mainformData.append('CompanyName', form.querySelector('input[name=CompanyName]').value);
+            mainformData.append('PersonalInfo.File', form.querySelector('input[name=Photo]').files[0]);
 
             fetch(AppGlobal.baseUrl + 'LoginUserAccount/SignUp', {
                 method: 'POST',
