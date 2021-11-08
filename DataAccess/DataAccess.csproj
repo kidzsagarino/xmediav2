@@ -61,9 +61,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FormCommonDataAccess.cs" />
     <Compile Include="Forms\FormDataAccess.cs" />
-    <Compile Include="Login\LoginNewUserAccountDataAccess.cs" />
-    <Compile Include="Login\LoginReturnInformationDataAccess.cs" />
+    <Compile Include="Account\LoginNewUserAccountDataAccess.cs" />
+    <Compile Include="Account\LoginReturnInformationDataAccess.cs" />
     <Compile Include="Orders\UserFormsOrderDataAccess.cs" />
     <Compile Include="Orders\UserFormsOrderNoDuplicatesDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

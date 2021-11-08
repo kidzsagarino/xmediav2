@@ -1,6 +1,6 @@
-﻿using BusinessRef.ModelObject.Login;
+﻿using BusinessRef.ModelObject.Account;
 
-namespace BusinessRef.Interfaces.Login
+namespace BusinessRef.Interfaces.Account
 {
     public interface IGetLoginReturnData
     {

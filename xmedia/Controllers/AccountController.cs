@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using BusinessLogic.Login;
-using BusinessRef.ModelObject.Login;
+using BusinessLogic.Account;
+using BusinessRef.ModelObject.Account;
 using BusinessRef.Interfaces.Generics;
-using BusinessRef.Interfaces.Login;
+using BusinessRef.Interfaces.Account;
 
 namespace xmedia.Controllers
 {
-    public class LoginUserAccountController : Controller
+    public class AccountController : Controller
     {
-        // GET: LoginUserAccount
+        // GET: Default
         public ActionResult Login()
         {
-            return View("~/Views/LoginUserAccount/Login.cshtml");
+            return View("~/Views/Account/Login.cshtml");
         }
 
         [HttpPost]
@@ -27,7 +27,7 @@ namespace xmedia.Controllers
 
         public ActionResult SignUp()
         {
-            return View("~/Views/LoginUserAccount/SignUp.cshtml");
+            return View("~/Views/Account/Signup.cshtml");
         }
 
         [HttpPost]
@@ -41,7 +41,7 @@ namespace xmedia.Controllers
 
         public ActionResult ForgotPassword()
         {
-            return View("~/Views/LoginUserAccount/ForgotPassword.cshtml");
+            return View("~/Views/Account/ForgotPassword.cshtml");
         }
 
         [HttpPost]

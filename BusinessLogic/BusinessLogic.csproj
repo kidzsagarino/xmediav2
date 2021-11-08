@@ -42,9 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FormCommonDataLogic.cs" />
     <Compile Include="Forms\GetPurchaseOrderDataLogic.cs" />
-    <Compile Include="Login\LoginNewUserAccountDataLogic.cs" />
-    <Compile Include="Login\LoginExistingUserDataLogic.cs" />
+    <Compile Include="Account\LoginNewUserAccountDataLogic.cs" />
+    <Compile Include="Account\LoginExistingUserDataLogic.cs" />
     <Compile Include="Orders\PostUserOrderFormsDataLogic.cs" />
     <Compile Include="Orders\PostUserOrderFormsNoDuplicatesDataLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

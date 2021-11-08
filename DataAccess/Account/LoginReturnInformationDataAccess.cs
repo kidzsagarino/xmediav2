@@ -1,14 +1,14 @@
 ﻿using BusinessRef.Interfaces.Generics;
-using BusinessRef.ModelObject.Login;
+using BusinessRef.ModelObject.Account;
 using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using BusinessRef.DashBoardObject;
 
-using model = BusinessRef.ModelObject.Login.LoginReturnInformationModel;
+using model = BusinessRef.ModelObject.Account.LoginReturnInformationModel;
 
-namespace DataAccess.Login
+namespace DataAccess.Account
 {
     public class LoginReturnInformationDataAccess : IPostDatabaseData<model>
     {

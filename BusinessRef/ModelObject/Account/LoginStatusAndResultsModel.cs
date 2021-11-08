@@ -1,5 +1,5 @@
 ﻿
-namespace BusinessRef.ModelObject.Login
+namespace BusinessRef.ModelObject.Account
 {
     public class LoginStatusAndResultsModel
     {

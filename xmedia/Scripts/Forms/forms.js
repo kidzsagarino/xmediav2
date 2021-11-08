@@ -551,7 +551,7 @@ var formAddToCart = function () {
 
                 localStorage.setItem('Cart', json);
 
-                window.location.href = '/LoginUserAccount/Login';
+                window.location.href = '/Account/Login';
 
             });
 

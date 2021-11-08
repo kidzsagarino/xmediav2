@@ -9,6 +9,7 @@ namespace BusinessRef.ModelObject.Forms
     public class FormPaperTypeModel
     {
         public int ID { get; set; }
+        public int FormMasterID { get; set; }
         public string PaperType { get; set; }
         public string Thickness { get; set; }
         public float PaperCostAtA3 { get; set; }

@@ -1,10 +1,10 @@
-﻿using BusinessRef.Interfaces.Login;
-using BusinessRef.ModelObject.Login;
+﻿using BusinessRef.Interfaces.Account;
+using BusinessRef.ModelObject.Account;
 using BusinessRef.Interfaces.Generics;
-using DataAccess.Login;
+using DataAccess.Account;
 using System.Text;
 
-namespace BusinessLogic.Login
+namespace BusinessLogic.Account
 {
     public class LoginExistingUserDataLogic : IGetLoginReturnData
     {

@@ -9,6 +9,7 @@ namespace BusinessRef.ModelObject.Forms
     public class FormQuantityModel
     {
         public int ID { get; set; }
+        public int FormMasterID { get; set; }
         public int FormQuantity { get; set; }
         public float QuantityFactor { get; set; }
     }

@@ -1,6 +1,6 @@
 ﻿using BusinessRef.Abstract;
 
-namespace BusinessRef.ModelObject.Login
+namespace BusinessRef.ModelObject.Account
 {
     public class LoginInfoUserModel : SQlErrorMessageModel
     {

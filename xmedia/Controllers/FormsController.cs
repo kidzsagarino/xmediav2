@@ -20,6 +20,13 @@ namespace xmedia.Controllers
             return View("~/Views/Forms/Index.cshtml",data1);
         }
 
+        public JsonResult GetFormCommon()
+        {
+            IGetFormCommonData data = new FormCommonDataLogic();
+
+            return Json(data.GetFormCommon(), JsonRequestBehavior.AllowGet);
+        }
+
         //public async Task<ActionResult> PurchaseOrder1()
         //{
         //    GetPurchaseOrderFormsInitialDataModel model = null;

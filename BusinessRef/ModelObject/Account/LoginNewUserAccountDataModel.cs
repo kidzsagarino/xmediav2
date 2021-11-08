@@ -7,7 +7,7 @@ using System.Web;
 using BusinessRef.Abstract;
 using BusinessRef.DashBoardObject;
 
-namespace BusinessRef.ModelObject.Login
+namespace BusinessRef.ModelObject.Account
 {
     public class LoginNewUserAccountDataModel: SQlErrorMessageModel
     {

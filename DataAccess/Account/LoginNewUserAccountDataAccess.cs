@@ -1,5 +1,5 @@
 ﻿using BusinessRef.Interfaces.Generics;
-using BusinessRef.ModelObject.Login;
+using BusinessRef.ModelObject.Account;
 using System;
 using System.Configuration;
 using System.Data;
@@ -7,9 +7,9 @@ using System.Data.SqlClient;
 using BusinessRef.DashBoardObject;
 
 
-using model = BusinessRef.ModelObject.Login.LoginNewUserAccountDataModel;
+using model = BusinessRef.ModelObject.Account.LoginNewUserAccountDataModel;
 
-namespace DataAccess.Login
+namespace DataAccess.Account
 {
     public class LoginNewUserAccountDataAccess : IPostDatabaseData<LoginReturnInformationModel>
     {

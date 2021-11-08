@@ -9,6 +9,7 @@ namespace BusinessRef.ModelObject.Forms
     public class FormPaperColorModel
     {
         public int ID { get; set; }
+        public int FormMasterID { get; set; }
         public string PaperColor { get; set; }
     }
 }

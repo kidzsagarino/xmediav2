@@ -16,14 +16,14 @@
             <input type="password" name="Password" value="" />
         </div>
         <div class="form-group forgot-password-btn">
-            <a href="@Url.Action("ForgotPassword", "LoginUserAccount")">Forgot Password?</a>
+            <a href="@Url.Action("ForgotPassword", "Account")">Forgot Password?</a>
         </div>
         <div class="form-footer">
             <button type="button" class="js-loginBtn loginBtn">Login</button>
         </div>
         <div class="form-footer sign-up-container">
             <small>Don't have an account?</small> <br />
-            <a href="@Url.Action("SignUp", "LoginUserAccount")" class="signUpBtn js-signupBtn">Sign Up</a>
+            <a href="@Url.Action("SignUp", "Account")" class="signUpBtn js-signupBtn">Sign Up</a>
             @*<button type="button" class="signUpBtn js-signupBtn"></button>*@
         </div>
     </form>
@@ -38,5 +38,5 @@
 
 @section JS {
 
-    <script src="~/Scripts/LoginUserAccount/login.js"></script>    
+    <script src="~/Scripts/Account/login.js"></script>
 }
