@@ -199,4 +199,25 @@ class LinkedList {
 
         return null;
     }
+
+    searchByIndex(propertyName, value) {
+        
+        if (this.head == null) return undefined
+
+        let arr = [];
+        let temp = this.head;
+
+        if (value) {
+
+            for (let i = temp; i != null; i = i.next) {
+
+                if (i.value[propertyName].toUpperCase().indexOf(value.toUpperCase()) > -1) {
+                    arr.push(i.value);
+                }
+
+            }
+        }
+
+        return arr;
+    }
 }

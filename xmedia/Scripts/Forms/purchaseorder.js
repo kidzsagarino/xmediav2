@@ -317,6 +317,8 @@
         let divisorFactor = paperSizeCost != null ? paperSizeCost.DivisorFactor : null;
         let laborFactor = paperSizeCost != null ? paperSizeCost.LaborFactor : null;
 
+        console.log(formAssignedSizesLL.searchByIndex('PaperSize', 't'));
+
         // PAPER TYPE AND ITS CORRESPONDING COST
         let paperTypeSelect = null;
         if (paperType) {
