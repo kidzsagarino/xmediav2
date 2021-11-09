@@ -316,6 +316,13 @@ form.prod-form input.has-error {
     font-size: 13px;
     text-align: right;
 }
+.purchase-order-table div.company-logo-preview {
+    position: absolute;
+    top: -13px;
+    border: 1px solid gray;
+    height: 40px;
+    width: 240px;
+}
 
 @media only screen and (max-width:767px) {
     .prodDets-divCont-02-prod {

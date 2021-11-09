@@ -18,12 +18,16 @@
                 M-1501
             </td>
         </tr>
-        <tr>
+        <tr style="position:relative">
             <td colspan="4" class="px-5">
                 <label class="custom-file-upload">
                     <input type="file" required name="ImageFileName" value="" id="js-companyLogoImg"/>
                     UPLOAD COMPANY LOGO
                 </label>
+                <div class="company-logo-preview js-companyLogoPreview" style="display: none">
+                    <img alt="Company Logo Preview" style="width:100%; height:100%"/>
+                </div>
+                @*<img alt="CompanyLogoPreview" class="company-logo-preview"/>*@
             </td>
             <td colspan="2" class="border-left px-5">
                 P.O. No:
