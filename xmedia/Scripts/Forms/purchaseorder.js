@@ -1,4 +1,127 @@
 ﻿
+
+class Node {
+    constructor(obj) {
+
+        this.value = obj
+        this.next = null
+    }
+}
+
+class PurchaseOrderLinkedList {
+
+    //FormPaperTypes
+    //FormAssignedSizes
+    //FormPrintColors
+    //FormQuantities
+    constructor() {
+
+        this.FormPaperTypes = null;
+        this.FormAssignedSizes = null;
+        this.FormPrintColors = null;
+        this.FormQuantities = null;
+
+    }
+
+    push(obj, type) {
+
+        const newNode = new Node(obj)
+
+        if (this[type] == null) {
+
+            let obj = {
+                head: newNode,
+                tail: newNode
+            };
+
+            this[type] = obj;
+        }
+        else {
+            this[type].tail.next = newNode
+            this[type].tail = newNode
+        }
+
+        if (!this[type].length) {
+            this[type].length = 1
+        }
+        else {
+            this[type].length++
+        }
+
+        //return this
+    }
+
+    GetQuantityFactor(value) {
+        if (this.FormQuantities == null) return undefined
+
+        let temp = this.FormQuantities.head;
+
+        if (value > 0) {
+            while (temp.value.ID != value) {
+                temp = temp.next;
+            }
+
+            let obj = {
+                QuantityFactor: temp.value.QuantityFactor,
+                Quantity: temp.value.FormQuantity
+            };
+
+            return obj;
+
+        }
+
+        return null;
+       
+    }
+
+    GetPaperTypeCost(value) {
+        if (this.FormPaperTypes == null) return undefined
+
+        let temp = this.FormPaperTypes.head;
+
+        if (value > 0) {
+            while (temp.value.ID != value) {
+                temp = temp.next;
+            }
+
+            let obj = {
+                MaterialCost: temp.value.PaperCostAtA3,
+                LaborCost: temp.value.LaborCostAtA3,
+                PrintBlackAndWhiteCost: temp.value.PrintingCostAtA3BW,
+                PrintColoredCost: temp.value.PrintingCostAtA3Colored
+            };
+
+            return obj;
+        }
+
+        return null;
+    }
+
+    GetPaperSizeCost(value) {
+        if (this.FormAssignedSizes == null) return undefined
+
+        let temp = this.FormAssignedSizes.head;
+
+        if (value > 0) {
+            while (temp.value.ID != value) {
+                temp = temp.next;
+            }
+
+            let obj = {
+                DivisorFactorCost: temp.value.DivisorFactor,
+                LaborFactor: temp.value.LaborFactor
+            };
+
+            return obj;
+        }
+
+        return null;
+    }
+}
+
+var poLinkedList = new PurchaseOrderLinkedList();
+
+
 var addDuplicateElem = function (el) {
 
     let duplicateContainer = document.querySelector('.js-duplicate-container');
@@ -287,9 +410,9 @@ var computePrice = function (paperType = null) {
 
     // PAPER SIZES
     let paperSizeSelect = document.querySelector('.js-paperSize-select');
-    let divisorFactor = paperSizeSelect.options[paperSizeSelect.selectedIndex].getAttribute('data-DivisorFactor');
-    let laborFactor = paperSizeSelect.options[paperSizeSelect.selectedIndex].getAttribute('data-LaborFactor');
-
+    let paperSizeCost = poLinkedList.GetPaperSizeCost(paperSizeSelect.value);
+    let divisorFactor = paperSizeCost != null ? paperSizeCost.DivisorFactorCost : null;
+    let laborFactor = paperSizeCost != null ? paperSizeCost.LaborFactor : null;
 
     // PAPER TYPE AND ITS CORRESPONDING COST
     let paperTypeSelect = null;
@@ -299,18 +422,25 @@ var computePrice = function (paperType = null) {
     else {
         paperTypeSelect = document.querySelector('.js-paperType-select');
     }
-    let paperCostAtA3 = paperTypeSelect.options[paperTypeSelect.selectedIndex].getAttribute('data-paperCost');
-    let laborCostAtA3 = paperTypeSelect.options[paperTypeSelect.selectedIndex].getAttribute('data-laborCost');
-    let printCostBW = paperTypeSelect.options[paperTypeSelect.selectedIndex].getAttribute('data-PrintCostBW');
-    let printCostColored = paperTypeSelect.options[paperTypeSelect.selectedIndex].getAttribute('data-PrintCostColored');
+
+    let paperTypeCost = poLinkedList.GetPaperTypeCost(paperTypeSelect.value);
+
+    let paperCostAtA3 = paperTypeCost != null ? paperTypeCost.MaterialCost : null;
+    let laborCostAtA3 = paperTypeCost != null ? paperTypeCost.LaborCost : null;
+
+    let printCostBW = paperTypeCost != null ? paperTypeCost.PrintBlackAndWhiteCost : null;
+    let printCostColored = paperTypeCost != null ? paperTypeCost.PrintColoredCost : null;
+
 
     // NUMBER OF DUPLICATES
     let duplicatesSelect = document.querySelector('.js-no-ofDuplicates');
 
     // paper quantity
     let paperQuantitySelect = document.querySelector('.js-paperQuantity-select');
-    let quantityFactor = paperQuantitySelect.options[paperQuantitySelect.selectedIndex].getAttribute('data-quantityfactor');
-    let quantityValue = paperQuantitySelect.options[paperQuantitySelect.selectedIndex].textContent;
+    let quantity = poLinkedList.GetQuantityFactor(paperQuantitySelect.value);
+    let quantityValue = quantity != null ? quantity.Quantity : null;
+    let quantityFactor = quantity != null ? quantity.QuantityFactor : null;
+   
 
     // PRINT COLOR
     // 1 => BLACK&WHITE
@@ -565,7 +695,47 @@ var formAddToCart = function () {
 
 };
 
-
 window.onload = function () {
     eventsListeners();
 };
+
+
+fetch(AppGlobal.baseUrl + 'Forms/GetFormSettings/1')
+    .then(response => {
+        if (response.status == 200) {
+            return response.json()
+        }
+        else {
+            throw 'Something went wrong.';
+        }
+    })
+    .then(data => {
+        //console.log(data);
+        
+        //let printColors = new PurchaseOrderLinkedList();
+
+        //FormPaperTypes 
+        data.FormPaperTypes.forEach((item) => {
+            poLinkedList.push(item, 'FormPaperTypes');
+        });
+
+        //FormAssignedSizes
+        data.FormAssignedSizes.forEach((item) => {
+            poLinkedList.push(item, 'FormAssignedSizes');
+        });
+
+        //FormPrintColors
+        data.FormPrintColors.forEach((item) => {
+            poLinkedList.push(item, 'FormPrintColors');
+        });
+
+        //FormQuantities
+        data.FormQuantities.forEach((item) => {
+            poLinkedList.push(item, 'FormQuantities');
+        });
+
+        console.log(poLinkedList);
+    })
+    .catch(error => {
+        console.log(error);
+    });

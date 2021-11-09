@@ -28,7 +28,7 @@
                         <option value="0">Select</option>
                         @foreach (var item in Model.FormAssignedSizes)
                         {
-                            <option value="@item.FormSizeID" data-DivisorFactor="@item.DivisorFactor" data-LaborFactor="@item.LaborFactor">@item.PaperSize</option>
+                            <option value="@item.FormSizeID">@item.PaperSize</option>
                         }
                     </select>
                     <i class="prodDetsCont-icon-checked"><img src="~/images/icon/checked-green.png" /></i>
@@ -48,7 +48,7 @@
                     <option value="0">Select</option>
                     @foreach (var item in Model.FormPaperTypes)
                     {
-                        <option value="@item.ID" data-paperCost="@item.PaperCostAtA3" data-laborCost="@item.LaborCostAtA3" data-PrintCostBW="@item.PrintingCostAtA3BW" data-PrintCostColored="@item.PrintingCostAtA3Colored">
+                        <option value="@item.ID">
                             @item.PaperType - @item.Thickness
                         </option>
                     }
@@ -139,7 +139,7 @@
                         <option value="0">Select</option>
                         @foreach (var item in Model.FormQuantities)
                         {
-                            <option value="@item.ID" data-quantityFactor="@item.QuantityFactor">@item.FormQuantity</option>
+                            <option value="@item.ID">@item.FormQuantity</option>
                         }
                     </select>
                 </div>
@@ -177,5 +177,5 @@
 </script>
 
 @section JS {
-    <script src="~/Scripts/Forms/forms.js"></script>
+    <script src="~/Scripts/Forms/purchaseorder.js"></script>
 }

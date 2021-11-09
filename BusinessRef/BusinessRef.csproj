@@ -46,7 +46,6 @@
     <Compile Include="DashBoardObject\PersonalInformationModel.cs" />
     <Compile Include="HelperObject\FileUploadHelper.cs" />
     <Compile Include="HelperObject\SendEmailHelper.cs" />
-    <Compile Include="Interfaces\Forms\IGetFormCommonData.cs" />
     <Compile Include="Interfaces\Forms\IGetPurchaseOrderFormsData.cs" />
     <Compile Include="Interfaces\Generics\IGetDatabaseCollectionData.cs" />
     <Compile Include="Interfaces\Generics\IGetDatabaseData.cs" />

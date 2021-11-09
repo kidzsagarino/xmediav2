@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\FormCommonDataLogic.cs" />
     <Compile Include="Forms\GetPurchaseOrderDataLogic.cs" />
     <Compile Include="Account\LoginNewUserAccountDataLogic.cs" />
     <Compile Include="Account\LoginExistingUserDataLogic.cs" />

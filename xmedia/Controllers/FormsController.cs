@@ -14,17 +14,18 @@ namespace xmedia.Controllers
         // GET: Forms
         public ActionResult PurchaseOrder()
         {
+            //Purchase Order ID in DB is '1'
             IGetPurchaseOrderFormsData data = new GetPurchaseOrderDataLogic(1);
             var data1 = data.GetPurchaseOrderForms();
 
             return View("~/Views/Forms/Index.cshtml",data1);
         }
 
-        public JsonResult GetFormCommon()
+        public JsonResult GetFormSettings(int id)
         {
-            IGetFormCommonData data = new FormCommonDataLogic();
+            IGetPurchaseOrderFormsData data = new GetPurchaseOrderDataLogic(id);
 
-            return Json(data.GetFormCommon(), JsonRequestBehavior.AllowGet);
+            return Json(data.GetPurchaseOrderForms(), JsonRequestBehavior.AllowGet);
         }
 
         //public async Task<ActionResult> PurchaseOrder1()

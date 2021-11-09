@@ -69,7 +69,8 @@ namespace DataAccess.Forms
                                         FormSizeID = (int)rdr["FormSizeID"],
                                         PaperSize = rdr["PaperSize"].ToString(),
                                         DivisorFactor = float.Parse(rdr["DivisorFactor"].ToString()),
-                                        LaborFactor = float.Parse(rdr["LaborFactor"].ToString())
+                                        LaborFactor = float.Parse(rdr["LaborFactor"].ToString()),
+                                        FormMasterID = (int)rdr["FormMasterID"]
                                     };
                                     paperSizeList.Add(dataList);
 
@@ -91,7 +92,8 @@ namespace DataAccess.Forms
                                             PaperCostAtA3 = float.Parse(rdr["PaperCostAtA3"].ToString()),
                                             LaborCostAtA3 = float.Parse(rdr["LaborCostAtA3"].ToString()),
                                             PrintingCostAtA3BW = float.Parse(rdr["PrintingCostAtA3BW"].ToString()),
-                                            PrintingCostAtA3Colored = float.Parse(rdr["PrintingCostAtA3Colored"].ToString())
+                                            PrintingCostAtA3Colored = float.Parse(rdr["PrintingCostAtA3Colored"].ToString()),
+                                            FormMasterID = (int)rdr["FormMasterID"]
 
                                         };
                                         paperTypeList.Add(dataList);
@@ -110,7 +112,8 @@ namespace DataAccess.Forms
                                         {
                                             ID = (int)rdr["ID"],
                                             FormQuantity = (int)rdr["FormQuantity"],
-                                            QuantityFactor = float.Parse(rdr["QuantityFactor"].ToString())
+                                            QuantityFactor = float.Parse(rdr["QuantityFactor"].ToString()),
+                                            FormMasterID = (int)rdr["FormMasterID"]
                                         };
 
                                         formQuantities.Add(dataList);
@@ -129,7 +132,8 @@ namespace DataAccess.Forms
                                         FormPrintColorModel dataList = new FormPrintColorModel
                                         {
                                             ID = (int)rdr["ID"],
-                                            PrintColor = rdr["PrintColor"].ToString()
+                                            PrintColor = rdr["PrintColor"].ToString(),
+                                            FormMasterID = (int)rdr["FormMasterID"]
                                         };
 
                                         printColors.Add(dataList);

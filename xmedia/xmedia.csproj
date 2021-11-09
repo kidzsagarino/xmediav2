@@ -156,10 +156,11 @@
     <Content Include="images\xmedia-logo.png" />
     <Content Include="Scripts\Cart\cart.js" />
     <Content Include="Scripts\common.js" />
-    <Content Include="Scripts\Forms\forms.js" />
+    <Content Include="Scripts\Forms\purchaseorder.js" />
     <Content Include="Scripts\Account\forgotPassword.js" />
     <Content Include="Scripts\Account\login.js" />
     <Content Include="Scripts\Account\signup.js" />
+    <Content Include="Scripts\sample.js" />
     <Content Include="Scripts\Shared\_LayoutMainpage.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
